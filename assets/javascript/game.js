@@ -4,26 +4,16 @@
 //This is a class file detecting specific key presses
 //USE THIS as an EXAMPLE for key detection
  // Let's start by grabbing a reference to the <span> below.
-      var userText = document.getElementById("user-text");
+      // var userText = document.getElementById("user-text");
 
       // Next, we give JavaScript a function to execute when onkeyup event fires.
-      document.onkeyup = function(event) {
-        console.log(event);
-        userText.textContent = event.key;
-      };
+      // document.onkeyup = function(event) {
+        //console.log(event);
+        //userText.textContent = event.key;
+      //};
 // END EXAMPLE
 
-
-/* my own notes for Hangman: 
-		make panels/divs for:
-				- word to guess
-				- letters already guesses
-				- wrong guesses
-				- guesses remaining
-				- win counter
-				- loss counter
-				*/
-
+// =============================================================
 
 // SECTION - global variables
 
@@ -37,9 +27,11 @@
 
 	// game counters
 
-		var CountWins = 0;
-		var CountLosses = 0;
+		var countWins = 0;
+		var countLosses = 0;
 		var remainingGuesses = 8;
+
+// =============================================================
 
 // SECTION - functions
 
@@ -58,7 +50,7 @@
 
 
 			//Populate blanks and successes with the correct number of blanks.
-			for (var i=0; i<numOfBlanks; i++){
+			for (var i=0; i<numOfBlanks; i++) {
 				blanksAndSuccesses.push("_");
 			}
 
@@ -67,8 +59,8 @@
 			// FYI - join will put the array members together without the unsightly comma delimiter
 			document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
 			document.getElementById("guessesLeft").innerHTML = remainingGuesses;
-			document.getElementById("wincount").innerHTML = CountWins;
-			document.getElementById("losscount").innerHTML = CountLosses;
+			document.getElementById("wincount").innerHTML = countWins;
+			document.getElementById("losscount").innerHTML = countLosses;
 
 
 			// TEST
@@ -88,6 +80,8 @@
 			for (var i=0; i<numOfBlanks; i++){
 				if(randomWord[i] == letter){
 					isLetterInWord = true;
+					// this breaks out of the for loop if a letter matches
+					break;
 				}
 			}
 
@@ -102,7 +96,7 @@
 
 			else {
 				wrongLetters.push(letter);
-				remainingGuesses--
+				remainingGuesses--;
 			}
 
 			//Testing this
@@ -112,8 +106,8 @@
 		
 
 
-		function roundComplete(){
-			console.log("Win Count: " + CountWins + "  |  LossCount: " + CountLosses + "  | Guesses Remaining: " + remainingGuesses);
+		function roundComplete() {
+			console.log("Win Count: " + countWins + "  |  LossCount: " + countLosses + "  | Guesses Remaining: " + remainingGuesses);
 			
 			// update the html to reflect the most current stats
 			document.getElementById("guessesLeft").innerHTML = remainingGuesses;
@@ -123,27 +117,29 @@
 
 			// check for a win
 			if (lettersInWord.toString() == blanksAndSuccesses.toString()) {
-				CountWins++;
+				countWins++;
 				alert("You Won!");
+				// reset wrong letter array
+				wrongLetters = [];
 
 				// update the win count
-				document.getElementById("wincount").innerHTML = CountWins;
+				document.getElementById("wincount").innerHTML = countWins;
 
 				launchGame();
 			}
 
 			else if (remainingGuesses == 0) {
-				CountLosses++;
-				alert("I'm sorry, but you've lost the game.");
+				countLosses++;
+				alert("I'm sorry, but you've lost the game. \nBetter luck next time!");
 
 				// update the loss count
-				document.getElementById("losscount").innerHTML = CountLosses;
+				document.getElementById("losscount").innerHTML = countLosses;
 
 				launchGame();
 			}
 		}
 
-
+// =============================================================
 
 // SECTION - main processes
 

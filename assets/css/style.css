@@ -1,0 +1,76 @@
+/* These are the custom styles for a class project game created in Javascript
+Author: Bonnie L. Hoffman - bonnieho@rice.edu */
+
+/* main div to hold the children together  */
+
+body {
+	font-family: arial, helvetica, sans-serif;
+	color: #999;
+}
+
+
+#main {
+	width: 65%;
+	margin: auto;
+}
+
+
+h1 {
+	font-size: 120%;
+	margin: 24px;
+}
+
+
+h2 {
+	font-size: 110%;
+	margin: 20px;
+	padding: 24px;
+	text-align: center;
+}
+
+
+h3 {
+	font-size: 100%;
+	margin: 24px;
+	margin-left: 30%;
+}
+
+#wordToGuess {
+	margin-top: 48px;
+	/* margin-left: 72px; */
+	font-size: 180%
+	font-weight: bold;
+}
+
+#wrongletters {
+	font-weight: bold;
+}
+
+.ital {
+	font-family: times, 'times new roman', serif;
+	font-size: 80%;
+	font-style: italic;
+	margin: -12px 24px 24px 60px;
+}
+
+.instructions {
+	width: 50%;
+	font-size: 80%;
+	font-style: italic;
+	margin: auto;
+	padding:16px 24px;
+	border: solid 1px #999;
+}
+
+.instructions ul {
+	margin: 24px 0 0 0;
+	margin-left: 20%;
+	list-style-type: circle;
+}
+
+.instructions li {
+	margin: 8px 0;
+}
+
+
+
