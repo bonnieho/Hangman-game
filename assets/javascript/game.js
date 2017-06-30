@@ -121,6 +121,7 @@
 				alert("You Won!");
 				// reset wrong letter array
 				wrongLetters = [];
+				document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 
 				// update the win count
 				document.getElementById("wincount").innerHTML = countWins;
@@ -131,6 +132,9 @@
 			else if (remainingGuesses == 0) {
 				countLosses++;
 				alert("I'm sorry, but you've lost the game. \nBetter luck next time!");
+				// reset wrong letter array
+				wrongLetters = [];
+				document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 
 				// update the loss count
 				document.getElementById("losscount").innerHTML = countLosses;
