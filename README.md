@@ -1,11 +1,13 @@
 # Hangman-game
-class homework assignment - Hangman game in JS
 
-Week 3 Assignment
+## Overview
 
-Overview
+This project is a classic "Hangman" app using a theme of National Hockey League team names. The app runs in a web browser and features dynamically updated HTML powered by basic JavaScript code.
 
-In this assignment, you'll create one of two possible computer games: Hangman or Psychic. These apps will run in the browser, and feature dynamically updated HTML powered by your JavaScript code.
+
+
+
+
 
 
 In the javascript folder, make a file called game.js. Use the src attribute of the script tag to link to this file, rather than embedding the code directly in your HTML document.
@@ -73,6 +75,15 @@ Don't forget to place your global variables and functions above your object.
 
 
 Remember: global variables, then objects, then calls.
+
+
+
+- - - 
+
+
+(c)2017 __Bonnie Lynne Hoffman__ 
+
+*toward the completion of The University of Texas at Austin Houston Coding Boot Camp Certificate - (June 2017 cohort)*
 
 
 
