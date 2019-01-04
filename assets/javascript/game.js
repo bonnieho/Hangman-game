@@ -130,6 +130,10 @@
 
 			// check for a win
 			if (lettersInWord.toString() == blanksAndSuccesses.toString()) {
+
+				// maybe put the push of last letter here? try uncommenting line below (check console.log)
+				// blanksAndSuccesses[i] = letter;
+
 				countWins++;
 				alert("You Won!");
 				// reset wrong letter array
