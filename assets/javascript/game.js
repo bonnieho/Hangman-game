@@ -13,6 +13,19 @@
       //};
 // END EXAMPLE
 
+
+// MVPs for this project:
+
+// (the OBVIOUS) - add background image(s) and STYLE the page (and alerts?!)
+
+// - see if there's a way to get the final letter (or space) of each correctly guessed team name to display:
+//  1. once it's typed AND before the alert pops up;
+//  2. maybe also have a logo display on either the page or the pop-up
+
+// - sounds! 
+//   1. maybe have a sound play when the user gets an answer correct (like a fog horn);
+//   2. how 'bout a final sound when the game is finished (is that even established?!)
+
 // =============================================================
 
 // SECTION - global variables
