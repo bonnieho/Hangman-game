@@ -26,6 +26,11 @@
 //   1. maybe have a sound play when the user gets an answer correct (like a fog horn);
 //   2. how 'bout a final sound when the game is finished (is that even established?!)
 
+
+// HARD STUFF
+
+// making objects?
+
 // =============================================================
 
 // SECTION - global variables
@@ -133,6 +138,8 @@
 
 				// maybe put the push of last letter here? try uncommenting line below (check console.log)
 				// blanksAndSuccesses[i] = letter;
+
+				// this is also where I think the sound effect of winning a single game should be
 
 				countWins++;
 				alert("You Won!");
