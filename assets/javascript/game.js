@@ -18,8 +18,9 @@
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and alerts?!)
 
-// - see if there's a way to get the final letter (or space) of each correctly guessed team name to display:
+// - see if there's a way to get the FINAL letter (or space) of each correctly guessed team name to display:
 //  1. once it's typed AND before the alert pops up;
+//  2. have spaces display somehow (as nbsp?? triggered by shift key)
 //  2. maybe also have a logo display on either the page or the pop-up
 
 // - sounds! 
@@ -109,6 +110,9 @@
 					if(randomWord[i] == letter){
 						blanksAndSuccesses[i] = letter;
 					}
+					// if(numOfBlanks.length == i){
+					//	blanksAndSuccesses[i].push(letter);
+					// }
 				}
 			}
 
@@ -119,6 +123,7 @@
 
 			//Testing this
 			console.log(blanksAndSuccesses);
+			console.log("inside checkLetters function");
 		}
 
 		
