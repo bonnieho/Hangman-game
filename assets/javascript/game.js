@@ -23,6 +23,10 @@
 //  2. have spaces display somehow (as nbsp?? triggered by shift key)
 //  2. maybe also have a logo display on either the page or the pop-up
 
+// - see if there's a way to only display a wrong letter once instead of a second time if you make a mistake and type it multiple times. Maybe an alert to let you know that you are a bone head to guess the same letter twice when you were already told it wasn't in the name?!?
+
+// limit the valid keystrokes to letters and the space bar (in other words, if the return is hit when going forward to a new round, that shouldn't count against you as the first missed guess in that next round.)
+
 // - sounds! 
 //   1. maybe have a sound play when the user gets an answer correct (like a fog horn);
 //   2. how 'bout a final sound when the game is finished (is that even established?!)
@@ -111,8 +115,8 @@
 					if(randomWord[i] == letter){
 						blanksAndSuccesses[i] = letter;
 						}
-						console.log("length of randomWord ="); 
-						console.log(randomWord.length);
+						//console.log("length of randomWord ="); 
+						//console.log(randomWord.length);
 					//if(randomWord.length(-1) == blanksAndSuccesses[i]){
 					//	blanksAndSuccesses[i].push(letter);
 					//	}				
@@ -125,26 +129,29 @@
 			}
 
 			//Testing this
-			//console.log(blanksAndSuccesses);
-			console.log("inside checkLetters function");
+			console.log(blanksAndSuccesses);
+			console.log("from inside checkLetters function");
 		}
 
 		
 
 
 		function roundComplete() {
-			console.log("Win Count: " + countWins + "  |  LossCount: " + countLosses + "  | Guesses Remaining: " + remainingGuesses);
+			// console.log("Win Count: " + countWins + "  |  LossCount: " + countLosses + "  | Guesses Remaining: " + remainingGuesses);
 			
 			// update the html to reflect the most current stats
-			//document.getElementById("guessesLeft").innerHTML = remainingGuesses;
-			//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
-			//document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
+			document.getElementById("guessesLeft").innerHTML = remainingGuesses;
+			document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+			document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 
 			// this didn't work either
 			//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.push(letterGuessed);
 
 			// check for a win
 			if (lettersInWord.toString() == blanksAndSuccesses.toString()) {
+				countWins++;
+				// update the win count
+				document.getElementById("wincount").innerHTML = countWins;
 
 				// maybe put the push of last letter here? try uncommenting line below (check console.log)
 				//blanksAndSuccesses[i] = letter; works, but see below
@@ -155,21 +162,18 @@
 				//letterGuessed.push(blanksAndSuccesses);
 				//Testing this
 				// console.log(blanksAndSuccesses);
-
+				
 				// this is also where I think the sound effect of winning a single game should be
 				//Testing this
 				console.log("sound is playing!");
 				alert("play sound here!");
 				// end test
 
-				countWins++;
 				alert("You Won!");
+
 				// reset wrong letter array
 				wrongLetters = [];
 				document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
-
-				// update the win count
-				document.getElementById("wincount").innerHTML = countWins;
 
 				launchGame();
 			}
@@ -186,11 +190,6 @@
 
 				launchGame();
 			}
-
-			// update the html to reflect the most current stats
-			document.getElementById("guessesLeft").innerHTML = remainingGuesses;
-			document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
-			document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 		}
 
 // =============================================================
