@@ -133,9 +133,9 @@
 			console.log("Win Count: " + countWins + "  |  LossCount: " + countLosses + "  | Guesses Remaining: " + remainingGuesses);
 			
 			// update the html to reflect the most current stats
-			document.getElementById("guessesLeft").innerHTML = remainingGuesses;
-			document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
-			document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
+			//document.getElementById("guessesLeft").innerHTML = remainingGuesses;
+			//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+			//document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 
 
 			// check for a win
@@ -147,7 +147,7 @@
 				// uncommenting the line above give this error:
 				// Uncaught ReferenceError: i is not defined at roundComplete (game.js:140)
     			// at HTMLDocument.document.onkeyup (game.js:189) Now line 193
-
+				//letterGuessed.push(blanksAndSuccesses);
 				//Testing this
 				// console.log(blanksAndSuccesses);
 
@@ -181,6 +181,11 @@
 
 				launchGame();
 			}
+
+			// update the html to reflect the most current stats
+			document.getElementById("guessesLeft").innerHTML = remainingGuesses;
+			document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+			document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 		}
 
 // =============================================================
