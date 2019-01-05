@@ -100,6 +100,7 @@
 				if(randomWord[i] == letter){
 					isLetterInWord = true;
 					// this breaks out of the for loop if a letter matches
+					console.log("letter matched - breaking out of loop now");
 					break;
 				}
 			}
@@ -109,10 +110,12 @@
 				for (var i=0; i<numOfBlanks; i++){
 					if(randomWord[i] == letter){
 						blanksAndSuccesses[i] = letter;
-					}
-					// if(numOfBlanks.length == i){
+						}
+						console.log("length of randomWord ="); 
+						console.log(randomWord.length);
+					//if(randomWord.length(-1) == blanksAndSuccesses[i]){
 					//	blanksAndSuccesses[i].push(letter);
-					// }
+					//	}				
 				}
 			}
 
@@ -122,7 +125,7 @@
 			}
 
 			//Testing this
-			console.log(blanksAndSuccesses);
+			//console.log(blanksAndSuccesses);
 			console.log("inside checkLetters function");
 		}
 
@@ -137,6 +140,8 @@
 			//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
 			//document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 
+			// this didn't work either
+			//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.push(letterGuessed);
 
 			// check for a win
 			if (lettersInWord.toString() == blanksAndSuccesses.toString()) {
