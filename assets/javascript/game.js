@@ -20,7 +20,7 @@
 
 // - see if there's a way to get the FINAL letter (or space) of each correctly guessed team name to display:
 //  1. once it's typed AND before the alert pops up;
-//  2. have spaces display somehow (as nbsp?? triggered by shift key)
+//  2. have spaces display somehow (as nbsp?? triggered by shift key) if (e.keyCode === 32 || e.key === ' ')
 //  2. maybe also have a logo display on either the page or the pop-up
 
 // - see if there's a way to only display a wrong letter once instead of a second time if you make a mistake and type it multiple times. Maybe an alert to let you know that you are a bone head to guess the same letter twice when you were already told it wasn't in the name?!?
@@ -163,10 +163,10 @@
 				//Testing this
 				// console.log(blanksAndSuccesses);
 				
-				// this is also where I think the sound effect of winning a single game should be
+				// this is also where the sound effect of winning a single game should be
 				//Testing this
-				console.log("sound is playing!");
-				alert("play sound here!");
+				//console.log("sound is playing!");
+				//alert("play sound here!");
 				// end test
 
 				alert("You Won!");
