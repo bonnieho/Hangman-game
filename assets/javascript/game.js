@@ -137,7 +137,12 @@
 			if (lettersInWord.toString() == blanksAndSuccesses.toString()) {
 
 				// maybe put the push of last letter here? try uncommenting line below (check console.log)
-				blanksAndSuccesses[i] = letter;
+				//blanksAndSuccesses[i] = letter; works, but see below
+				//blanksAndSuccesses.push(letter);  works but with this one, letter is not defined
+				// uncommenting the line above give this error:
+				// Uncaught ReferenceError: i is not defined at roundComplete (game.js:140)
+    			// at HTMLDocument.document.onkeyup (game.js:189) Now line 193
+
 				//Testing this
 				console.log(blanksAndSuccesses);
 
