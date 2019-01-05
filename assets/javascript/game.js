@@ -144,7 +144,7 @@
     			// at HTMLDocument.document.onkeyup (game.js:189) Now line 193
 
 				//Testing this
-				console.log(blanksAndSuccesses);
+				// console.log(blanksAndSuccesses);
 
 				// this is also where I think the sound effect of winning a single game should be
 				//Testing this
