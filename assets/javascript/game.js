@@ -138,8 +138,14 @@
 
 				// maybe put the push of last letter here? try uncommenting line below (check console.log)
 				// blanksAndSuccesses[i] = letter;
+				//Testing this
+				// console.log(blanksAndSuccesses);
 
 				// this is also where I think the sound effect of winning a single game should be
+				//Testing this
+				console.log("sound is playing?");
+				alert("play sound here");
+				// end test
 
 				countWins++;
 				alert("You Won!");
