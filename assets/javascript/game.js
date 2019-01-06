@@ -185,6 +185,7 @@
 			else if (remainingGuesses == 0) {
 				countLosses++;
 				alert("I'm sorry, but you've lost the game. \nBetter luck next time!");
+
 				// reset wrong letter array
 				wrongLetters = [];
 				document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
@@ -211,6 +212,10 @@
 		checkLetters(letterGuessed);
 		roundComplete();
 
+
+		//is this where I want to have a check for whether a letter has been picked or not (and not let it count against you again)? (wrongLetters array)
+
+		// also, is this where I want it to check for ONLY letters and the space bar and let errant keystrokes count against you?
 		//testing it
 		console.log(letterGuessed);
 	}
