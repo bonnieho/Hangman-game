@@ -104,7 +104,7 @@
 				if(randomWord[i] == letter){
 					isLetterInWord = true;
 					// this breaks out of the for loop if a letter matches
-					console.log("letter matched - breaking out of loop now");
+					//console.log("letter matched - breaking out of loop now");
 					break;
 				}
 			}
@@ -154,6 +154,7 @@
 				document.getElementById("wincount").innerHTML = countWins;
 
 				// maybe put the push of last letter here? try uncommenting line below (check console.log)
+				blanksAndSuccesses = letter;
 				//blanksAndSuccesses[i] = letter; works, but see below
 				//blanksAndSuccesses.push(letter);  works but with this one, letter is not defined
 				// uncommenting the line above give this error:
