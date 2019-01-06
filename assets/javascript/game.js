@@ -144,9 +144,6 @@
 			document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
 			document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 
-			// this didn't work either
-			//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.push(letterGuessed);
-
 			// check for a win
 			if (lettersInWord.toString() == blanksAndSuccesses.toString()) {
 				countWins++;
@@ -164,11 +161,10 @@
 				// Uncaught ReferenceError: i is not defined at roundComplete (game.js:140)
     			// at HTMLDocument.document.onkeyup (game.js:189) Now line 193
 				//letterGuessed.push(blanksAndSuccesses);
-				//Testing this
-				// console.log(blanksAndSuccesses);
+				
 				
 				// this is also where the sound effect of winning a single game should be
-				//Testing this
+				//Testing for the insertion point
 				//console.log("sound is playing!");
 				//alert("play sound here!");
 				// end test
@@ -216,6 +212,7 @@
 		//is this where I want to have a check for whether a letter has been picked or not (and not let it count against you again)? (wrongLetters array)
 
 		// also, is this where I want it to check for ONLY letters and the space bar and let errant keystrokes count against you?
+
 		//testing it
 		console.log(letterGuessed);
 	}
