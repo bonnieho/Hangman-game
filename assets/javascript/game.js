@@ -153,8 +153,11 @@
 				// update the win count
 				document.getElementById("wincount").innerHTML = countWins;
 
+
+
 				// maybe put the push of last letter here? try uncommenting line below (check console.log)
-				blanksAndSuccesses = letter;
+				//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.push(letterGuessed); works but letterGuessed not defined
+				//blanksAndSuccesses = letter; works to plae last letter but breaks after that bc letter is undefined.
 				//blanksAndSuccesses[i] = letter; works, but see below
 				//blanksAndSuccesses.push(letter);  works but with this one, letter is not defined
 				// uncommenting the line above give this error:
