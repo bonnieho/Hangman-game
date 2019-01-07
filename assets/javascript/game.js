@@ -206,6 +206,10 @@
 	document.onkeyup = function(event){
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 		checkLetters(letterGuessed);
+
+		// maybe somewhere in here to place the last letter?!?
+
+
 		roundComplete();
 
 
@@ -213,7 +217,8 @@
 
 		// also, is this where I want it to check for ONLY letters and the space bar and let errant keystrokes count against you?
 
-		//testing it
+		//testing it 
+		console.log("letter guessed was: ")
 		console.log(letterGuessed);
 	}
 
