@@ -205,9 +205,12 @@
 
 	document.onkeyup = function(event){
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+		// somewhere here, validate letterGuessed for letters ONLY and SPACE
+
 		checkLetters(letterGuessed);
 
 		// maybe somewhere in here to place the last letter?!?
+
 
 
 		roundComplete();
