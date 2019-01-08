@@ -217,6 +217,8 @@
     */
     // from https://github.com/JulieBurk/Hangman-game/blob/master/assets/javascript/game.js
 
+    // also check this link http://danorlovsky.tech/Articles/Javascript-Hangman-Tutorial
+
 		checkLetters(letterGuessed);
 
 		// maybe somewhere in here to place the last letter?!?
