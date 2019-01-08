@@ -153,9 +153,9 @@
 
 
 				// maybe put the push of last letter here? try uncommenting line below (check console.log)
-				//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.push(letterGuessed); works but letterGuessed not defined
-				//blanksAndSuccesses = letter; works to plae last letter but breaks after that bc letter is undefined.
-				//blanksAndSuccesses[i] = letter; works, but see below
+				//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.push(letterGuessed); WORKS but letterGuessed not defined
+				//blanksAndSuccesses = letter; WORKS to place last letter but breaks after that bc letter is undefined.
+				//blanksAndSuccesses[i] = letter; WORKS, but see below
 				//blanksAndSuccesses.push(letter);  works but with this one, letter is not defined
 				// uncommenting the line above give this error:
 				// Uncaught ReferenceError: i is not defined at roundComplete (game.js:140)
