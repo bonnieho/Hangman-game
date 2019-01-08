@@ -208,6 +208,7 @@
 		// somewhere here, validate letterGuessed for letters ONLY and SPACE
 
 		// somewhere here, too(?) check for duplicate letters already guessed (both correct and incorrect??)
+		// https://github.com/jeffreylowy/Hangman-Game/blob/master/assets/js/got-hangman.js
 
 		checkLetters(letterGuessed);
 
