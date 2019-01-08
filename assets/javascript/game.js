@@ -210,6 +210,13 @@
 		// somewhere here, too(?) check for duplicate letters already guessed (both correct and incorrect??)
 		// https://github.com/jeffreylowy/Hangman-Game/blob/master/assets/js/got-hangman.js
 
+		/*
+    to check if a letter is already in the wrong guesses array. What we want to do
+    is set up an if/else conditional that will run a for loop that will iterate over
+    all the letters and then use the if/else to check if it it already exists.
+    */
+    // from https://github.com/JulieBurk/Hangman-game/blob/master/assets/javascript/game.js
+
 		checkLetters(letterGuessed);
 
 		// maybe somewhere in here to place the last letter?!?
