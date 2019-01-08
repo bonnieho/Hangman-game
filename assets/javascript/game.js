@@ -219,6 +219,8 @@
 
     // also check this link http://danorlovsky.tech/Articles/Javascript-Hangman-Tutorial
 
+    // this one checks for letters only: https://smendez92.github.io/Hangman-Game/
+
 		checkLetters(letterGuessed);
 
 		// maybe somewhere in here to place the last letter?!?
