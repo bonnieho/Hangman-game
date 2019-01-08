@@ -207,6 +207,8 @@
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 		// somewhere here, validate letterGuessed for letters ONLY and SPACE
 
+		// somewhere here, too(?) check for duplicate letters already guessed (both correct and incorrect??)
+
 		checkLetters(letterGuessed);
 
 		// maybe somewhere in here to place the last letter?!?
