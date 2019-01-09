@@ -115,6 +115,7 @@
 					if(randomWord[i] == letter){
 						blanksAndSuccesses[i] = letter;
 						}
+						// BAH - none of these worked
 						//console.log("length of randomWord ="); 
 						//console.log(randomWord.length);
 					//if(randomWord.length(-1) == blanksAndSuccesses[i]){
