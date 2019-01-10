@@ -21,7 +21,7 @@
 // - see if there's a way to get the FINAL letter (or space) of each correctly guessed team name to display:
 //  1. once it's typed AND before the alert pops up;
 //  2. have spaces display somehow (can the shift key trigger placement of a nbsp if the name has one??) if (e.keyCode === 32 || e.key === ' ')
-//  2. maybe also have a logo display on either the page or the pop-up
+//  2. maybe also have a logo display on either the page or the pop-up (I think I'd prefer the alert if possible)
 
 // - see if there's a way to only display a wrong letter once instead of a second time if you make a mistake and type it multiple times. Maybe an alert to let you know that you are a bone head to guess the same letter twice when you were already told it wasn't in the name?!?
 
