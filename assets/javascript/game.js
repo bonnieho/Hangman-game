@@ -129,6 +129,8 @@
 				remainingGuesses--;
 			}
 
+			// How to determine letters that have already been chosen for the array?
+
 			//Testing this
 			console.log(blanksAndSuccesses);
 			console.log("from inside checkLetters function");
