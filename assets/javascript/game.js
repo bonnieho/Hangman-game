@@ -130,6 +130,7 @@
 			}
 
 			// How to determine letters that have already been chosen for the array?
+			// Is this where that validation would go?
 
 			//Testing this
 			console.log(blanksAndSuccesses);
