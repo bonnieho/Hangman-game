@@ -36,6 +36,9 @@
 
 // making objects?
 
+
+// check this tutorial https://www.youtube.com/watch?v=KJeRLolub8E
+
 // =============================================================
 
 // SECTION - global variables
