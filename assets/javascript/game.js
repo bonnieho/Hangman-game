@@ -114,10 +114,17 @@
 				}
 			}
 
+	
+
+
 		//check index placement of existing letter(s) then populate blanksAndSuccesses
 			if(isLetterInWord) {
 				for (var i=0; i<numOfBlanks; i++){
 					if(randomWord[i] == letter){
+						// checking for space and inserting nbsp
+						if (letter == " "){
+							letter = '&#160';	
+							}
 						blanksAndSuccesses[i] = letter;
 						}			
 				}
@@ -209,6 +216,8 @@
 
 
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+
+
 
 		//var key = event.key || event.keyCode; key is current; keyCode is deprecated.
 
