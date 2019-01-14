@@ -19,8 +19,9 @@
 // (the OBVIOUS) - add background image(s) and STYLE the page (and alerts?!)
 
 // - see if there's a way to get the FINAL letter (or space) of each correctly guessed team name to display:
-//  1. once it's typed AND before the alert pops up;
-//  2. have spaces display somehow (can the shift key trigger placement of a nbsp if the name has one??) if (e.keyCode === 32 || e.key === ' ')
+//  once it's typed AND before the alert pops up; DONE DONE DONE!!!
+
+//  1. have spaces display somehow (can the shift key trigger placement of a nbsp if the name has one??) if (e.keyCode === 32 || e.key === ' ')
 //  2. maybe also have a logo display on either the page or the pop-up (I think I'd prefer the alert if possible)
 
 // - see if there's a way to only display a wrong letter once instead of a second time if you make a mistake and type it multiple times. Maybe an alert to let you know that you are a bone head to guess the same letter twice when you were already told it wasn't in the name?!?
@@ -212,6 +213,15 @@
     // also check this link http://danorlovsky.tech/Articles/Javascript-Hangman-Tutorial
 
     // this one checks for letters only: https://smendez92.github.io/Hangman-Game/
+	//Check to see if user input is a letter before moving on.
+			    	//if (event.keyCode >= 65 && event.keyCode <= 90) {
+    //Display warning popUp if user input is not a letter, except for ENTER key.
+			    	//else if (event.keyCode !== 13){
+			    	//	popUpText.textContent = ("ＬＥＴＴＥＲＳ 　ＯＮＬＹ，　ＰＬＥＡＳＥ");
+			    	//	popUpWindow.style.display = "block";
+			    	//	isOpen = true;
+			    	//	return;
+			    	//}
 
 		checkLetters(letterGuessed);
 
