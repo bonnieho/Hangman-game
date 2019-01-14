@@ -200,6 +200,8 @@
 	document.onkeyup = function(event){
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 
+		//var key = event.key || event.keyCode; key is current; keyCode is deprecated.
+
 		// somewhere here, too(?) check for duplicate letters already guessed (both correct and incorrect??)
 		// https://github.com/jeffreylowy/Hangman-Game/blob/master/assets/js/got-hangman.js
 
@@ -211,6 +213,11 @@
     // from https://github.com/JulieBurk/Hangman-game/blob/master/assets/javascript/game.js
 
     // also check this link http://danorlovsky.tech/Articles/Javascript-Hangman-Tutorial
+
+    //space key is keyCode === 32) check it first, though
+    // KeyboardEvent.key Value for spacebar returns " " also some older browsers may return Spacebar
+
+    // 65 - 90 lc letters
 
     // this one checks for letters only: https://smendez92.github.io/Hangman-Game/
 	//Check to see if user input is a letter before moving on.
