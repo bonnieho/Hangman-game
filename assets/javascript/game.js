@@ -18,16 +18,14 @@
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and alerts?!)
 
-// - see if there's a way to get the FINAL letter (or space) of each correctly guessed team name to display:
-//  once it's typed AND before the alert pops up; DONE DONE DONE!!!
 
-//  1. have spaces display somehow (can the shift key trigger placement of a nbsp if the name has one??) if (e.keyCode === 32 || e.key === ' ')
-//  2. maybe also have a logo display on either the page or the pop-up (I think I'd prefer the alert if possible)
+//  1. maybe also have a logo display on either the page or the pop-up (I think I'd prefer the alert if possible)
 
 // - see if there's a way to only display a wrong letter once instead of a second time if you make a mistake and type it multiple times. Maybe an alert to let you know that you are a bone head to guess the same letter twice when you were already told it wasn't in the name?!?
 
-// limit the valid keystrokes to letters and the space bar (in other words, if the return is hit when going forward to a new round, that shouldn't count against you as the first missed guess in that next round.)
-// limit
+// limit the valid keystrokes to letters and the space bar (in other words, 
+// if the RETURN is hit that shouldn't count against you as a keypress
+
 // - sounds! 
 //   1. maybe have a sound play when the user gets an answer correct (like a fog horn);
 //   2. how 'bout a final sound when the game is finished (is that even established?!)
@@ -39,6 +37,12 @@
 
 
 // check this tutorial https://www.youtube.com/watch?v=KJeRLolub8E
+
+
+// DONE DONE DONE !!!
+// - see if there's a way to get the FINAL letter (or space) of each correctly guessed team name to display:
+//  once it's typed AND before the alert pops up; DONE DONE DONE!!!
+//  have spaces display somehow (can the shift key trigger placement of a nbsp if the name has one??) DONE DONE DONE!!!
 
 
 // =============================================================
@@ -132,7 +136,7 @@
 
 			else {
 				if (letter == " "){
-					letter = 'space&#160;';	
+					letter = '[space]&#160;';	
 					}
 				wrongLetters.push(letter);
 				remainingGuesses--;
