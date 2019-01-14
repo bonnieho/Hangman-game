@@ -198,6 +198,16 @@
 	// this registers key clicks
 
 	document.onkeyup = function(event){
+
+		if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 32) {
+			console.log("This is an OK key");
+		}
+
+		else if (event.keyCode <= 65 && event.keyCode >= 90 || event.keyCode !== 32) {
+			console.log("This NOT a good key");
+		}
+
+
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 
 		//var key = event.key || event.keyCode; key is current; keyCode is deprecated.
