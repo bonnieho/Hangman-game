@@ -18,6 +18,7 @@
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and alerts?!)
 
+// FIX: if team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
 
 //  1. maybe also have a logo display on either the page or the pop-up (I think I'd prefer the alert if possible)
 
@@ -128,12 +129,13 @@
 						// checking for space and inserting nbsp
 						if (letter == " "){
 							letter = '&#160;';	
-							}
+							} // the space character check HERE breaks game cycle IF there's a space in the team name
 						blanksAndSuccesses[i] = letter;
 						}			
 				}
 			}
 
+			// the space character check works here (doesn't break game cycle)
 			else {
 				if (letter == " "){
 					letter = '[space]&#160;';	
