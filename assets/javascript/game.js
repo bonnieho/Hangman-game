@@ -123,7 +123,7 @@
 					if(randomWord[i] == letter){
 						// checking for space and inserting nbsp
 						if (letter == " "){
-							letter = '&#160';	
+							letter = '&#160;';	
 							}
 						blanksAndSuccesses[i] = letter;
 						}			
@@ -131,6 +131,9 @@
 			}
 
 			else {
+				if (letter == " "){
+					letter = 'space&#160;';	
+					}
 				wrongLetters.push(letter);
 				remainingGuesses--;
 			}
