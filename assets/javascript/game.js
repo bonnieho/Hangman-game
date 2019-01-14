@@ -118,13 +118,7 @@
 				for (var i=0; i<numOfBlanks; i++){
 					if(randomWord[i] == letter){
 						blanksAndSuccesses[i] = letter;
-						}
-						// BAH - none of these worked
-						//console.log("length of randomWord ="); 
-						//console.log(randomWord.length);
-					//if(randomWord.length(-1) == blanksAndSuccesses[i]){
-					//	blanksAndSuccesses[i].push(letter);
-					//	}				
+						}			
 				}
 			}
 
@@ -160,46 +154,36 @@
 				document.getElementById("wincount").innerHTML = countWins;
 
 
+			/* Developer note: There was a timing issue with the win/loss alert happening before the last letter
+			displayed (either right or wrong). By enclosing everything in a function that specifically delays the 
+			alert activating by 1/2 a second, the letters, correct or incorrect, are now having a chance to populate 
+			their divs as I had hoped. */
 
-				// maybe put the push of last letter here? try uncommenting line below (check console.log)
-				//document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.push(letterGuessed); WORKS but letterGuessed not defined
-				//blanksAndSuccesses = letter; WORKS to place last letter but breaks after that bc letter is undefined.
-				//blanksAndSuccesses[i] = letter; WORKS, but see below
-				//blanksAndSuccesses.push(letter);  works but with this one, letter is not defined
-				// uncommenting the line above give this error:
-				// Uncaught ReferenceError: i is not defined at roundComplete (game.js:140)
-    			// at HTMLDocument.document.onkeyup (game.js:189) Now line 193
-				//letterGuessed.push(blanksAndSuccesses);
-				
-				
-				// this is also where the sound effect of winning a single game should be
-				//Testing for the insertion point
-				//console.log("sound is playing!");
-				//alert("play sound here!");
-				// end test
-
-				alert("You Won!");
-
-				// reset wrong letter array
-				wrongLetters = [];
-				document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
-
-				launchGame();
+				setTimeout(function(){ 
+					alert("You won!");
+					// this is also where the sound effect of winning a single game should be
+					//Testing for the insertion point
+					//console.log("sound is playing!");
+					// reset wrong letter array
+					wrongLetters = [];
+					document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
+					launchGame();
+				}, 500);				
 			}
-
+			
 			else if (remainingGuesses == 0) {
 				countLosses++;
-				alert("I'm sorry, but you've lost the game. \nBetter luck next time!");
-
-				// reset wrong letter array
-				wrongLetters = [];
-				document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
-
 				// update the loss count
 				document.getElementById("losscount").innerHTML = countLosses;
 
-				launchGame();
-			}
+				setTimeout(function(){ 
+					alert("I'm sorry, but you've lost the game. \nBetter luck next time!");
+					// reset wrong letter array
+					wrongLetters = [];
+					document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
+					launchGame();
+				}, 500);		
+			}			
 		}
 
 // =============================================================
@@ -214,7 +198,6 @@
 
 	document.onkeyup = function(event){
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
-		// somewhere here, validate letterGuessed for letters ONLY and SPACE
 
 		// somewhere here, too(?) check for duplicate letters already guessed (both correct and incorrect??)
 		// https://github.com/jeffreylowy/Hangman-Game/blob/master/assets/js/got-hangman.js
@@ -232,12 +215,7 @@
 
 		checkLetters(letterGuessed);
 
-		// maybe somewhere in here to place the last letter?!?
-
-
-
 		roundComplete();
-
 
 		//is this where I want to have a check for whether a letter has been picked or not (and not let it count against you again)? (wrongLetters array)
 
@@ -247,6 +225,11 @@
 		console.log("letter guessed was: ")
 		console.log(letterGuessed);
 	}
+
+
+// =============================================================
+// ========================= END ===============================
+
 
 
 
