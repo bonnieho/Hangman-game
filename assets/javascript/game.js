@@ -26,6 +26,38 @@
 
 // - see if there's a way to only display a wrong letter once if you make a mistake and type it multiple times. 
 // Maybe an alert == or notification in the page == to let you know that you are a bone head to guess the same letter twice when you were already told it wasn't in the name?!?
+// smendez92 
+
+/* <!-- Error PopUp -->
+			<div id="myPopUp" class="popUp">
+					<div>ALERT<div class="popUpClose">x</div>
+					</div>
+					<div>
+						<p id="popUpMessage"> </p>
+					</div>
+			</div> */
+
+//Prepare pop-up window
+			//var popUpWindow = document.getElementById("myPopUp");
+			//var span = document.getElementsByClassName("popUpClose")[0];
+			//var popUpText = document.getElementById("popUpMessage");
+			//var isOpen;
+
+			//if an alert popup is open, pressing ENTER will close it
+	    		//if(isOpen == true && event.keyCode == 13){
+				 //   popUpWindow.style.display = "none";
+				 //   isOpen = false;
+				//    return;
+				//}
+
+				//Check if user has already guessed the letter they entered. If so, display error popUp and break out.
+    			/* else if (isInArray(guessedLettersArray, latestGuessedLetter)){
+    				popUpText.textContent = ("ＹＯＵ.  ＡＬＲＥＡＤＹ.  ＧＵＥＳＳＥＤ. ＴＨＡＴ.  ＬＥＴＴＥＲ.");
+	    			popUpWindow.style.display = "block";
+	    			isOpen = true;
+    				return;
+    			} */
+
 
 // limit the valid keystrokes to letters and the space bar (in other words, 
 // if the RETURN is hit that shouldn't count against you as a keypress
