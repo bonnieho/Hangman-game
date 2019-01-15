@@ -5,7 +5,7 @@
 This project is a classic "Hangman" app using a theme of National Hockey League team names. The app runs in a web browser and features dynamically updated HTML powered by basic JavaScript code.
 
 
-
+- - -
 
 
 
@@ -17,19 +17,12 @@ Also in the css folder, make a file called reset.css. Paste into it the code fro
 In the images folder, save whatever images you plan on using.
 Push the above changes to GitHub.
 
-Choose whichever game you'd like to build. Making the Psychic game will prove less challenging than coding Hangman. However, as the challenge of the Hangman exercise provides a more comprehensive review of this week's material, we suggest attempting that assignment first.
-
-
-
-Option One: Psychic Game (Basic)
-
-
 
 Option Two: Hangman Game (Challenge - Recommended)
 
 
 
-Choose a theme for your game! In the demo, we picked an 80s theme: 80s questions, 80s sound and an 80s aesthetic. You can choose any subject for your theme, though, so be creative!
+
 
 
 Use key events to listen for the letters that your players will type.
@@ -81,7 +74,7 @@ Remember: global variables, then objects, then calls.
 - - - 
 
 
-(c)2017 __Bonnie Lynne Hoffman__ 
+(c)2017-2019 __Bonnie Lynne Hoffman__ 
 
 *toward the completion of The University of Texas at Austin Houston Coding Boot Camp Certificate - (June 2017 cohort)*
 
