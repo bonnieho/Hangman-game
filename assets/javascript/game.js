@@ -152,8 +152,21 @@
 			console.log(blanksAndSuccesses);
 
 			// removing array element to leave the unused?
-			gameWords = gameWords.splice([i-randomNumber]);
-			console.log(gameWords);
+			//gameWords = gameWords.splice([i-randomNumber]);
+			//console.log(gameWords);
+
+			//testing the tossing out of current randomly picked member of the gameWOrds array
+			var i = gameWords.length; //initialize counter to array length 
+
+			while (i--) //decrement counter 
+			{
+  				if (gameWords[i] === gameWords[randomNumber]) {
+    			console.log("gameWords Array after removal of RandomNumber element: ");
+    			gameWords = gameWords.slice(0, i).concat(gameWords.slice(i + 1));
+    			console.log(gameWords);
+  				}
+			}
+
 
 		}
 
