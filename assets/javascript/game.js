@@ -104,15 +104,19 @@
 
 	// in-page messaging setup (to replace alert popups)
 		var pageAlert = document.getElementById("inPageAlert");
-		//var span = document.getElementsByClassName("popUpClose")[0];
 		var pageMessage = document.getElementById("inPageMessage");
-		var isOpen;
 
 // =============================================================
 
 // SECTION - functions
 
 		function launchGame() {
+
+			// in-page message trigger
+			pageMessage.textContent = ("Starting this round... Good luck!");
+	    	pageMessage.style.display = "block";
+
+	    	// generate a random element from the gameWords array
 			randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 			lettersInWord = randomWord.split("");
 			//this figures how many blanks are required for a specific team name
@@ -151,6 +155,11 @@
 
 
 		function checkLetters(letter) {
+
+			// clearing in-page message 
+			//pageMessage.textContent = ("<p>&#160;</p>");
+			pageMessage.textContent = (" ");
+	    	pageMessage.style.display = "block";
 
 			var isLetterInWord = false;
 
@@ -215,9 +224,8 @@
 				document.getElementById("wincount").innerHTML = countWins;
 
 				// in-page message trigger
-				pageMessage.textContent = ("YOU WON!");
+				pageMessage.textContent = ("You won this round!");
 	    		pageMessage.style.display = "block";
-	    		isOpen = true;
 
 			/* Developer note: There was a timing issue with the win/loss alert happening before the last letter
 			displayed (either right or wrong). By enclosing everything in a function that specifically delays the 
@@ -244,7 +252,6 @@
 				// in-page message trigger
 				pageMessage.textContent = ("Sorry. You've run out of chances on this round.");
 	    		pageMessage.style.display = "block";
-	    		isOpen = true;
 
 				setTimeout(function(){ 
 					alert("I'm sorry, but you've lost the game. \nBetter luck next time!");
