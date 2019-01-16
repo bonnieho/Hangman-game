@@ -216,9 +216,8 @@
 
 				// in-page message trigger
 				pageMessage.textContent = ("YOU WON!");
-	    			pageMessage.style.display = "block";
-	    			isOpen = true;
-    				// return;
+	    		pageMessage.style.display = "block";
+	    		isOpen = true;
 
 			/* Developer note: There was a timing issue with the win/loss alert happening before the last letter
 			displayed (either right or wrong). By enclosing everything in a function that specifically delays the 
@@ -241,6 +240,11 @@
 				countLosses++;
 				// update the loss count
 				document.getElementById("losscount").innerHTML = countLosses;
+
+				// in-page message trigger
+				pageMessage.textContent = ("Sorry. You've run out of chances on this round.");
+	    		pageMessage.style.display = "block";
+	    		isOpen = true;
 
 				setTimeout(function(){ 
 					alert("I'm sorry, but you've lost the game. \nBetter luck next time!");
