@@ -102,6 +102,12 @@
 		var countLosses = 0;
 		var remainingGuesses = 8;
 
+	// in-page messaging setup (to replace alert popups)
+		var pageAlert = document.getElementById("inPageAlert");
+		//var span = document.getElementsByClassName("popUpClose")[0];
+		var pageMessage = document.getElementById("inPageMessage");
+		var isOpen;
+
 // =============================================================
 
 // SECTION - functions
@@ -208,6 +214,11 @@
 				// update the win count
 				document.getElementById("wincount").innerHTML = countWins;
 
+				// in-page message trigger
+				pageMessage.textContent = ("YOU WON!");
+	    			pageMessage.style.display = "block";
+	    			isOpen = true;
+    				// return;
 
 			/* Developer note: There was a timing issue with the win/loss alert happening before the last letter
 			displayed (either right or wrong). By enclosing everything in a function that specifically delays the 
