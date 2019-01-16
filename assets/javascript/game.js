@@ -43,13 +43,6 @@
 			//var popUpText = document.getElementById("popUpMessage");
 			//var isOpen;
 
-			//if an alert popup is open, pressing ENTER will close it
-	    		//if(isOpen == true && event.keyCode == 13){
-				 //   popUpWindow.style.display = "none";
-				 //   isOpen = false;
-				//    return;
-				//}
-
 				//Check if user has already guessed the letter they entered. If so, display error popUp and break out.
     			/* else if (isInArray(guessedLettersArray, latestGuessedLetter)){
     				popUpText.textContent = ("ＹＯＵ.  ＡＬＲＥＡＤＹ.  ＧＵＥＳＳＥＤ. ＴＨＡＴ.  ＬＥＴＴＥＲ.");
@@ -275,16 +268,26 @@
 
 	document.onkeyup = function(event){
 
+		// var key = event.key || event.keyCode;
+
+		// testing for letters only in console.log
 		if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 32) {
 			console.log("This is an OK key");
 		}
 
 		else if (event.keyCode <= 65 && event.keyCode >= 90 || event.keyCode !== 32) {
+			// in-page message trigger
+			// pageMessage.textContent = ("Sorry. That's not a letter.");
+	    	// pageMessage.style.display = "block";
 			console.log("This NOT a good key");
 		}
+		// END testing for only letters
 
 
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+
+
+		// Check if user has already guessed the letter they entered.
 
 
 
