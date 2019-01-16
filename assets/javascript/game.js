@@ -110,7 +110,14 @@
 	    	pageMessage.style.display = "block";
 
 	    	// generate a random element from the gameWords array
-			randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+	    	randomNumber = (Math.floor(Math.random() * gameWords.length));
+
+			// randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+			randomWord = gameWords[randomNumber];
+
+			
+			// ?? if else loop here to check if word has been selected already?
+
 			lettersInWord = randomWord.split("");
 			//this figures how many blanks are required for a specific team name
 			numOfBlanks = lettersInWord.length;
@@ -144,6 +151,10 @@
 			console.log(numOfBlanks);
 			console.log(blanksAndSuccesses);
 
+			// removing array element to leave the unused?
+			gameWords = gameWords.splice([i-randomNumber]);
+			console.log(gameWords);
+
 		}
 
 
@@ -168,7 +179,7 @@
 	
 
 
-		//check index placement of existing letter(s) then populate blanksAndSuccesses
+		// check index placement of existing letter(s) then populate blanksAndSuccesses
 			if(isLetterInWord) {
 				for (var i=0; i<numOfBlanks; i++){
 					if(randomWord[i] == letter){
@@ -268,7 +279,12 @@
 
 	document.onkeyup = function(event){
 
+		// FIRST, let's create a loop to check for letters and SPACEBAR ONLY BEFORE sending to letterGuessed
+
+				// var latestGuessedLetter = event.key.toLowerCase();
+
 		// var key = event.key || event.keyCode;
+		//var key = event.key || event.keyCode; key is current; keyCode is deprecated.
 
 		// testing for letters only in console.log
 		if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 32) {
@@ -283,15 +299,20 @@
 		}
 		// END testing for only letters
 
+		// testing for the enter/return key
+		if (event.keyCode === 13) {
+			// in-page message trigger
+			pageMessage.textContent = ("Sorry. That's not a letter.");
+	    	pageMessage.style.display = "block";
+		}
+
+		// END loop checking for letters and spacebar
+
 
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 
 
 		// Check if user has already guessed the letter they entered.
-
-
-
-		//var key = event.key || event.keyCode; key is current; keyCode is deprecated.
 
 		// somewhere here, too(?) check for duplicate letters already guessed (both correct and incorrect??)
 		// https://github.com/jeffreylowy/Hangman-Game/blob/master/assets/js/got-hangman.js
