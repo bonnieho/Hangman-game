@@ -119,8 +119,9 @@
 			// ?? if else loop here to check if word has been selected already?
 
 			lettersInWord = randomWord.split("");
-			//this figures how many blanks are required for a specific team name
+			// this figures how many blanks are required for a specific team name
 			numOfBlanks = lettersInWord.length;
+
 
 
 			// RESET guesses left
@@ -134,6 +135,8 @@
 			for (var i=0; i<numOfBlanks; i++) {
 				blanksAndSuccesses.push("_");
 			}
+
+			// maybe check here if there is a blank in the name and place the blank in automatically?
 
 
 			// Change HTML to reflect round conditions
@@ -155,7 +158,7 @@
 			//gameWords = gameWords.splice([i-randomNumber]);
 			//console.log(gameWords);
 
-			//testing the tossing out of current randomly picked member of the gameWOrds array
+			//testing the tossing out of current randomly picked member of the gameWords array
 			var i = gameWords.length; //initialize counter to array length 
 
 			while (i--) //decrement counter 
