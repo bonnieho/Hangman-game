@@ -1,4 +1,4 @@
-//This ia a class project game created in Javascript
+// This ia a Bootcamp class project game created in Javascript
 // Author: Bonnie L. Hoffman - bonnieho@rice.edu
 
 //This is a class file detecting specific key presses
@@ -16,13 +16,15 @@
 
 // MVPs for this project:
 
-// (the OBVIOUS) - add background image(s) and STYLE the page (and alerts?!)
+// (the OBVIOUS) - add background image(s) and STYLE the page (and style alerts?!)
 
 // FIX: if team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
 
-//  1. maybe also have a logo display on either the page or the pop-up (I think I'd prefer the alert if possible)
+//  1. maybe also have a logo display on either the page or the pop-up (maybe an animated gif red lamp + logo?)
 
 // checking to see if a letter has already been chosen == and notification in the page == !!!
+
+// activity once the game can be won rightfully!
 
 // - see if there's a way to only display a wrong letter once if you make a mistake and type it multiple times. 
 // Maybe an alert == or notification in the page == to let you know that you are a bone head to guess the same letter twice when you were already told it wasn't in the name?!?
@@ -55,9 +57,6 @@
 // limit the valid keystrokes to letters and the space bar (in other words, 
 // if the RETURN is hit that shouldn't count against you as a keypress
 
-// see about eliminating previous team names that were randomly picked one by one so that there are no repeats until 
-// all of the individual team names are picked and the game can be won rightfully!
-
 // - sounds! 
 //   1. maybe have a sound play when the user gets an answer correct (like a fog horn);
 //   2. how 'bout a final sound when the game is finished (is that even established?!)
@@ -75,6 +74,9 @@
 // - see if there's a way to get the FINAL letter (or space) of each correctly guessed team name to display:
 //  once it's typed AND before the alert pops up; DONE DONE DONE!!!
 //  have spaces display somehow (can the shift key trigger placement of a nbsp if the name has one??) DONE DONE DONE!!!
+// DONE DONE DONE !!!
+// see about eliminating previous team names that were randomly picked one by one so that there are no repeats until 
+// all of the individual team names are picked 
 
 
 // =============================================================
@@ -193,7 +195,7 @@
 			//pageMessage.textContent = ("<p>&#160;</p>");
 			pageMessage.textContent = ('&#160;');
 			pageMessage.style.display = "block";
-	    	// NOT working to place (encoded) nbsp in PageMessage div
+	    	// NOT working to place (encoded) nbsp in PageMessage div (it just puts the literal string)
 
 			var isLetterInWord = false;
 
