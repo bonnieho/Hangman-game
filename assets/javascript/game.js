@@ -191,8 +191,8 @@
 
 			// clearing in-page message 
 			//pageMessage.textContent = ("<p>&#160;</p>");
-			pageMessage.textContent = (" ");
-	    	pageMessage.style.display = "block";
+			pageMessage.textContent = ('&#160;');
+			pageMessage.style.display = "block";
 	    	// NOT working to place (encoded) nbsp in PageMessage div
 
 			var isLetterInWord = false;
@@ -224,6 +224,7 @@
 			}
 
 			// the space character check works here (doesn't break game cycle)
+			// this may be removed later if I can get the blanks to insert automatically if there's one in the team name.
 			else {
 				if (letter == " "){
 					letter = '[space]&#160;';	
@@ -267,11 +268,14 @@
 			alert activating by 1/2 a second, the letters, correct or incorrect, are now having a chance to populate 
 			their divs as I had hoped. */
 
+			/* that said, I may take out the alerts anyway (in favor of the pageMessage div). */
+
 				setTimeout(function(){ 
 					alert("You won!");
 					// this is also where the sound effect of winning a single game should be
 					//Testing for the insertion point
 					//console.log("sound is playing!");
+
 					// reset wrong letter array
 					wrongLetters = [];
 					document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
