@@ -149,7 +149,7 @@
 						blanksAndSuccesses[i] = letter;
 						}			
 				}
-
+			// END check for blanks in name
 
 
 			// Change HTML to reflect round conditions
@@ -172,9 +172,9 @@
 			//console.log(gameWords);
 
 			//testing the tossing out of current randomly picked member of the gameWords array
-			var i = gameWords.length; //initialize counter to array length 
+			var i = gameWords.length; // initialize counter to array length 
 
-			while (i--) //decrement counter 
+			while (i--) // decrement counter 
 			{
   				if (gameWords[i] === gameWords[randomNumber]) {
     			console.log("gameWords Array after removal of RandomNumber element: ");
@@ -182,7 +182,7 @@
     			console.log(gameWords);
   				}
 			}
-
+			// this seems to work!
 
 		}
 
@@ -193,6 +193,7 @@
 			//pageMessage.textContent = ("<p>&#160;</p>");
 			pageMessage.textContent = (" ");
 	    	pageMessage.style.display = "block";
+	    	// NOT working to place (encoded) nbsp in PageMessage div
 
 			var isLetterInWord = false;
 
@@ -204,7 +205,10 @@
 					break;
 				}
 			}
-
+		
+		//is this where I want to have a check for whether a letter has been picked or not (and not let it count against you again)? (wrongLetters array)
+		// also, is this where I want it to check for ONLY letters and the space bar and let errant keystrokes count against you?
+		
 
 		// check index placement of existing letter(s) then populate blanksAndSuccesses
 			if(isLetterInWord) {
@@ -373,9 +377,6 @@
 
 		roundComplete();
 
-		//is this where I want to have a check for whether a letter has been picked or not (and not let it count against you again)? (wrongLetters array)
-
-		// also, is this where I want it to check for ONLY letters and the space bar and let errant keystrokes count against you?
 
 		//testing it 
 		console.log("letter guessed was: ")
