@@ -136,7 +136,20 @@
 				blanksAndSuccesses.push("_");
 			}
 
-			// maybe check here if there is a blank in the name and place the blank in automatically?
+			// check for blanks in name
+			var isBlankInWord = false;
+
+			if(isBlankInWord) {
+				for (var i=0; i<numOfBlanks; i++){
+					// checking for space and inserting nbsp
+					if(randomWord[i] == " "){
+							isBlankInWord = true;
+							letter = '&#160;';	
+							} // the space character check HERE breaks game cycle IF there's a space in the team name
+						blanksAndSuccesses[i] = letter;
+						}			
+				}
+
 
 
 			// Change HTML to reflect round conditions
@@ -191,8 +204,6 @@
 					break;
 				}
 			}
-
-	
 
 
 		// check index placement of existing letter(s) then populate blanksAndSuccesses
