@@ -107,6 +107,11 @@
 
 		function launchGame() {
 
+			// check to see if the whole game was won (if you successfully guessed all of the teams!)
+			if (gameWords.length === 0){
+				alert("OMG - you successfully guessed all of the teams in the NHL!");
+			}
+
 			// in-page message trigger
 			pageMessage.textContent = ("Starting this round... Good luck!");
 	    	pageMessage.style.display = "block";
@@ -185,6 +190,7 @@
   				}
 			}
 			// this seems to work!
+
 
 		}
 
