@@ -105,6 +105,9 @@
 		var pageAlert = document.getElementById("inPageAlert");
 		var pageMessage = document.getElementById("inPageMessage");
 
+	// converting non-breaking space to something that the browser understands
+		var SpaceCharacterNode = document.createTextNode("\u00a0")
+
 // =============================================================
 
 // SECTION - functions
@@ -154,7 +157,7 @@
 						// checking for space and inserting nbsp
 						if(randomWord[i] == " "){
 							isBlankInWord = true;
-							letter = '&#160;';	
+							letter = "&#160;";	
 							} // the space character check HERE breaks game cycle IF there's a space in the team name
 							blanksAndSuccesses[i] = letter;
 						}			
@@ -205,9 +208,9 @@
 
 			// clearing in-page message 
 			//pageMessage.textContent = ("<p>&#160;</p>");
-			pageMessage.textContent = ('\xC2\xA0');
+			pageMessage.textContent = (SpaceCharacterNode);
 			pageMessage.style.display = "block";
-	    	// NOT working to place (encoded) nbsp in PageMessage div (it just puts the literal string)
+	    	// NOT working to place (encoded) nbsp in PageMessage div (it just puts [object Text])
 
 			var isLetterInWord = false;
 
