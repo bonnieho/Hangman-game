@@ -208,7 +208,7 @@
 
 			// clearing in-page message 
 			//pageMessage.textContent = ("<p>&#160;</p>");
-			pageMessage.textContent = (SpaceCharacterNode);
+			pageMessage.textContent = ("\xa0");
 			pageMessage.style.display = "block";
 	    	// NOT working to place (encoded) nbsp in PageMessage div (it just puts [object Text])
 
