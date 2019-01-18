@@ -231,6 +231,7 @@
 			if(isLetterInWord) {
 				for (var i=0; i<numOfBlanks; i++){
 					if(randomWord[i] == letter){
+						// look into this: https://stackoverflow.com/questions/6116474/how-to-find-if-an-array-contains-a-specific-string-in-javascript-jquery
 						// checking for space and inserting nbsp
 						if (letter == " "){
 							letter = '&#160;';	
@@ -247,12 +248,15 @@
 					letter = '[space]&#160;';	
 					}
 				wrongLetters.push(letter);
+				// check to see if letter has already been chosen
+				// How to determine letters that have already been chosen for the array?
+				// Is this where that validation would go?
+				// Then how to test??
+				//if(letter)
 				remainingGuesses--;
 			}
 
-			// How to determine letters that have already been chosen for the array?
-			// Is this where that validation would go?
-			// Then how to test??
+			
 
 			//Testing this
 			console.log(blanksAndSuccesses);
