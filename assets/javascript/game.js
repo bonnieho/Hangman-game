@@ -145,22 +145,24 @@
 			//Populate blanks and successes with the correct number of blanks.
 			for (var i=0; i<numOfBlanks; i++) {
 				blanksAndSuccesses.push("_");
-			}
+				
+				// check for blanks in name
+				var isBlankInWord = false;
 
-			// check for blanks in name
-			var isBlankInWord = false;
-
-			if(isBlankInWord) {
-				for (var i=0; i<numOfBlanks; i++){
-					// checking for space and inserting nbsp
-					if(randomWord[i] == " "){
+				if(isBlankInWord) {
+					for (var i=0; i<numOfBlanks; i++){
+						// checking for space and inserting nbsp
+						if(randomWord[i] == " "){
 							isBlankInWord = true;
 							letter = '&#160;';	
 							} // the space character check HERE breaks game cycle IF there's a space in the team name
-						blanksAndSuccesses[i] = letter;
+							blanksAndSuccesses[i] = letter;
 						}			
 				}
-			// END check for blanks in name
+				// END check for blanks in name
+			}
+			// END populate blanks and successes with the correct number of blanks.
+			
 
 
 			// Change HTML to reflect round conditions
@@ -188,9 +190,9 @@
 			while (i--) // decrement counter 
 			{
   				if (gameWords[i] === gameWords[randomNumber]) {
-    			console.log("gameWords Array after removal of RandomNumber element: ");
-    			gameWords = gameWords.slice(0, i).concat(gameWords.slice(i + 1));
-    			console.log(gameWords);
+	    			console.log("gameWords Array after removal of RandomNumber element: ", gameWords[i]);
+	    			gameWords = gameWords.slice(0, i).concat(gameWords.slice(i + 1));
+	    			console.log(gameWords);
   				}
 			}
 			// this seems to work!
@@ -203,7 +205,7 @@
 
 			// clearing in-page message 
 			//pageMessage.textContent = ("<p>&#160;</p>");
-			pageMessage.textContent = ('&#160;');
+			pageMessage.textContent = ('\xC2\xA0');
 			pageMessage.style.display = "block";
 	    	// NOT working to place (encoded) nbsp in PageMessage div (it just puts the literal string)
 
@@ -335,11 +337,14 @@
 
 		// testing for letters only in console.log
 		if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 32) {
+			// in-page message trigger - THIS IS NOT working
+			// pageMessage.textContent = ("That IS a letter.");
+	    	// pageMessage.style.display = "block";
 			console.log("This is an OK key");
 		}
 
 		else if (event.keyCode <= 65 && event.keyCode >= 90 || event.keyCode !== 32) {
-			// in-page message trigger
+			// in-page message trigger - THIS IS NOT working
 			// pageMessage.textContent = ("Sorry. That's not a letter.");
 	    	// pageMessage.style.display = "block";
 			console.log("This NOT a good key");
