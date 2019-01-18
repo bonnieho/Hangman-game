@@ -107,9 +107,9 @@
 
 		function launchGame() {
 
-			// check to see if the whole game was won (if you successfully guessed all of the teams!)
+			// check to see if all teams have shown up (the whole game is completed). 
 			if (gameWords.length === 0){
-				alert("OMG - you successfully guessed all of the teams in the NHL!");
+				alert("OMG - you successfully guessed the names of all of the teams in the NHL!");
 			}
 
 			// in-page message trigger
@@ -301,7 +301,7 @@
 	    		pageMessage.style.display = "block";
 
 				setTimeout(function(){ 
-					alert("I'm sorry, but you've lost the game. \nBetter luck next time!");
+					alert("I'm sorry, but you've lost the round. \nBetter luck next time!");
 					// reset wrong letter array
 					wrongLetters = [];
 					document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
