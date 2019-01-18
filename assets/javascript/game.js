@@ -24,8 +24,6 @@
 
 // checking to see if a letter has already been chosen == and notification in the page == !!!
 
-// activity once the game can be won rightfully!
-
 // - see if there's a way to only display a wrong letter once if you make a mistake and type it multiple times. 
 // Maybe an alert == or notification in the page == to let you know that you are a bone head to guess the same letter twice when you were already told it wasn't in the name?!?
 // smendez92 
@@ -57,6 +55,11 @@
 // limit the valid keystrokes to letters and the space bar (in other words, 
 // if the RETURN is hit that shouldn't count against you as a keypress
 
+// GAME PLAY MVPs
+
+// Since all names should be guessed successfully before the game can be won...
+// keep record of names that are missed and add them back into the gameWords array so the player has a chance to get them right.
+
 // - sounds! 
 //   1. maybe have a sound play when the user gets an answer correct (like a fog horn);
 //   2. how 'bout a final sound when the game is finished (is that even established?!)
@@ -77,6 +80,7 @@
 // DONE DONE DONE !!!
 // see about eliminating previous team names that were randomly picked one by one so that there are no repeats until 
 // all of the individual team names are picked 
+// alert is displayed once all names have been displayed from the gameWords array
 
 
 // =============================================================
