@@ -213,7 +213,10 @@
 
 		function checkLetters(letter) {
 
-			// clearing in-page message 
+			// RE-ENABLE this message if we don't want to list message stating which letter was chosen OR if the key pressed was NOT a letter key.
+			
+			// clearing in-page message - this successfully blanks out the pageMessage div WITHOUT the unsightly shift
+			// of having no content inside. The code within sends a nbsp! (finally!)
 			//pageMessage.textContent = ("\xa0");
 			//pageMessage.style.display = "block";
 
@@ -283,7 +286,7 @@
 
 			//Testing this
 			console.log(blanksAndSuccesses);
-			console.log("from inside checkLetters function");
+			// console.log("from inside checkLetters function");
 		}
 
 		
@@ -366,15 +369,20 @@
 		//var key = event.key || event.keyCode;
 		//var key = event.key || event.keyCode; key is current; keyCode is deprecated.
 
+		// this conversion to upperCase lets us validate for event.code since letters are all "KeyA", "KeyB", "KeyC", etc.
 		var letterGuessed = String.fromCharCode(event.keyCode).toUpperCase();
 
+		// testing for event.code helps bulletproof this verification because:
+		// The value of event.key can change depending on the language or CapsLock enabled. 
+		// Also, the value of event.code is strictly bound to the key,
 		if (event.code=="Key"+letterGuessed){
 			console.log(event.code);
-			// in-page message trigger - THIS IS working!
+			// in-page message trigger - This works and displays UpperCase letter, which looks a little nicer in the message area.
 			pageMessage.textContent = ("You've chosen letter: "+letterGuessed);
 	    	pageMessage.style.display = "block";
 		}
 
+		// put this in a listener ?? Because we don't want to send non-letter entries to the incorrect guesses array and have them count against the player.
 		else if (event.code !== "Key"+letterGuessed){
 			console.log(event.code);
 			// in-page message trigger - THIS IS working!
@@ -382,6 +390,8 @@
 	    	pageMessage.style.display = "block";
 		}
 
+// ORIGINAL test
+/*
 		// testing for letters only in console.log
 		if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 32) {
 			// in-page message trigger - THIS IS NOT working
@@ -396,6 +406,7 @@
 	    	// pageMessage.style.display = "block";
 			console.log("This NOT a good key");
 		}
+
 		// END testing for only letters
 
 		// testing for the enter/return key
@@ -406,10 +417,12 @@
 		}
 
 		// END loop checking for letters and spacebar
+*/
 
 		// var latestGuessedLetter = event.key.toLowerCase();
 
-		//var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+		// sends the letterGuessed to the checkLetter() function as LowerCase (because letters in array are all LC).
+		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 
 
 		// Check if user has already guessed the letter they entered.
@@ -446,10 +459,6 @@
 
 		roundComplete();
 
-
-		//testing it 
-		console.log("letter guessed was: ")
-		console.log(letterGuessed);
 	}
 
 
