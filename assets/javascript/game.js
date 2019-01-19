@@ -126,11 +126,12 @@
 	    	// generate a random element from the gameWords array
 	    	randomNumber = (Math.floor(Math.random() * gameWords.length));
 
-			// randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+			// randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; // changed to what's below to allow the countdown of names already shown.
 			randomWord = gameWords[randomNumber];
 
 			
 			// ?? if else loop here to check if word has been selected already?
+
 
 			lettersInWord = randomWord.split("");
 			// this figures how many blanks are required for a specific team name
@@ -155,11 +156,13 @@
 				if(isBlankInWord) {
 					for (var i=0; i<numOfBlanks; i++){
 						// checking for space and inserting nbsp
-						if(randomWord[i] == " "){
+						//if(randomWord[i] === " "){
+						if(lettersInWord[i] === " "){
 							isBlankInWord = true;
-							letter = "&#160;";	
+							lettersInWord[i] = '\xa0';	
 							} // the space character check HERE breaks game cycle IF there's a space in the team name
-							blanksAndSuccesses[i] = letter;
+							//blanksAndSuccesses[i] = letter;
+							blanksAndSuccesses[i] = '\xa0';
 						}			
 				}
 				// END check for blanks in name
@@ -200,8 +203,11 @@
 			}
 			// this seems to work!
 
-
 		}
+
+		/* function checkForSpace(){
+
+		} */
 
 
 		function checkLetters(letter) {
@@ -225,17 +231,25 @@
 		
 		//is this where I want to have a check for whether a letter has been picked or not (and not let it count against you again)? (wrongLetters array)
 		// also, is this where I want it to check for ONLY letters and the space bar and let errant keystrokes count against you?
-		
-
+		/*
+			var alreadyChosen = false;
+			for (var i = 0; i < categories.length && !alreadyChosen; i++) {
+  				if (randomWord[i] === [any from already chosen array?]) {
+    			alreadyChosen = true;
+    			break;
+  				}
+			}
+*/
 		// check index placement of existing letter(s) then populate blanksAndSuccesses
 			if(isLetterInWord) {
+				//for (var i=0; i<numOfBlanks && !alreadyChosen; i++){
 				for (var i=0; i<numOfBlanks; i++){
 					if(randomWord[i] == letter){
 						// look into this: https://stackoverflow.com/questions/6116474/how-to-find-if-an-array-contains-a-specific-string-in-javascript-jquery
 						// checking for space and inserting nbsp --- this WORKS to insert space if name has one BUT it BREAKS ability to win the round!
-						//if (letter == " "){
-						//	letter = '&#160;';	
-						//	} // the space character check HERE breaks game cycle IF there's a space in the team name
+						// if (letter === " "){
+						//	letter = '\xa0';	
+						//	} 
 						blanksAndSuccesses[i] = letter;
 						}			
 				}
@@ -329,6 +343,9 @@
 
 	// this inititates the game the first time
 	launchGame();
+
+	// function to check for a nbsp in the team name
+	//checkForSpace();
 
 
 	// this registers key clicks
