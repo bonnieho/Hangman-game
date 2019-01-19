@@ -232,10 +232,10 @@
 				for (var i=0; i<numOfBlanks; i++){
 					if(randomWord[i] == letter){
 						// look into this: https://stackoverflow.com/questions/6116474/how-to-find-if-an-array-contains-a-specific-string-in-javascript-jquery
-						// checking for space and inserting nbsp
-						if (letter == " "){
-							letter = '&#160;';	
-							} // the space character check HERE breaks game cycle IF there's a space in the team name
+						// checking for space and inserting nbsp --- this WORKS to insert space if name has one BUT it BREAKS ability to win the round!
+						//if (letter == " "){
+						//	letter = '&#160;';	
+						//	} // the space character check HERE breaks game cycle IF there's a space in the team name
 						blanksAndSuccesses[i] = letter;
 						}			
 				}
