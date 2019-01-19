@@ -20,7 +20,7 @@
 
 // FIX: if team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
 
-//  1. maybe also have a logo display on either the page or the pop-up (maybe an animated gif red lamp + logo?)
+//  1. maybe also have a logo display on either the page or the pop-up.
 
 // checking to see if a letter has already been chosen == and notification in the page == !!!
 
@@ -81,6 +81,7 @@
 // see about eliminating previous team names that were randomly picked one by one so that there are no repeats until 
 // all of the individual team names are picked (throw out successfully guessed name as player wins that round using decrement of array members)
 // alert is displayed once all names have been displayed from the gameWords array
+// an animated gif red lamp when a round is WON! (then 'disabled' once the next round begins.)
 
 
 // =============================================================
@@ -104,9 +105,16 @@
 	// in-page messaging setup (to replace alert popups)
 		var pageAlert = document.getElementById("inPageAlert");
 		var pageMessage = document.getElementById("inPageMessage");
+		var winLampShow = document.getElementById("win-lamp");
 
-	// converting non-breaking space to something that the browser understands
-		var SpaceCharacterNode = document.createTextNode("\u00a0")
+		// var x = document.getElementsByClassName("example");
+		// var i;
+			//for (i = 0; i < winLampShow.length; i++) {
+  			//winLampShow[i].style.display = "inline-block";
+			//}
+
+	// converting non-breaking space to something that the browser understands - NOT USING RIGHT NOW
+		// var SpaceCharacterNode = document.createTextNode("\u00a0")
 
 // =============================================================
 
@@ -122,15 +130,15 @@
 			// in-page message trigger
 			pageMessage.textContent = ("Starting this round... Good luck!");
 	    	pageMessage.style.display = "block";
+	    	winLampShow.style.display = "none";
+
+
 
 	    	// generate a random element from the gameWords array
 	    	randomNumber = (Math.floor(Math.random() * gameWords.length));
 
 			// randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; // changed to what's below to allow the countdown of names already shown.
 			randomWord = gameWords[randomNumber];
-
-			
-			// ?? if else loop here to check if word has been selected already?
 
 
 			lettersInWord = randomWord.split("");
@@ -139,7 +147,7 @@
 
 
 
-			// RESET guesses left
+			// RESET remainingGuesses total and wrongLetters and blanksAndSuccesses arrays
 
 			remainingGuesses = 8;
 			wrongLetters = [];
@@ -187,9 +195,6 @@
 			console.log(numOfBlanks);
 			console.log(blanksAndSuccesses);
 
-			// removing array element to leave the unused?
-			//gameWords = gameWords.splice([i-randomNumber]);
-			//console.log(gameWords);
 
 			//testing the tossing out of current randomly picked member of the gameWords array
 			var i = gameWords.length; // initialize counter to array length 
@@ -258,10 +263,16 @@
 				for (var i=0; i<numOfBlanks; i++){
 					if(randomWord[i] == letter){
 						// look into this: https://stackoverflow.com/questions/6116474/how-to-find-if-an-array-contains-a-specific-string-in-javascript-jquery
-						// checking for space and inserting nbsp --- this WORKS to insert space if name has one BUT it BREAKS ability to win the round!
+						// checking for space and inserting nbsp --- this WORKS to insert space if name has one 
+						// BUT it BREAKS ability to win the round!
 						// if (letter === " "){
 						//	letter = '\xa0';	
 						//	} 
+
+						// capitalize first letter?
+							//if(randomWord[0] == letter){
+							//	letter = String.toUpperCase();
+							//}
 						blanksAndSuccesses[i] = letter;
 						}			
 				}
@@ -293,7 +304,6 @@
 
 
 		function roundComplete() {
-			// console.log("Win Count: " + countWins + "  |  LossCount: " + countLosses + "  | Guesses Remaining: " + remainingGuesses);
 			
 			// update the html to reflect the most current stats
 			document.getElementById("guessesLeft").innerHTML = remainingGuesses;
@@ -309,21 +319,27 @@
 				// in-page message trigger
 				pageMessage.textContent = ("You won this round!");
 	    		pageMessage.style.display = "block";
+	    		// display goal lamp animated gif
+	    		winLampShow.style.display = "inline-block";
+	    		
 
 			/* Developer note: There was a timing issue with the win/loss alert happening before the last letter
 			displayed (either right or wrong). By enclosing everything in a function that specifically delays the 
-			alert activating by 1/2 a second, the letters, correct or incorrect, are now having a chance to populate 
+			alert activating by 1/2 a second, the letters - correct or incorrect - are now having a chance to populate 
 			their divs as I had hoped. */
 
 			/* that said, I may take out the alerts anyway (in favor of the pageMessage div). */
 
 				setTimeout(function(){ 
 					alert("You won!");
+					// 'disable' goal lamp animated gif -- NOTE - this action is now associated with the popup alert.
+					// winLampShow.style.display = "inline-block";
+
 					// this is also where the sound effect of winning a single game should be
 					//Testing for the insertion point
 					//console.log("sound is playing!");
 
-					// reset wrong letter array
+					// reset wrongLetters array
 					wrongLetters = [];
 					document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 					launchGame();
@@ -341,7 +357,7 @@
 
 				setTimeout(function(){ 
 					alert("I'm sorry, but you've lost the round. \nBetter luck next time!");
-					// reset wrong letter array
+					// reset wrongLetters array
 					wrongLetters = [];
 					document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 					launchGame();
@@ -356,6 +372,9 @@
 	// this inititates the game the first time
 	launchGame();
 
+	// clear red goal lamp if starting new round/game.
+	// winLampShow.style.display = "none";
+
 	// function to check for a nbsp in the team name
 	//checkForSpace();
 
@@ -364,7 +383,7 @@
 
 	document.onkeyup = function(event){
 
-		// FIRST, let's create a loop to check for letters and SPACEBAR ONLY BEFORE sending to letterGuessed
+		// FIRST, let's create a loop to check for letters (maybe not... and SPACEBAR) ONLY BEFORE sending to letterGuessed
 
 		//var key = event.key || event.keyCode;
 		//var key = event.key || event.keyCode; key is current; keyCode is deprecated.
@@ -421,7 +440,8 @@
 
 		// var latestGuessedLetter = event.key.toLowerCase();
 
-		// sends the letterGuessed to the checkLetter() function as LowerCase (because letters in array are all LC).
+		// converts the letterGuessed back to LowerCase before sending to the checkLetter() function 
+		// (because letters in array are all LC).
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 
 
@@ -458,7 +478,6 @@
 		checkLetters(letterGuessed);
 
 		roundComplete();
-
 	}
 
 

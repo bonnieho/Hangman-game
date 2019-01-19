@@ -1,0 +1,128 @@
+{
+  "teams": [
+    {
+      "team": "avalanche",
+      "image": "/assets/images/NHL_Avalanche_Primary.png"
+    },
+    {
+      "team": "blackhawks",
+      "image": "/assets/images/NHL_Blackhawks_Primary.png"
+    },
+    {
+      "team": "blue jackets",
+      "image": "/assets/images/NHL_Blue_Jackets_Primary.png"
+    },
+    {
+      "team": "blues",
+      "image": "/assets/images/NHL_Blues_Primary.png"
+    },
+    {
+      "team": "bruins",
+      "image": "/assets/images/NHL_Bruins_Primary.png"
+    },
+    {
+      "team": "canadiens",
+      "image": "/assets/images/NHL_Canadiens_Primary.png"
+    },
+    {
+      "team": "canucks",
+      "image": "/assets/images/NHL_Canucks_Primary.png"
+    },
+    {
+      "team": "capitals",
+      "image": "/assets/images/NHL_Capitals_Primary.png"
+    },
+    {
+      "team": "coyotes",
+      "image": "/assets/images/NHL_Coyotes_Primary.png"
+    },
+    {
+      "team": "devils",
+      "image": "/assets/images/NHL_Devils_Primary.png"
+    },
+    {
+      "team": "ducks",
+      "image": "/assets/images/NHL_Ducks_Primary.png"
+    },
+    {
+      "team": "flames",
+      "image": "/assets/images/NHL_Flames_Primary.png"
+    },
+    {
+      "team": "flyers",
+      "image": "/assets/images/NHL_Flyers_Primary.png"
+    },
+    {
+      "team": "golden knights",
+      "image": "/assets/images/NHL_Golden_Kinghts_Primary.png"
+    },
+    {
+      "team": "hurricanes",
+      "image": "/assets/images/NHL_Hurricanes_Primary.png"
+    },
+    {
+      "team": "islanders",
+      "image": "/assets/images/NHL_Islanders_Primary.png"
+    },
+    {
+      "team": "jets",
+      "image": "/assets/images/NHL_Jets_Primary.png"
+    },
+    {
+      "team": "kings",
+      "image": "/assets/images/NHL_Kings_Primary.png"
+    },
+    {
+      "team": "lightning",
+      "image": "/assets/images/NHL_Lightning_Primary.png"
+    },
+    {
+      "team": "maple leafs",
+      "image": "/assets/images/NHL_Maple_Leafs_Primary.png"
+    },
+    {
+      "team": "oilers",
+      "image": "/assets/images/NHL_Oilers_Primary.png"
+    },
+    {
+      "team": "panthers",
+      "image": "/assets/images/NHL_Panthers_Primary.png"
+    },
+    {
+      "team": "penguins",
+      "image": "/assets/images/NHL_Penguins_Primary.png"
+    },
+    {
+      "team": "predators",
+      "image": "/assets/images/NHL_Predators_Primary.png"
+    },
+    {
+      "team": "rangers",
+      "image": "/assets/images/NHL_Rangers_Primary.png"
+    },
+    {
+      "team": "red wings",
+      "image": "/assets/images/NHL_Red_Wings_Primary.png"
+    },
+    {
+      "team": "sabres",
+      "image": "/assets/images/NHL_Sabres_Primary.png"
+    },
+    {
+      "team": "senators",
+      "image": "/assets/images/NHL_Senators_Primary.png"
+    },
+    {
+      "team": "sharks",
+      "image": "/assets/images/NHL_Sharks_Primary.png"
+    },
+    {
+      "team": "stars",
+      "image": "/assets/images/NHL_Stars_Primary.png"
+    },
+    {
+      "team": "wild",
+      "image": "/assets/images/NHL_Wild_Primary.png"
+    }
+  ]
+}
