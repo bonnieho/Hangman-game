@@ -214,8 +214,8 @@
 		function checkLetters(letter) {
 
 			// clearing in-page message 
-			pageMessage.textContent = ("\xa0");
-			pageMessage.style.display = "block";
+			//pageMessage.textContent = ("\xa0");
+			//pageMessage.style.display = "block";
 
 
 			/* // checking to see if guessed letter is already in the blanksAndSuccesses array or the wrongLetters letter array
@@ -363,10 +363,24 @@
 
 		// FIRST, let's create a loop to check for letters and SPACEBAR ONLY BEFORE sending to letterGuessed
 
-				// var latestGuessedLetter = event.key.toLowerCase();
-
-		// var key = event.key || event.keyCode;
+		//var key = event.key || event.keyCode;
 		//var key = event.key || event.keyCode; key is current; keyCode is deprecated.
+
+		var letterGuessed = String.fromCharCode(event.keyCode).toUpperCase();
+
+		if (event.code=="Key"+letterGuessed){
+			console.log(event.code);
+			// in-page message trigger - THIS IS working!
+			pageMessage.textContent = ("You've chosen letter: "+letterGuessed);
+	    	pageMessage.style.display = "block";
+		}
+
+		else if (event.code !== "Key"+letterGuessed){
+			console.log(event.code);
+			// in-page message trigger - THIS IS working!
+			pageMessage.textContent = ("That's NOT a letter. Please choose a letter between a-z.");
+	    	pageMessage.style.display = "block";
+		}
 
 		// testing for letters only in console.log
 		if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 32) {
@@ -393,8 +407,9 @@
 
 		// END loop checking for letters and spacebar
 
+		// var latestGuessedLetter = event.key.toLowerCase();
 
-		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+		//var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 
 
 		// Check if user has already guessed the letter they entered.
