@@ -62,7 +62,7 @@
 
 // - sounds! 
 //   1. maybe have a sound play when the user gets an answer correct (like a fog horn);
-//   2. how 'bout a final sound when the game is finished (is that even established?!)
+//   2. how 'bout a final sound when the game is finished (all teams have been successfully guessed).
 
 
 // HARD STUFF
@@ -76,10 +76,10 @@
 // DONE DONE DONE !!!
 // - see if there's a way to get the FINAL letter (or space) of each correctly guessed team name to display:
 //  once it's typed AND before the alert pops up; DONE DONE DONE!!!
-//  have spaces display somehow (can the shift key trigger placement of a nbsp if the name has one??) DONE DONE DONE!!!
+//  have spaces display somehow (can the space key trigger placement of a nbsp if the name has one??) YES, but if it displays, it breaks the game cycle.
 // DONE DONE DONE !!!
 // see about eliminating previous team names that were randomly picked one by one so that there are no repeats until 
-// all of the individual team names are picked 
+// all of the individual team names are picked (throw out successfully guessed name as player wins that round using decrement of array members)
 // alert is displayed once all names have been displayed from the gameWords array
 
 
@@ -150,6 +150,7 @@
 			for (var i=0; i<numOfBlanks; i++) {
 				blanksAndSuccesses.push("_");
 				
+				/* NOT WORKING yet
 				// check for blanks in name
 				var isBlankInWord = false;
 
@@ -162,10 +163,10 @@
 							lettersInWord[i] = '\xa0';	
 							} // the space character check HERE breaks game cycle IF there's a space in the team name
 							//blanksAndSuccesses[i] = letter;
-							blanksAndSuccesses[i] = '\xa0';
+							blanksAndSuccesses[i].push('\xa0');
 						}			
 				}
-				// END check for blanks in name
+				// END check for blanks in name */
 			}
 			// END populate blanks and successes with the correct number of blanks.
 			
@@ -213,10 +214,18 @@
 		function checkLetters(letter) {
 
 			// clearing in-page message 
-			//pageMessage.textContent = ("<p>&#160;</p>");
 			pageMessage.textContent = ("\xa0");
 			pageMessage.style.display = "block";
-	    	// NOT working to place (encoded) nbsp in PageMessage div (it just puts [object Text])
+
+
+			/* // checking to see if guessed letter is already in the blanksAndSuccesses array or the wrongLetters letter array
+			for (var i=0; i<numOfBlanks; i++){
+				if(letter == wrongLetters[i] || blanksAndSuccesses[i]){
+					alert("You've already picked that letter.");
+				}
+			}
+			*/
+
 
 			var isLetterInWord = false;
 
