@@ -229,13 +229,21 @@
 			//pageMessage.style.display = "block";
 
 
-			/* // checking to see if guessed letter is already in the blanksAndSuccesses array or the wrongLetters letter array
+			// checking to see if guessed letter has been picked already
+			// (is already in the blanksAndSuccesses array or the wrongLetters letter array)
+			var alreadyChosen = false;
 			for (var i=0; i<numOfBlanks; i++){
-				if(letter == wrongLetters[i] || blanksAndSuccesses[i]){
-					alert("You've already picked that letter.");
+				if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
+					alreadyChosen = true;
+					// in-page message trigger
+					pageMessage.textContent = ("You've already picked that letter!");
+	    			pageMessage.style.display = "block";
 				}
 			}
-			*/
+			// Cool. This is sort of working. 
+			// The only problem is that it's still counting multiple choices of an incorrect letter against the player 
+			// (decrementing total guess remaining).
+			
 
 
 			var isLetterInWord = false;
@@ -249,20 +257,9 @@
 				}
 			}
 		
-		//is this where I want to have a check for whether a letter has been picked or not (and not let it count against you again)? (wrongLetters array)
-		// also, is this where I want it to check for ONLY letters and the space bar and let errant keystrokes count against you?
-		/*
-			var alreadyChosen = false;
-			for (var i = 0; i < categories.length && !alreadyChosen; i++) {
-  				if (randomWord[i] === [any from already chosen array?]) {
-    			alreadyChosen = true;
-    			break;
-  				}
-			}
-*/
+		
 		// check index placement of existing letter(s) then populate blanksAndSuccesses
 			if(isLetterInWord) {
-				//for (var i=0; i<numOfBlanks && !alreadyChosen; i++){
 				for (var i=0; i<numOfBlanks; i++){
 					if(randomWord[i] == letter){
 						// look into this: https://stackoverflow.com/questions/6116474/how-to-find-if-an-array-contains-a-specific-string-in-javascript-jquery
@@ -288,11 +285,6 @@
 					letter = '[space]&#160;';	
 					}
 				wrongLetters.push(letter);
-				// check to see if letter has already been chosen
-				// How to determine letters that have already been chosen for the array?
-				// Is this where that validation would go?
-				// Then how to test??
-				//if(letter)
 				remainingGuesses--;
 			}
 
