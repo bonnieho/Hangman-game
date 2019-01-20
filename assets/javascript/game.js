@@ -116,6 +116,9 @@
 	// converting non-breaking space to something that the browser understands - NOT USING RIGHT NOW
 		// var SpaceCharacterNode = document.createTextNode("\u00a0")
 
+
+		// researching on how to bring in info from JSON file: https://stackoverflow.com/questions/14519041/how-to-read-a-json-object-in-js
+
 // =============================================================
 
 // SECTION - functions
