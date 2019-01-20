@@ -243,6 +243,16 @@
 			// Cool. This is sort of working. 
 			// The only problem is that it's still counting multiple choices of an incorrect letter against the player 
 			// (decrementing total guess remaining).
+
+// additional notes for debugging
+			// checking for duplicate letters already guessed (both correct and incorrect??)
+			// https://github.com/jeffreylowy/Hangman-Game/blob/master/assets/js/got-hangman.js
+			/*
+		    to check if a letter is already in the wrong guesses array. What we want to do
+		    is set up an if/else conditional that will run a for loop that will iterate over
+		    all the letters and then use the if/else to check if it it already exists.
+		    */
+		    // from https://github.com/JulieBurk/Hangman-game/blob/master/assets/javascript/game.js
 			
 
 
@@ -389,7 +399,7 @@
 		// testing for event.code helps bulletproof this verification because:
 		// The value of event.key can change depending on the language or CapsLock enabled. 
 		// Also, the value of event.code is strictly bound to the key,
-		if (event.code=="Key"+letterGuessed){
+		if (event.code == "Key"+letterGuessed){
 			console.log(event.code);
 			// in-page message trigger - This works and displays UpperCase letter, which looks a little nicer in the message area.
 			pageMessage.textContent = ("You've chosen letter: "+letterGuessed);
@@ -440,17 +450,6 @@
 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 
 
-		// Check if user has already guessed the letter they entered.
-
-		// somewhere here, too(?) check for duplicate letters already guessed (both correct and incorrect??)
-		// https://github.com/jeffreylowy/Hangman-Game/blob/master/assets/js/got-hangman.js
-
-		/*
-    to check if a letter is already in the wrong guesses array. What we want to do
-    is set up an if/else conditional that will run a for loop that will iterate over
-    all the letters and then use the if/else to check if it it already exists.
-    */
-    // from https://github.com/JulieBurk/Hangman-game/blob/master/assets/javascript/game.js
 
     // also check this link http://danorlovsky.tech/Articles/Javascript-Hangman-Tutorial
 
