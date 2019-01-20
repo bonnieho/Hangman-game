@@ -2,126 +2,157 @@
   "teams": [
     {
       "team": "avalanche",
+      "fullname": "Colorado Avalanche",
       "image": "/assets/images/NHL_Avalanche_Primary.png"
     },
     {
       "team": "blackhawks",
+      "fullname": "Chicago Blackhawks",
       "image": "/assets/images/NHL_Blackhawks_Primary.png"
     },
     {
       "team": "blue jackets",
+      "fullname": "Columbus Blue Jackets",
       "image": "/assets/images/NHL_Blue_Jackets_Primary.png"
     },
     {
       "team": "blues",
+      "fullname": "St. Louis Blues",
       "image": "/assets/images/NHL_Blues_Primary.png"
     },
     {
       "team": "bruins",
+      "fullname": "Boston Bruins",
       "image": "/assets/images/NHL_Bruins_Primary.png"
     },
     {
       "team": "canadiens",
+      "fullname": "Montreal Canadiens",
       "image": "/assets/images/NHL_Canadiens_Primary.png"
     },
     {
       "team": "canucks",
+      "fullname": "Vancouver Canucks",
       "image": "/assets/images/NHL_Canucks_Primary.png"
     },
     {
       "team": "capitals",
+      "fullname": "Washington Capitals",
       "image": "/assets/images/NHL_Capitals_Primary.png"
     },
     {
       "team": "coyotes",
+      "fullname": "Arizona Coyotes",
       "image": "/assets/images/NHL_Coyotes_Primary.png"
     },
     {
       "team": "devils",
+      "fullname": "new Jersey Devils",
       "image": "/assets/images/NHL_Devils_Primary.png"
     },
     {
       "team": "ducks",
+      "fullname": "Anaheim Ducks",
       "image": "/assets/images/NHL_Ducks_Primary.png"
     },
     {
       "team": "flames",
+      "fullname": "Calgary Flames",
       "image": "/assets/images/NHL_Flames_Primary.png"
     },
     {
       "team": "flyers",
+      "fullname": "Philadelphia Flyers",
       "image": "/assets/images/NHL_Flyers_Primary.png"
     },
     {
       "team": "golden knights",
+      "fullname": "Vegas Golden Knights",
       "image": "/assets/images/NHL_Golden_Kinghts_Primary.png"
     },
     {
       "team": "hurricanes",
+      "fullname": "Carolina Hurricanes",
       "image": "/assets/images/NHL_Hurricanes_Primary.png"
     },
     {
       "team": "islanders",
+      "fullname": "New York Islanders",
       "image": "/assets/images/NHL_Islanders_Primary.png"
     },
     {
       "team": "jets",
+      "fullname": "Winnipeg Jets",
       "image": "/assets/images/NHL_Jets_Primary.png"
     },
     {
       "team": "kings",
+      "fullname": "Los Angeles Kings",
       "image": "/assets/images/NHL_Kings_Primary.png"
     },
     {
       "team": "lightning",
+      "fullname": "Pittsburgh Penguins",
       "image": "/assets/images/NHL_Lightning_Primary.png"
     },
     {
       "team": "maple leafs",
+      "fullname": "Toronto Maple Leafs",
       "image": "/assets/images/NHL_Maple_Leafs_Primary.png"
     },
     {
       "team": "oilers",
+      "fullname": "Edmonton Oilers",
       "image": "/assets/images/NHL_Oilers_Primary.png"
     },
     {
       "team": "panthers",
+      "fullname": "Florida Panthers",
       "image": "/assets/images/NHL_Panthers_Primary.png"
     },
     {
       "team": "penguins",
+      "fullname": "Pittsburgh Penguins",
       "image": "/assets/images/NHL_Penguins_Primary.png"
     },
     {
       "team": "predators",
+      "fullname": "Nashville Predators",
       "image": "/assets/images/NHL_Predators_Primary.png"
     },
     {
       "team": "rangers",
+      "fullname": "New York Rangers",
       "image": "/assets/images/NHL_Rangers_Primary.png"
     },
     {
       "team": "red wings",
+      "fullname": "Detroit Red Wings",
       "image": "/assets/images/NHL_Red_Wings_Primary.png"
     },
     {
       "team": "sabres",
+      "fullname": "Buffalo Sabres",
       "image": "/assets/images/NHL_Sabres_Primary.png"
     },
     {
       "team": "senators",
+      "fullname": "Ottawa Senators",
       "image": "/assets/images/NHL_Senators_Primary.png"
     },
     {
       "team": "sharks",
+      "fullname": "San Jose Sharks",
       "image": "/assets/images/NHL_Sharks_Primary.png"
     },
     {
       "team": "stars",
+      "fullname": "Dallas Stars",
       "image": "/assets/images/NHL_Stars_Primary.png"
     },
     {
       "team": "wild",
+      "fullname": "Minnesota Wild",
       "image": "/assets/images/NHL_Wild_Primary.png"
     }
   ]
