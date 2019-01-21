@@ -232,14 +232,14 @@
 			// (is already in the blanksAndSuccesses array OR the wrongLetters letter array)
 			var alreadyChosen = false;
 			for (var i=0; i<numOfBlanks; i++){
-				//if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
-				if(letter == blanksAndSuccesses[i] || letter == wrongLetters[i]){
+				if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
 					alreadyChosen = true;
 					// in-page message trigger
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
 				}
 			}
+
 			// Cool. This is sort of working. 
 			// The only problem is that it's still counting multiple choices of an incorrect letter against the player 
 			// (decrementing total guess remaining).
@@ -284,20 +284,17 @@
 							//	letter = String.toUpperCase();
 							//}
 						blanksAndSuccesses[i] = letter;
-						}			
+						}
+					else if (wrongLetters[i] == letter){
+						break;
+					}		
 				}
 			}
 
 			// the space character check works here (doesn't break game cycle)
 			// this may be removed later if I can get the blanks to insert automatically if there's one in the team name.
 			else {
-					if(letter == wrongLetters[i]){
-						alreadyChosen = true;
-						// in-page message trigger
-						pageMessage.textContent = ("You've already picked that letter!");
-		    			pageMessage.style.display = "block";
-					}
-					else if (letter == " "){
+					if (letter == " "){
 						letter = '[space]&#160;';	
 						}
 					wrongLetters.push(letter);
