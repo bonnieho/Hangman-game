@@ -237,6 +237,7 @@
 					// in-page message trigger
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
+	    			break;
 				}
 			}
 
@@ -285,9 +286,9 @@
 							//}
 						blanksAndSuccesses[i] = letter;
 						}
-					else if (wrongLetters[i] == letter){
-						break;
-					}		
+					// else if (wrongLetters[i] == letter){
+					// 	break;
+					//}		
 				}
 			}
 
