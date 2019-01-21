@@ -22,10 +22,11 @@
 
 //  1. maybe also have a logo display on either the page or the pop-up.
 
-// checking to see if a letter has already been chosen == and notification in the page == !!!
+// Only display/register a wrong letter ONCE if you accidently type it multiple times. 
 
-// - see if there's a way to only display a wrong letter once if you make a mistake and type it multiple times. 
-// Maybe an alert == or notification in the page == to let you know that you are a bone head to guess the same letter twice when you were already told it wasn't in the name?!?
+// limit the valid keystrokes to letters and the space bar (in other words, 
+// if the RETURN is hit that shouldn't count against you as a keypress
+
 // smendez92 
 
 /* <!-- Error PopUp -->
@@ -52,13 +53,11 @@
     			} */
 
 
-// limit the valid keystrokes to letters and the space bar (in other words, 
-// if the RETURN is hit that shouldn't count against you as a keypress
 
 // GAME PLAY MVPs
 
 // Since all names should be guessed successfully before the game can be won...
-// keep record of names that are missed and add them back into the gameWords array so the player has a chance to get them right.
+// keep record of names that are missed and add them back into the gameWords array so the player has a chance to get them right?
 
 // - sounds! 
 //   1. maybe have a sound play when the user gets an answer correct (like a fog horn);
@@ -230,10 +229,11 @@
 
 
 			// checking to see if guessed letter has been picked already
-			// (is already in the blanksAndSuccesses array or the wrongLetters letter array)
+			// (is already in the blanksAndSuccesses array OR the wrongLetters letter array)
 			var alreadyChosen = false;
 			for (var i=0; i<numOfBlanks; i++){
-				if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
+				//if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
+				if(letter == blanksAndSuccesses[i] || letter == wrongLetters[i]){
 					alreadyChosen = true;
 					// in-page message trigger
 					pageMessage.textContent = ("You've already picked that letter!");
@@ -291,12 +291,19 @@
 			// the space character check works here (doesn't break game cycle)
 			// this may be removed later if I can get the blanks to insert automatically if there's one in the team name.
 			else {
-				if (letter == " "){
-					letter = '[space]&#160;';	
+					if(letter == wrongLetters[i]){
+						alreadyChosen = true;
+						// in-page message trigger
+						pageMessage.textContent = ("You've already picked that letter!");
+		    			pageMessage.style.display = "block";
 					}
-				wrongLetters.push(letter);
-				remainingGuesses--;
-			}
+					else if (letter == " "){
+						letter = '[space]&#160;';	
+						}
+					wrongLetters.push(letter);
+					remainingGuesses--;
+				}
+			
 
 			
 
