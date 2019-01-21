@@ -237,7 +237,7 @@
 					// in-page message trigger
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
-	    			break;
+	    			// break;
 				}
 			}
 
