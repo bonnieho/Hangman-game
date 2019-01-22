@@ -272,6 +272,12 @@
 					//console.log("letter matched - breaking out of loop now");
 					break;
 				}
+				if(isLetterInWord = false){
+					// in-page message trigger
+					pageMessage.textContent = ("You've already picked that letter!");
+	    			pageMessage.style.display = "block";
+	    			break;
+				}
 			}
 		
 		
