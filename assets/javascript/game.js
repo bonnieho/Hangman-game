@@ -235,17 +235,17 @@
 				if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
 					alreadyChosen = true;
 					// in-page message trigger
-					//pageMessage.textContent = ("You've already picked that letter!");
-	    			//pageMessage.style.display = "block";
-	    			// break;
-				}
-			}
-
-			if (alreadyChosen = true){
-				// in-page message trigger
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
+				}
+				break;
 			}
+
+			//if (alreadyChosen = true){
+				// in-page message trigger
+				//	pageMessage.textContent = ("You've already picked that letter!");
+	    		//	pageMessage.style.display = "block";
+			//}
 
 			// Cool. This is sort of working. 
 			// The only problem is that it's still counting multiple choices of an incorrect letter against the player 
@@ -272,15 +272,15 @@
 					//console.log("letter matched - breaking out of loop now");
 					break;
 				}
-				if(isLetterInWord = false){
+				//if(isLetterInWord = false){
 					//not pushing if this is here
-					wrongLetters.push(letter);
-					remainingGuesses--;
+					//wrongLetters.push(letter);
+					//remainingGuesses--;
 					// in-page message trigger
-					pageMessage.textContent = ("You've already picked that letter!");
-	    			pageMessage.style.display = "block";
-	    			break;
-				}
+					//pageMessage.textContent = ("You've already picked that letter!");
+	    			//pageMessage.style.display = "block";
+	    			//break;
+				//}
 			}
 		
 		
@@ -310,8 +310,8 @@
 				if (letter == " "){
 					letter = '[space]&#160;';	
 				}
-					//wrongLetters.push(letter);
-					//remainingGuesses--;
+					wrongLetters.push(letter);
+					remainingGuesses--;
 				//else if (alreadyChosen = true) {
 					// in-page message trigger
 				//	pageMessage.textContent = ("You've already picked that letter!");
