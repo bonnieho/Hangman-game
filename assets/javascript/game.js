@@ -285,22 +285,21 @@
 							//	letter = String.toUpperCase();
 							//}
 						blanksAndSuccesses[i] = letter;
-						}
-					// else if (wrongLetters[i] == letter){
-					// 	break;
-					//}		
+					}	
 				}
 			}
 
 			// the space character check works here (doesn't break game cycle)
 			// this may be removed later if I can get the blanks to insert automatically if there's one in the team name.
 			else {
-					if (letter == " "){
-						letter = '[space]&#160;';	
-						}
+				if (letter == " "){
+					letter = '[space]&#160;';	
+				}
+				if (alreadyChosen = false) {
 					wrongLetters.push(letter);
 					remainingGuesses--;
 				}
+			}
 			
 
 			
