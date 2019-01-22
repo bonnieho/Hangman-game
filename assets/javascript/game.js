@@ -273,6 +273,9 @@
 					break;
 				}
 				if(isLetterInWord = false){
+					//not pushing if this is here
+					wrongLetters.push(letter);
+					remainingGuesses--;
 					// in-page message trigger
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
@@ -307,10 +310,8 @@
 				if (letter == " "){
 					letter = '[space]&#160;';	
 				}
-				//if (alreadyChosen = false) {
-					wrongLetters.push(letter);
-					remainingGuesses--;
-				//}
+					//wrongLetters.push(letter);
+					//remainingGuesses--;
 				//else if (alreadyChosen = true) {
 					// in-page message trigger
 				//	pageMessage.textContent = ("You've already picked that letter!");
