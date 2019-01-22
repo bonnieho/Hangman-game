@@ -235,10 +235,16 @@
 				if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
 					alreadyChosen = true;
 					// in-page message trigger
-					pageMessage.textContent = ("You've already picked that letter!");
-	    			pageMessage.style.display = "block";
+					//pageMessage.textContent = ("You've already picked that letter!");
+	    			//pageMessage.style.display = "block";
 	    			// break;
 				}
+			}
+
+			if (alreadyChosen = true){
+				// in-page message trigger
+					pageMessage.textContent = ("You've already picked that letter!");
+	    			pageMessage.style.display = "block";
 			}
 
 			// Cool. This is sort of working. 
@@ -299,9 +305,13 @@
 					wrongLetters.push(letter);
 					remainingGuesses--;
 				}
+				//else if (alreadyChosen = true) {
+					// in-page message trigger
+				//	pageMessage.textContent = ("You've already picked that letter!");
+	    		//	pageMessage.style.display = "block";
+				//}
 			}
 			
-
 			
 
 			//Testing this
