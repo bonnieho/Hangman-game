@@ -301,10 +301,10 @@
 				if (letter == " "){
 					letter = '[space]&#160;';	
 				}
-				if (alreadyChosen = false) {
+				//if (alreadyChosen = false) {
 					wrongLetters.push(letter);
 					remainingGuesses--;
-				}
+				//}
 				//else if (alreadyChosen = true) {
 					// in-page message trigger
 				//	pageMessage.textContent = ("You've already picked that letter!");
