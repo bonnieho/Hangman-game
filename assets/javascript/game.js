@@ -47,7 +47,7 @@
 					</div>
 			</div> */
 
-//Prepare pop-up window
+//Prepare pop-up window (really just an in-page div)
 			//var popUpWindow = document.getElementById("myPopUp");
 			//var span = document.getElementsByClassName("popUpClose")[0];
 			//var popUpText = document.getElementById("popUpMessage");
@@ -199,6 +199,7 @@
 			document.getElementById("losscount").innerHTML = countLosses;
 
 
+
 			// TEST
 			//console.log(gameWords);
 			console.log(randomWord);
@@ -226,6 +227,7 @@
 
 		} */
 
+/* =========   Function to check letter that were typed in  ================  */
 
 		function checkLetters(letter) {
 
