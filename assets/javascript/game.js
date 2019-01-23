@@ -311,7 +311,7 @@
 					letter = '[space]&#160;';	
 				}
 					wrongLetters.push(letter);
-					remainingGuesses--;
+					remainingGuesses--; 
 				//else if (alreadyChosen = true) {
 					// in-page message trigger
 				//	pageMessage.textContent = ("You've already picked that letter!");
