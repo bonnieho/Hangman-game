@@ -21,6 +21,11 @@
 // FIX: if team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
 
 //  1. maybe also have a logo display on either the page or the pop-up.
+// what about embedding the JSON file that contains the:
+// team (data is identical to what's already in the )
+// fullname
+// logo image
+// to populate a (Bootstrap) modal?
 
 // Only display/register a wrong letter ONCE if you accidently type it multiple times. 
 
