@@ -1,4 +1,4 @@
-// This ia a Bootcamp class project game created in Javascript
+// This ia a UT Austin @Houston Bootcamp class project game created in Javascript
 // Author: Bonnie L. Hoffman - bonnieho@rice.edu
 
 //This is a class file detecting specific key presses
@@ -14,11 +14,16 @@
 // END EXAMPLE
 
 
+
 // MVPs for this project:
+
+// PRIORITY: Only display/register a wrong letter ONCE if you accidently type it multiple times. 
+
+// FIX: if team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and style alerts?!)
 
-// FIX: if team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
+
 
 //  1. maybe also have a logo display on either the page or the pop-up.
 // what about embedding the JSON file that contains the:
@@ -27,7 +32,6 @@
 // logo image
 // to populate a (Bootstrap) modal?
 
-// Only display/register a wrong letter ONCE if you accidently type it multiple times. 
 
 // limit the valid keystrokes to letters and the space bar (in other words, 
 // if the RETURN is hit that shouldn't count against you as a keypress
