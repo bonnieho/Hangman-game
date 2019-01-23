@@ -283,6 +283,7 @@
 					//console.log("letter matched - breaking out of loop now");
 					break;
 				}
+				// tried this - what's wrong?!?
 				//if(isLetterInWord = false){
 					//not pushing if this is here
 					//wrongLetters.push(letter);
@@ -321,8 +322,12 @@
 				if (letter == " "){
 					letter = '[space]&#160;';	
 				}
+				// This WORKS to place a space in the wrongLetters array if there's not one in the team name
+
 					wrongLetters.push(letter);
 					remainingGuesses--; 
+					
+
 				//else if (alreadyChosen = true) {
 					// in-page message trigger
 				//	pageMessage.textContent = ("You've already picked that letter!");
