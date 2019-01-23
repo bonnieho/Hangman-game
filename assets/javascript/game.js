@@ -343,7 +343,7 @@
 		}
 
 		
-
+/* =========   Function when the round is complete (either won or not) ================  */
 
 		function roundComplete() {
 			
@@ -407,9 +407,12 @@
 			}			
 		}
 
-// =============================================================
+// ===============================================================================
 
 // SECTION - main processes
+
+// launchGame();
+// then onkeyup event triggers checkLetters then roundComplete functions
 
 	// this inititates the game the first time
 	launchGame();
