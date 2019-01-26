@@ -113,7 +113,7 @@
 	// in-page messaging setup (to replace alert popups)
 		var pageAlert = document.getElementById("inPageAlert");
 		var pageMessage = document.getElementById("inPageMessage");
-		var winLampShow = document.getElementById("win-lamp");
+		var winLampShowL = document.getElementById("win-lamp_L");
 		var winLampShowR = document.getElementById("win-lamp_R");
 
 		// var x = document.getElementsByClassName("example");
@@ -142,7 +142,7 @@
 			// in-page message trigger
 			pageMessage.textContent = ("Starting this round... Good luck!");
 	    	pageMessage.style.display = "block";
-	    	winLampShow.style.display = "none";
+	    	winLampShowL.style.display = "none";
 	    	winLampShowR.style.display = "none";
 
 
@@ -364,7 +364,7 @@
 				pageMessage.textContent = ("You won this round!");
 	    		pageMessage.style.display = "block";
 	    		// display goal lamp(s) animated gif
-	    		winLampShow.style.display = "inline-block";
+	    		winLampShowL.style.display = "inline-block";
 	    		winLampShowR.style.display = "inline-block";
 	    		
 
