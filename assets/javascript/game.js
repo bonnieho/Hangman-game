@@ -171,6 +171,9 @@
 				blanksAndSuccesses.push("_");
 				
 				// also try this https://stackoverflow.com/questions/5308797/detect-nbsp-and-space-with-javascript
+				// https://stackoverflow.com/questions/1495822/replacing-nbsp-from-javascript-dom-text-node
+				// https://stackoverflow.com/questions/5237989/how-is-a-non-breaking-space-represented-in-a-javascript-string
+				
 				/* NOT WORKING yet
 				// check for blanks in name
 				var isBlankInWord = false;
