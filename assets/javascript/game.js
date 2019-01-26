@@ -114,7 +114,7 @@
 		var pageAlert = document.getElementById("inPageAlert");
 		var pageMessage = document.getElementById("inPageMessage");
 		var winLampShowL = document.getElementById("win-lamp_L");
-		var winLampShowR = document.getElementById("win-lamp_R");
+		var winLampShowR = document.getElementById("win-lamp_R"); 
 
 		// var x = document.getElementsByClassName("example");
 		// var i;
