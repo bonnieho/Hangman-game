@@ -146,7 +146,6 @@
 	    	winLampShowR.style.display = "none";
 
 
-
 	    	// generate a random element from the gameWords array
 	    	randomNumber = (Math.floor(Math.random() * gameWords.length));
 
