@@ -114,6 +114,7 @@
 		var pageAlert = document.getElementById("inPageAlert");
 		var pageMessage = document.getElementById("inPageMessage");
 		var winLampShow = document.getElementById("win-lamp");
+		var winLampShowR = document.getElementById("win-lamp_R");
 
 		// var x = document.getElementsByClassName("example");
 		// var i;
@@ -142,6 +143,7 @@
 			pageMessage.textContent = ("Starting this round... Good luck!");
 	    	pageMessage.style.display = "block";
 	    	winLampShow.style.display = "none";
+	    	winLampShowR.style.display = "none";
 
 
 
@@ -361,8 +363,9 @@
 				// in-page message trigger
 				pageMessage.textContent = ("You won this round!");
 	    		pageMessage.style.display = "block";
-	    		// display goal lamp animated gif
+	    		// display goal lamp(s) animated gif
 	    		winLampShow.style.display = "inline-block";
+	    		winLampShowR.style.display = "inline-block";
 	    		
 
 			/* Developer note: There was a timing issue with the win/loss alert happening before the last letter
