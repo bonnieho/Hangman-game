@@ -174,8 +174,8 @@
 				// https://stackoverflow.com/questions/1495822/replacing-nbsp-from-javascript-dom-text-node
 				// https://stackoverflow.com/questions/5237989/how-is-a-non-breaking-space-represented-in-a-javascript-string
 				// THIS MIGHT JUST DO IT! https://appendto.com/2016/02/replace-spaces-underscores-javascript/
-				
-				/* NOT WORKING yet
+
+				/* NOT WORKING yet - maybe double == or single = instead???
 				// check for blanks in name
 				var isBlankInWord = false;
 
