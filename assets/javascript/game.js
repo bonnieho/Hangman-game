@@ -170,6 +170,7 @@
 			for (var i=0; i<numOfBlanks; i++) {
 				blanksAndSuccesses.push("_");
 				
+				// also try this https://stackoverflow.com/questions/5308797/detect-nbsp-and-space-with-javascript
 				/* NOT WORKING yet
 				// check for blanks in name
 				var isBlankInWord = false;
