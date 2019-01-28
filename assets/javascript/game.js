@@ -192,6 +192,9 @@
 						}			
 				}
 				// END check for blanks in name */
+				
+ 				// not working yet, but I think this is promising (to find a space in the randomWord array and insert it into blanksAndSuccesses automatically)
+				randomWord = randomWord.replace(/\s/g, " ");
 			}
 			// END populate blanks and successes with the correct number of blanks.
 			
