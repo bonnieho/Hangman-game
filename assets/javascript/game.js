@@ -400,7 +400,7 @@
 			
 			else if (remainingGuesses == 0) {
 				// pushing missed team name into missedName array to give the player a chace to get it right later.
-				// not working - does this need ot be in a loop?
+				// not working - does this need to be in a loop?
 				// randomWord.push(missedName);
 
 				countLosses++;
