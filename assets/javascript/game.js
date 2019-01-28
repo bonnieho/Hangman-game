@@ -19,7 +19,7 @@
 
 // PRIORITY: Only display/register a wrong letter ONCE if you accidently type it multiple times. 
 
-// FIX: if team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
+// FIX: IF team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and style alerts?!)
 
@@ -103,6 +103,8 @@
 		var lettersInWord = [];
 		var numOfBlanks = 0;
 		var blanksAndSuccesses = [];
+		// new array to hold missed team names to give the player a chance to get them correct
+		var missedName = [];
 
 	// game counters
 
@@ -332,8 +334,6 @@
 					letter = '[space]&#160;';	
 				}
 				// This WORKS to place a space in the wrongLetters array if there's not one in the team name
-
-					wrongLetters.push(letter);
 					remainingGuesses--; 
 					
 
@@ -399,6 +399,10 @@
 			}
 			
 			else if (remainingGuesses == 0) {
+				// pushing missed team name into missedName array to give the player a chace to get it right later.
+				// not working - does this need ot be in a loop?
+				// randomWord.push(missedName);
+
 				countLosses++;
 				// update the loss count
 				document.getElementById("losscount").innerHTML = countLosses;
