@@ -148,7 +148,7 @@
 	    	winLampShowR.style.display = "none";
 
 			console.log("new round starting");
-			
+
 	    	// generate a random element from the gameWords array
 	    	randomNumber = (Math.floor(Math.random() * gameWords.length));
 
@@ -319,7 +319,7 @@
 						//	letter = '\xa0';	
 						//	} 
 
-						// capitalize first letter?
+						// capitalize first letter? WORK ON THIS!!!
 							//if(randomWord[0] == letter){
 							//	letter = String.toUpperCase();
 							//}
