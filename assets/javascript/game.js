@@ -400,7 +400,8 @@
 			
 			else if (remainingGuesses == 0) {
 				// pushing missed team name into missedName array to give the player a chace to get it right later.
-				// not working - does this need to be in a loop?
+				// not working - does this need to be in a loop? does it need to be elsewhere?
+				//ERROR THROWN Uncaught TypeError: randomWord.push is not a function at roundComplete (game.js:404) at HTMLDocument.document.onkeyup (game.js:528)
 				// randomWord.push(missedName);
 
 				countLosses++;
