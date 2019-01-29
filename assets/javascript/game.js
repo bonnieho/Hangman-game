@@ -147,7 +147,8 @@
 	    	winLampShowL.style.display = "none";
 	    	winLampShowR.style.display = "none";
 
-
+			console.log("new round starting");
+			
 	    	// generate a random element from the gameWords array
 	    	randomNumber = (Math.floor(Math.random() * gameWords.length));
 
