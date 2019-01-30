@@ -51,12 +51,17 @@ h3 {
 	font-weight: bold;
 }
 
+#inPageAlert {
+	text-align: center;
+	/* height: 48px; */
+}
+
+/* light the lamps - I had to make these unique ids because I wasn't successful with a class */
 #win-lamp_L {
 	display: none;
 	margin-top: -24px;
 	padding: 0 12px;
 }
-
 
 #win-lamp_R {
 	display: none;
