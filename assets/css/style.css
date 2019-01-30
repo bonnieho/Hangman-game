@@ -131,11 +131,11 @@ h3 {
 
 /* Modal Content */
 .modal-content {
-  position: fixed;
-  bottom: 0;
+  position: fixed; /* I think this where I need to start tweaking where it shows up in the window */
+  bottom: 0;  /* I think this where I need to start tweaking where it shows up in the window */
   background-color: #fefefe;
   width: 100%;
-  -webkit-animation-name: slideIn;
+  -webkit-animation-name: slideIn; /* check the animation - I don't know if I want a slide-in */
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
   animation-duration: 0.4s

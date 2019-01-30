@@ -118,6 +118,9 @@
 		var winLampShowL = document.getElementById("win-lamp_L");
 		var winLampShowR = document.getElementById("win-lamp_R"); 
 
+	// in-page messaging setup (to replace alert popups)
+		var modal = document.getElementById("myModal");
+
 		// var x = document.getElementsByClassName("example");
 		// var i;
 			//for (i = 0; i < winLampShow.length; i++) {
@@ -367,6 +370,9 @@
 				countWins++;
 				// update the win count
 				document.getElementById("wincount").innerHTML = countWins;
+
+				// modal trigger
+				modal.style.display = "block";
 
 				// in-page message trigger
 				pageMessage.textContent = ("You won this round!");
