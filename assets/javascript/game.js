@@ -470,6 +470,8 @@
 	    	pageMessage.style.display = "block";
 		}
 
+
+
 // ORIGINAL test
 /*
 		// testing for letters only in console.log
@@ -508,6 +510,14 @@
 
 
     // also check this link http://danorlovsky.tech/Articles/Javascript-Hangman-Tutorial
+
+// NOT WORKING, but promising
+     // Make sure we didn't use this letter yet
+       /* if (letterGuessed.indexOf(event) === -1) {
+            letterGuessed.push(event);
+            checkLetters(event);
+        } */
+  
 
     //space key is keyCode === 32) check it first, though
     // KeyboardEvent.key Value for spacebar returns " " also some older browsers may return Spacebar
