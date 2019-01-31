@@ -23,9 +23,11 @@
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and style alerts?!)
 
+// clean up modal - placement to center if possible, colors, height, content
 
 
-//  1. maybe also have a logo display on either the page or the pop-up.
+
+//  1. maybe also have a logo display on either the page or the pop-up - BETTER YET - as content in the modal!
 // what about embedding the JSON file that contains the:
 // team (data is identical to what's already in the )
 // fullname
@@ -38,20 +40,6 @@
 
 // smendez92 
 
-/* <!-- Error PopUp -->
-			<div id="myPopUp" class="popUp">
-					<div>ALERT<div class="popUpClose">x</div>
-					</div>
-					<div>
-						<p id="popUpMessage"> </p>
-					</div>
-			</div> */
-
-//Prepare pop-up window (really just an in-page div)
-			//var popUpWindow = document.getElementById("myPopUp");
-			//var span = document.getElementsByClassName("popUpClose")[0];
-			//var popUpText = document.getElementById("popUpMessage");
-			//var isOpen;
 
 				//Check if user has already guessed the letter they entered. If so, display error popUp and break out.
     			/* else if (isInArray(guessedLettersArray, latestGuessedLetter)){
