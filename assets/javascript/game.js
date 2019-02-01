@@ -84,15 +84,15 @@
 // SECTION - json to an object
 
 var logos = '{"teams": [' + 
-  '{"team": "avalanche","fullname": "Colorado Avalanche","image": "/assets/images/NHL_Avalanche_Primary.png"},' +
-  '{"team": "blackhawks","fullname": "Chicago Blackhawks","image": "/assets/images/NHL_Blackhawks_Primary.png"},' + 
-  '{"team": "blue jackets","fullname": "Columbus Blue Jackets","image": "/assets/images/NHL_Blue_Jackets_Primary.png"},' +
-  '{"team": "blues","fullname": "St. Louis Blues","image": "/assets/images/NHL_Blues_Primary.png"},' +
-  '{"team": "bruins","fullname": "Boston Bruins","image": "/assets/images/NHL_Bruins_Primary.png"},' +
-  '{"team": "canadiens","fullname": "Montreal Canadiens","image": "/assets/images/NHL_Canadiens_Primary.png"},' +
-  '{"team": "canucks","fullname": "Vancouver Canucks","image": "/assets/images/NHL_Canucks_Primary.png"},' +
-  '{"team": "capitals","fullname": "Washington Capitals","image": "/assets/images/NHL_Capitals_Primary.png"},' +
-  '{"team": "coyotes","fullname": "Arizona Coyotes","image": "/assets/images/NHL_Coyotes_Primary.png"},' +
+  '{"team": "avalanche","fullname": "Colorado Avalanche","image": "../images/NHL_Avalanche_Primary.png"},' +
+  '{"team": "blackhawks","fullname": "Chicago Blackhawks","image": "../images/NHL_Blackhawks_Primary.png"},' + 
+  '{"team": "blue jackets","fullname": "Columbus Blue Jackets","image": "../images/NHL_Blue_Jackets_Primary.png"},' +
+  '{"team": "blues","fullname": "St. Louis Blues","image": "../images/NHL_Blues_Primary.png"},' +
+  '{"team": "bruins","fullname": "Boston Bruins","image": "../images/NHL_Bruins_Primary.png"},' +
+  '{"team": "canadiens","fullname": "Montreal Canadiens","image": "../images/NHL_Canadiens_Primary.png"},' +
+  '{"team": "canucks","fullname": "Vancouver Canucks","image": "../images/NHL_Canucks_Primary.png"},' +
+  '{"team": "capitals","fullname": "Washington Capitals","image": "../images/NHL_Capitals_Primary.png"},' +
+  '{"team": "coyotes","fullname": "Arizona Coyotes","image": "../images/NHL_Coyotes_Primary.png"},' +
   '{"team": "devils","fullname": "new Jersey Devils","image": "/assets/images/NHL_Devils_Primary.png"},' +
   '{"team": "ducks","fullname": "Anaheim Ducks","image": "/assets/images/NHL_Ducks_Primary.png"},' +
   '{"team": "flames","fullname": "Calgary Flames","image": "/assets/images/NHL_Flames_Primary.png"},' +
@@ -422,6 +422,12 @@ var logos = '{"teams": [' +
 
 				// modal trigger
 				modal.style.display = "block";
+				logo = JSON.parse(logos);
+				document.getElementById("modal-header").innerHTML = "<h2>" + logo.teams[randomNumber].fullname + "</h2>";
+				// image is not working yet (PATHING??)
+				// document.getElementById("modal-content").innerHTML = logo.teams[randomNumber].image;
+
+
 
 				// in-page message trigger
 				pageMessage.textContent = ("You won this round!");

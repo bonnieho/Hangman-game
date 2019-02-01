@@ -130,7 +130,7 @@ h3 {
 }
 
 /* Modal Content */
-.modal-content {
+#modal-content {
   position: fixed; /* I think this where I need to start tweaking where it shows up in the window */
   bottom: 0;  /* I think this where I need to start tweaking where it shows up in the window */
   background-color: #fefefe;
@@ -156,7 +156,7 @@ h3 {
   cursor: pointer;
 }
 
-.modal-header {
+#modal-header {
   padding: 2px 16px;
   background-color: #5cb85c;
   color: white;
