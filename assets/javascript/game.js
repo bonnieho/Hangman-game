@@ -27,13 +27,6 @@
 
 
 
-//  1. maybe also have a logo display on either the page or the pop-up - BETTER YET - as content in the modal!
-// what about embedding the JSON file that contains the:
-// team (data is identical to what's already in the )
-// fullname
-// logo image
-// to populate a (Bootstrap) modal?
-
 
 // limit the valid keystrokes to letters and the space bar (in other words, 
 // if the RETURN is hit that shouldn't count against you as a keypress
@@ -49,8 +42,7 @@
     				return;
     			} */
 
-
-
+ 
 // GAME PLAY MVPs
 
 // Since all names should be guessed successfully before the game can be won...
@@ -78,6 +70,9 @@
 // all of the individual team names are picked (throw out successfully guessed name as player wins that round using decrement of array members)
 // alert is displayed once all names have been displayed from the gameWords array
 // an animated gif red lamp when a round is WON! (then 'disabled' once the next round begins.)
+// have a logo display on either the page or the pop-up - BETTER YET - as content in the modal!
+// embedding the JSON file that contains the:
+// team (data is identical to what's already in the original array) + fullname + logo image + to populate a (Bootstrap) modal?
 
 // =============================================================
 
@@ -136,11 +131,14 @@ var logos = '{"teams": [' +
 		var countLosses = 0;
 		var remainingGuesses = 8;
 
-	// in-page messaging setup (to replace alert popups)
+	// in-page messaging setup (in-page div to replace alert popups)
 		var pageAlert = document.getElementById("inPageAlert");
 		var pageMessage = document.getElementById("inPageMessage");
 		var winLampShowL = document.getElementById("win-lamp_L");
 		var winLampShowR = document.getElementById("win-lamp_R"); 
+
+
+// ======= modal set up ==========
 
 	// in-page messaging setup (to replace alert popups) 
 		var modal = document.getElementById("myModal");
@@ -159,6 +157,9 @@ var logos = '{"teams": [' +
 		    modal.style.display = "none";
 		  }
 		}
+
+// ======= END modal set up ========== 
+
 
 		// var x = document.getElementsByClassName("example");
 		// var i;
@@ -196,16 +197,6 @@ var logos = '{"teams": [' +
 
 			// randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; // changed to what's below to allow the countdown of names already shown.
 			randomWord = gameWords[randomNumber];
-
-
-
-			// populate the modal
-			// NOT WORKING - might need to put these in the class-named containers modalHeader and modalContent
-			//logo = JSON.parse(logos);
-			//document.getElementById("myModal").innerHTML =
-			//logo.teams[randomNumber].team + " " + logo.teams[randomNumber].fullname + "<br />" + logo.teams[randomNumber].image;
-
-
 
 
 			lettersInWord = randomWord.split("");
@@ -423,8 +414,9 @@ var logos = '{"teams": [' +
 				// modal trigger
 				modal.style.display = "block";
 				logo = JSON.parse(logos);
+				// still need to close the modal other than clicking off of it 
+				// <span class='close'>&times;</span>
 				document.getElementById("modal-header").innerHTML = "<h2>Congratulation! You won this round by successfully guessing the " + logo.teams[randomNumber].fullname + "!</h2>";
-				// image is not working yet (PATHING??)
 				document.getElementById("modal-body").innerHTML = "<p><img src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"' /></p>";
 
 
