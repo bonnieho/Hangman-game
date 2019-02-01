@@ -420,7 +420,7 @@ var logos = '{"teams": [' +
 				// still need to close the modal other than clicking off of it 
 				// modalContent.style.display = "block";
 				document.getElementById("modal-header").innerHTML = span + "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
-				document.getElementById("modal-body").innerHTML = "<p><img src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"' /></p>";
+				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style=''/><img src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"' /><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style=''/></p>";
 
 
 
