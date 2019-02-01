@@ -425,7 +425,7 @@ var logos = '{"teams": [' +
 				logo = JSON.parse(logos);
 				document.getElementById("modal-header").innerHTML = "<h2>Congratulation! You won this round by successfully guessing the " + logo.teams[randomNumber].fullname + "!</h2>";
 				// image is not working yet (PATHING??)
-				// document.getElementById("modal-content").innerHTML = logo.teams[randomNumber].image;
+				// document.getElementById("modal-content").innerHTML = "<p><img src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"' /></p>";
 
 
 
