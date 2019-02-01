@@ -140,7 +140,8 @@ h3 {
   position: fixed; /* I think this where I need to start tweaking where it shows up in the window */
   bottom: 0;  /* I think this where I need to start tweaking where it shows up in the window */
   background-color: #fefefe;
-  /* width: 100%; */
+  border-radius: 25px;
+  	width: 100%;
   -webkit-animation-name: slideIn; /* check the animation - I don't know if I want a slide-in */
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
@@ -164,12 +165,23 @@ h3 {
 
 #modal-header {
   padding: 2px 16px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   /* background-color: #5cb85c; original green color */
   background-color: #000;
   color: white;
 }
 
-#modal-body {padding: 16px 16px; background-color: #fefefe;}
+#modal-body {
+	padding: 16px 16px; 
+	background-color: #fefefe;
+	border-bottom-left-radius: 25px;
+  	border-bottom-right-radius: 25px;
+}
+
+#modal-body p {
+	text-align: center;
+}
 
 .modal-footer {
   padding: 2px 16px;

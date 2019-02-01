@@ -158,6 +158,9 @@ var logos = '{"teams": [' +
 		  }
 		}
 
+	// Build the modal body (parent container to the header and modal body)
+		var modalContent = document.getElementById("modal-content");
+
 // ======= END modal set up ========== 
 
 
@@ -415,8 +418,8 @@ var logos = '{"teams": [' +
 				modal.style.display = "block";
 				logo = JSON.parse(logos);
 				// still need to close the modal other than clicking off of it 
-				// <span class='close'>&times;</span>
-				document.getElementById("modal-header").innerHTML = "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
+				// modalContent.style.display = "block";
+				document.getElementById("modal-header").innerHTML = span + "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
 				document.getElementById("modal-body").innerHTML = "<p><img src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"' /></p>";
 
 
