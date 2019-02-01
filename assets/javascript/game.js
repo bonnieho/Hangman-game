@@ -423,7 +423,7 @@ var logos = '{"teams": [' +
 				// modal trigger
 				modal.style.display = "block";
 				logo = JSON.parse(logos);
-				document.getElementById("modal-header").innerHTML = "<h2>" + logo.teams[randomNumber].fullname + "</h2>";
+				document.getElementById("modal-header").innerHTML = "<h2>Congratulation! You won this round by successfully guessing the " + logo.teams[randomNumber].fullname + "!</h2>";
 				// image is not working yet (PATHING??)
 				// document.getElementById("modal-content").innerHTML = logo.teams[randomNumber].image;
 
