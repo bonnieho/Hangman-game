@@ -198,6 +198,16 @@ var logos = '{"teams": [' +
 			randomWord = gameWords[randomNumber];
 
 
+
+			// populate the modal
+			// NOT WORKING - might need to put these in the class-named containers modalHeader and modalContent
+			//logo = JSON.parse(logos);
+			//document.getElementById("myModal").innerHTML =
+			//logo.teams[randomNumber].team + " " + logo.teams[randomNumber].fullname + "<br />" + logo.teams[randomNumber].image;
+
+
+
+
 			lettersInWord = randomWord.split("");
 			// this figures how many blanks are required for a specific team name
 			numOfBlanks = lettersInWord.length;
