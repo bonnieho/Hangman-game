@@ -110,22 +110,17 @@ h3 {
 
 /*  =======================  MODAL stuff  =======================  */
 /* styles are from: https://www.w3schools.com/howto/howto_css_modals.asp */
+/* modification to make the modal's content to center nicely come from http://lynn.io/2014/02/22/modalin/ */
 
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  /* from lynn.io */
-  max-height: calc(100% - 100px);
-  position: fixed;
-    top: 50%;
-    left: 50%;
-  transform: translate(-50%, -50%);
-  /* left: 0;
-  top: 0; */
-  /* width: 100%; Full width */
-  /*height: 100%;  Full height */
+  left: 0;
+  top: 0; 
+  width: 100%; /* Full width */
+  height: 100%;  /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -136,12 +131,19 @@ h3 {
 }
 
 /* Modal Content */
-#modal-content {
-  position: fixed; /* I think this where I need to start tweaking where it shows up in the window */
-  bottom: 0;  /* I think this where I need to start tweaking where it shows up in the window */
+/* w3schools has this as a class ! */
+.modal-content {
+  position: fixed; /
+  bottom: 0;
   background-color: #fefefe;
+  width: 50%; /* sets the width of the content element (parent that's holding everything) */
+      /* from lynn.io */
+      max-height: calc(100% - 100px);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
   border-radius: 25px;
-  	width: 100%;
   -webkit-animation-name: slideIn; /* check the animation - I don't know if I want a slide-in */
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
@@ -163,6 +165,7 @@ h3 {
   cursor: pointer;
 }
 
+/* w3schools has this as a class ! */
 #modal-header {
   padding: 2px 12px;
   border-top-left-radius: 25px;
@@ -172,15 +175,27 @@ h3 {
   color: white;
 }
 
+/* w3schools has this as a class ! */
 #modal-body {
 	padding: 16px 16px; 
 	background-color: #fefefe;
+    background-image: url(../images/ice-rink-background.jpg);
 	border-bottom-left-radius: 25px;
-  	border-bottom-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
+
+/* Mixin to vertically align the red lamps and team logo images */
+/* @mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+} */
 
 #modal-body p {
 	text-align: center;
+  /* @include vertical-align(); */
 }
 
 

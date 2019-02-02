@@ -143,6 +143,9 @@ var logos = '{"teams": [' +
 	// in-page messaging setup (to replace alert popups) 
 		var modal = document.getElementById("myModal");
 
+	// trying to get the close button working on the modal header
+		// var mySpan = document.getElementById("mySpan");
+
 	// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 
@@ -159,7 +162,7 @@ var logos = '{"teams": [' +
 		}
 
 	// Build the modal body (parent container to the header and modal body)
-		var modalContent = document.getElementById("modal-content");
+		//var modalContent = document.getElementById("modal-content");
 
 // ======= END modal set up ========== 
 
@@ -419,8 +422,9 @@ var logos = '{"teams": [' +
 				logo = JSON.parse(logos);
 				// still need to close the modal other than clicking off of it 
 				// modalContent.style.display = "block";
-				document.getElementById("modal-header").innerHTML = span + "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
-				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style=''/><img style='margin-right: 48px; margin-left: 36px;' src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style=''/></p>";
+				// span = document.getElementsByClassName("close")[0];
+				document.getElementById("modal-header").innerHTML = "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
+				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/><img style='margin-right: 48px; margin-left: 48px;' src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/></p>";
 
 
 
