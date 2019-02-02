@@ -150,9 +150,18 @@ var logos = '{"teams": [' +
 		// var mySpan = document.getElementById("mySpan");
 
 	// Get the <span> element that closes the modal
-		// var span = document.getElementsByClassName("close")[0];
+		var span = document.getElementsByClassName("close")[0];
 		// still not working
-		var span = document.getElementById('mySpan').getElementsByTagName('span');
+		// var span = document.getElementById('mySpan').getElementsByTagName('span');
+// var objectHTMLCollection = document.getElementById("mySpan"),
+		/* var span = document.getElementById("mySpan"),
+    string = [].map.call( span, function(node){
+        return node.textContent || node.innerText || "";
+    }).join(""); */
+
+    console.log("this is the value for span:");
+	console.log(span);
+
 
 	// When the user clicks on <span> (x), close the modal
 		span.onclick = function() {
@@ -439,7 +448,14 @@ var logos = '{"teams": [' +
 				// still need to close the modal other than clicking off of it 
 				// modalContent.style.display = "block";
 				// span = document.getElementsByClassName("close")[0];
-				document.getElementById("modal-header").innerHTML = "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
+				// document.getElementById("mySpan").innerHTML = span
+
+				var textnode = document.createTextNode("<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>");         // Create a text node
+
+				document.getElementById("modal-header").appendChild(textnode);
+
+				// document.getElementById("modal-header").innerHTML = "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
+
 				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/><img style='margin-right: 54px; margin-left: 54px;' src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/></p>";
 
 

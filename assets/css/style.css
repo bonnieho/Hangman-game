@@ -152,7 +152,7 @@ h3 {
 
 /* The Close Button */
 .close {
-  color: white;
+  color: #fff;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -160,7 +160,7 @@ h3 {
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
@@ -172,7 +172,7 @@ h3 {
   border-top-right-radius: 25px;
   /* background-color: #5cb85c; original green color */
   background-color: #000;
-  color: white;
+  color: #fff;
 }
 
 /* w3schools has this as a class ! */
