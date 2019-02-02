@@ -420,7 +420,7 @@ var logos = '{"teams": [' +
 				// still need to close the modal other than clicking off of it 
 				// modalContent.style.display = "block";
 				document.getElementById("modal-header").innerHTML = span + "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
-				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style=''/><img src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"' /><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style=''/></p>";
+				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style=''/><img style='margin-right: 48px; margin-left: 36px;' src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style=''/></p>";
 
 
 
@@ -437,7 +437,7 @@ var logos = '{"teams": [' +
 			alert activating by 1/2 a second, the letters - correct or incorrect - are now having a chance to populate 
 			their divs as I had hoped. */
 
-			/* that said, I may take out the alerts anyway (in favor of the pageMessage div). */
+			/* that said, I may take out the alerts anyway (in favor of the pageMessage div AND/OR a modal). */
 
 				setTimeout(function(){ 
 					alert("You won!");
