@@ -402,8 +402,6 @@ var logos = '{"teams": [' +
 					// in-page message trigger
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
-	    			// break;
-					
 
 				//else if (alreadyChosen = true) {
 					// in-page message trigger
