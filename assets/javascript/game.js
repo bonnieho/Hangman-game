@@ -19,11 +19,13 @@
 
 // PRIORITY: Only display/register a wrong letter ONCE if you accidently type it multiple times. 
 
+// FIX: NOT pushing incorrectly guessed letters into the wrongLetters array!
+
 // FIX: IF team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and style alerts?!)
 
-// clean up modal - placement to center if possible, colors, height, content
+// clean up modal - get close span button to work and set breakpoints for width on smaller viewport devices
 
 
 
@@ -72,7 +74,8 @@
 // an animated gif red lamp when a round is WON! (then 'disabled' once the next round begins.)
 // have a logo display on either the page or the pop-up - BETTER YET - as content in the modal!
 // embedding the JSON file that contains the:
-// team (data is identical to what's already in the original array) + fullname + logo image + to populate a (Bootstrap) modal?
+// team (data is identical to what's already in the original array) + fullname + logo image + to populate a (non-Bootstrap!) modal?
+// clean up modal - placement to center DONE! colors DONE!, height DONE!, content DONE!
 
 // =============================================================
 
@@ -147,7 +150,9 @@ var logos = '{"teams": [' +
 		// var mySpan = document.getElementById("mySpan");
 
 	// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
+		// var span = document.getElementsByClassName("close")[0];
+		// still not working
+		var span = document.getElementById('mySpan').getElementsByTagName('span');
 
 	// When the user clicks on <span> (x), close the modal
 		span.onclick = function() {
@@ -185,6 +190,9 @@ var logos = '{"teams": [' +
 
 		function launchGame() {
 
+			// reset randomNumber
+			randomNumber = null;
+
 			// check to see if all teams have shown up (the whole game is completed). 
 			if (gameWords.length === 0){
 				alert("OMG - you successfully guessed the names of all of the teams in the NHL!");
@@ -200,6 +208,11 @@ var logos = '{"teams": [' +
 
 	    	// generate a random element from the gameWords array
 	    	randomNumber = (Math.floor(Math.random() * gameWords.length));
+
+	    	// debugging to see why the wrong image comes up after a couple of correct images.
+	    	// it's likely because the original array is decreased but the JSON file is not, so the number doesn't match after the first few in the array are removed.
+	    	console.log("The random number is:");
+	    	console.log(randomNumber);
 
 			// randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; // changed to what's below to allow the countdown of names already shown.
 			randomWord = gameWords[randomNumber];
@@ -385,6 +398,11 @@ var logos = '{"teams": [' +
 				}
 				// This WORKS to place a space in the wrongLetters array if there's not one in the team name
 					remainingGuesses--; 
+					wrongLetters.push(letter);
+					// in-page message trigger
+					pageMessage.textContent = ("You've already picked that letter!");
+	    			pageMessage.style.display = "block";
+	    			// break;
 					
 
 				//else if (alreadyChosen = true) {
@@ -424,7 +442,7 @@ var logos = '{"teams": [' +
 				// modalContent.style.display = "block";
 				// span = document.getElementsByClassName("close")[0];
 				document.getElementById("modal-header").innerHTML = "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
-				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/><img style='margin-right: 48px; margin-left: 48px;' src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/></p>";
+				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/><img style='margin-right: 54px; margin-left: 54px;' src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/></p>";
 
 
 

@@ -125,9 +125,9 @@ h3 {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.6s;
   animation-name: fadeIn;
-  animation-duration: 0.4s
+  animation-duration: 0.6s
 }
 
 /* Modal Content */
@@ -136,7 +136,7 @@ h3 {
   position: fixed; /
   bottom: 0;
   background-color: #fefefe;
-  width: 50%; /* sets the width of the content element (parent that's holding everything) */
+  width: 40%; /* sets the width of the content element (parent that's holding everything) */
       /* from lynn.io */
       max-height: calc(100% - 100px);
       position: fixed;
@@ -167,7 +167,7 @@ h3 {
 
 /* w3schools has this as a class ! */
 #modal-header {
-  padding: 2px 12px;
+  padding: 2px 8px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   /* background-color: #5cb85c; original green color */
