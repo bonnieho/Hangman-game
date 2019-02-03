@@ -1,5 +1,7 @@
 # Hangman-game
 
+Published site: [https://bonnieho.github.io/Hangman-game/](https://bonnieho.github.io/Hangman-game/)
+
 ## Overview
 
 This project is a classic "Hangman" app using a theme of National Hockey League team names. The app runs in a web browser and features dynamically updated HTML powered by basic JavaScript code.
