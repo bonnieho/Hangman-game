@@ -88,7 +88,7 @@ var logos = '{"teams": [' +
   '{"team": "blue jackets","fullname": "Columbus Blue Jackets","image": "assets/images/NHL_Blue_Jackets_Primary.png"},' +
   '{"team": "blues","fullname": "St. Louis Blues","image": "assets/images/NHL_Blues_Primary.png"},' +
   '{"team": "bruins","fullname": "Boston Bruins","image": "assets/images/NHL_Bruins_Primary.png"},' +
-  '{"team": "canadiens","fullname": "Montreal Canadiens","image": "assets/imagesNHL_Canadiens_Primary.png"},' +
+  '{"team": "canadiens","fullname": "Montreal Canadiens","image": "assets/images/NHL_Canadiens_Primary.png"},' +
   '{"team": "canucks","fullname": "Vancouver Canucks","image": "assets/images/NHL_Canucks_Primary.png"},' +
   '{"team": "capitals","fullname": "Washington Capitals","image": "assets/images/NHL_Capitals_Primary.png"},' +
   '{"team": "coyotes","fullname": "Arizona Coyotes","image": "assets/images/NHL_Coyotes_Primary.png"},' +
