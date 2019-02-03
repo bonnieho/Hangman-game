@@ -19,13 +19,15 @@
 
 // PRIORITY: Only display/register a wrong letter ONCE if you accidently type it multiple times. 
 
-// FIX: NOT pushing incorrectly guessed letters into the wrongLetters array!
+// FIX: modal-header parsing!
+
+// FIX: modal content needs to pull by randomWord NOT randomNumber!
 
 // FIX: IF team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and style alerts?!)
 
-// clean up modal - change ice color/resize team logos/set breakpoints for width on smaller viewport devices?
+// clean up modal - change ice color/set breakpoints for width on smaller viewport devices?
 
 
 
