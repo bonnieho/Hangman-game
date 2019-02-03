@@ -25,7 +25,7 @@
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and style alerts?!)
 
-// clean up modal - get close span button to work and set breakpoints for width on smaller viewport devices
+// clean up modal - change ice color/resize team logos/set breakpoints for width on smaller viewport devices?
 
 
 
@@ -76,6 +76,7 @@
 // embedding the JSON file that contains the:
 // team (data is identical to what's already in the original array) + fullname + logo image + to populate a (non-Bootstrap!) modal?
 // clean up modal - placement to center DONE! colors DONE!, height DONE!, content DONE!
+// clean up modal - get close span button to work DONE!
 
 // =============================================================
 
@@ -91,7 +92,7 @@ var logos = '{"teams": [' +
   '{"team": "canucks","fullname": "Vancouver Canucks","image": "assets/images/NHL_Canucks_Primary.png"},' +
   '{"team": "capitals","fullname": "Washington Capitals","image": "assets/images/NHL_Capitals_Primary.png"},' +
   '{"team": "coyotes","fullname": "Arizona Coyotes","image": "assets/images/NHL_Coyotes_Primary.png"},' +
-  '{"team": "devils","fullname": "new Jersey Devils","image": "assets/images/NHL_Devils_Primary.png"},' +
+  '{"team": "devils","fullname": "New Jersey Devils","image": "assets/images/NHL_Devils_Primary.png"},' +
   '{"team": "ducks","fullname": "Anaheim Ducks","image": "assets/images/NHL_Ducks_Primary.png"},' +
   '{"team": "flames","fullname": "Calgary Flames","image": "assets/images/NHL_Flames_Primary.png"},' +
   '{"team": "flyers","fullname": "Philadelphia Flyers","image": "assets/images/NHL_Flyers_Primary.png"},' +
@@ -146,12 +147,10 @@ var logos = '{"teams": [' +
 	// in-page messaging setup (to replace alert popups) 
 		var modal = document.getElementById("myModal");
 
-	// trying to get the close button working on the modal header
-		// var mySpan = document.getElementById("mySpan");
-
 	// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
-		// still not working
+
+		// stuff I tested
 		// var span = document.getElementById('mySpan').getElementsByTagName('span');
 // var objectHTMLCollection = document.getElementById("mySpan"),
 		/* var span = document.getElementById("mySpan"),
@@ -159,8 +158,8 @@ var logos = '{"teams": [' +
         return node.textContent || node.innerText || "";
     }).join(""); */
 
-    console.log("this is the value for span:");
-	console.log(span);
+    // console.log("this is the value for span:");
+	// console.log(span);
 
 
 	// When the user clicks on <span> (x), close the modal
@@ -174,9 +173,6 @@ var logos = '{"teams": [' +
 		    modal.style.display = "none";
 		  }
 		}
-
-	// Build the modal body (parent container to the header and modal body)
-		//var modalContent = document.getElementById("modal-content");
 
 // ======= END modal set up ========== 
 
@@ -200,7 +196,10 @@ var logos = '{"teams": [' +
 		function launchGame() {
 
 			// reset randomNumber
-			randomNumber = null;
+			// NOT WORKING randomNumber = null;
+
+			// reset node (text that populates modal header - if not, it repeats the earlier ones.)
+			// NOT WORKING var node = "";
 
 			// check to see if all teams have shown up (the whole game is completed). 
 			if (gameWords.length === 0){
@@ -445,17 +444,24 @@ var logos = '{"teams": [' +
 				// modal trigger
 				modal.style.display = "block";
 				logo = JSON.parse(logos);
-				// still need to close the modal other than clicking off of it 
-				// modalContent.style.display = "block";
-				// span = document.getElementsByClassName("close")[0];
-				// document.getElementById("mySpan").innerHTML = span
 
-				var textnode = document.createTextNode("<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>");         // Create a text node
+				var newElemH2 = document.createElement("h2");
+				var newElemBR = document.createElement("BR");
+				var node = document.createTextNode("Congratulations!" + newElemBR + "You won this round by successfully guessing"+ newElemBR +"the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</strong></style>!");
+				var head2 = newElemH2.appendChild(node);
 
-				document.getElementById("modal-header").appendChild(textnode);
 
+				//works but with tags as strings
+				//var textnode = document.createTextNode("<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>");
+				//works but with tags as strings
+				//document.getElementById("modal-header").appendChild(textnode);
+
+				document.getElementById("modal-header").appendChild(head2);
+
+				// works but with no close button!
 				// document.getElementById("modal-header").innerHTML = "<h2>Congratulations!<br />You won this round by successfully guessing<br /> the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</style></strong>!</h2>";
 
+				// WORKS (red lamps + team logo)
 				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/><img style='margin-right: 54px; margin-left: 54px;' src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-100%);'/></p>";
 
 
@@ -468,7 +474,7 @@ var logos = '{"teams": [' +
 	    		winLampShowR.style.display = "inline-block";
 	    		
 
-			/* Developer note: There was a timing issue with the win/loss alert happening before the last letter
+			/* Developer note: There was a timing issue with the win/loss ALERT happening before the last letter
 			displayed (either right or wrong). By enclosing everything in a function that specifically delays the 
 			alert activating by 1/2 a second, the letters - correct or incorrect - are now having a chance to populate 
 			their divs as I had hoped. */
