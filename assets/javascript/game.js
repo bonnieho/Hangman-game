@@ -466,12 +466,17 @@ var logos = '{"teams": [' +
 				modal.style.display = "block";
 				logo = JSON.parse(logos);
 
+				console.log(logo);
+
 				// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
 				function findObjectByKey(logo, team, value) {
-				    for (var i = 0; i < gameWords.length; i++) {
+				    for (var i = 0; i < logo.length; i++) {
 				        if (logo[i][team] === randomWord) {
 				            return logo[i][fullname];
+				            return logo[i][image];
 				        }
+				        console.log(logo[i][fullname]);
+				        console.log(logo[i][image]);
 				    }
 				    return null;
 				}
