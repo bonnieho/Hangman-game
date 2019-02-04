@@ -475,11 +475,12 @@ var logos = '{"teams": [' +
 				            return logo[i][fullname];
 				            return logo[i][image];
 				        }
-				        console.log(logo[i][fullname]);
-				        console.log(logo[i][image]);
 				    }
 				    return null;
 				}
+
+				//console.log(logo[i][fullname]);
+				//console.log(logo[i][image]);
 
 
 				var newElemH2 = document.createElement("h2");
