@@ -167,6 +167,14 @@ var logos = '{"teams": [' +
 	// When the user clicks on <span> (x), close the modal
 		span.onclick = function() {
 		  modal.style.display = "none";
+
+		  	// Get the div element with id="modal-header"
+			// var clearNodeStuff = document.getElementById("modal-header");
+
+			// As long as modal-header has a child node, remove it
+			//while (clearNodeStuff.hasChildNodes()) {  
+			//  clearNodeStuff.removeChild(clearNodeStuff.childNodes[0]);
+			//} 
 		}
 
 	// When the user clicks anywhere outside of the modal, close it
@@ -174,6 +182,14 @@ var logos = '{"teams": [' +
 		  if (event.target == modal) {
 		    modal.style.display = "none";
 		  }
+
+		  	// Get the div element with id="modal-header"
+			// var clearNodeStuff = document.getElementById("modal-header");
+			
+			// As long as modal-header has a child node, remove it
+			// while (clearNodeStuff.hasChildNodes()) {  
+			//  clearNodeStuff.removeChild(clearNodeStuff.childNodes[0]);
+			//} 
 		}
 
 // ======= END modal set up ========== 
@@ -202,6 +218,7 @@ var logos = '{"teams": [' +
 
 			// reset node (text that populates modal header - if not, it repeats the earlier ones.)
 			// NOT WORKING var node = "";
+
 
 			// check to see if all teams have shown up (the whole game is completed). 
 			if (gameWords.length === 0){
