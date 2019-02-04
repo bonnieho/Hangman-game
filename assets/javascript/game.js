@@ -124,12 +124,14 @@ var logos = '{"teams": [' +
 	// create arrays
 
 		var gameWords = ["avalanche", "blackhawks", "blue jackets", "blues", "bruins", "canadiens", "canucks", "capitals", "coyotes", "devils", "ducks", "flames", "flyers", "golden knights", "hurricanes", "islanders", "jets", "kings", "lightning", "maple leafs", "oilers", "panthers", "penguins", "predators", "rangers", "red wings", "sabres", "senators", "sharks", "stars", "wild"];
+		// newGameWords array holding team names not guessed yet
+		var newGameWords = [];
 		var randomWord = ""
 		var lettersInWord = [];
 		var numOfBlanks = 0;
 		var blanksAndSuccesses = [];
 		// new array to hold missed team names to give the player a chance to get them correct
-		var missedName = [];
+		var missedNames = [];
 
 	// game counters
 
@@ -315,7 +317,7 @@ var logos = '{"teams": [' +
 			while (i--) // decrement counter 
 			{
   				if (gameWords[i] === gameWords[randomNumber]) {
-	    			console.log("gameWords Array after removal of RandomNumber element: ", gameWords[i]);
+	    			console.log("NEW gameWords Array after removal of RandomNumber element: ", gameWords[i]);
 	    			gameWords = gameWords.slice(0, i).concat(gameWords.slice(i + 1));
 	    			console.log(gameWords);
   				}
