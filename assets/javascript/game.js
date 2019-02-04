@@ -466,6 +466,17 @@ var logos = '{"teams": [' +
 				modal.style.display = "block";
 				logo = JSON.parse(logos);
 
+				// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
+				function findObjectByKey(logo, team, value) {
+				    for (var i = 0; i < gameWords.length; i++) {
+				        if (logo[i][team] === randomWord) {
+				            return logo[i][fullname];
+				        }
+				    }
+				    return null;
+				}
+
+
 				var newElemH2 = document.createElement("h2");
 				var newElemBR = document.createElement("BR");
 				var node = document.createTextNode("Congratulations!" + newElemBR + "You won this round by successfully guessing"+ newElemBR +"the <style='font-size: x-large;'><strong>" + logo.teams[randomNumber].fullname + "</strong></style>!");
