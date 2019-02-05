@@ -98,7 +98,7 @@ var logos = '{"teams": [' +
   '{"team": "ducks","fullname": "Anaheim Ducks","image": "assets/images/NHL_Ducks_Primary.png"},' +
   '{"team": "flames","fullname": "Calgary Flames","image": "assets/images/NHL_Flames_Primary.png"},' +
   '{"team": "flyers","fullname": "Philadelphia Flyers","image": "assets/images/NHL_Flyers_Primary.png"},' +
-  '{"team": "golden knights","fullname": "Vegas Golden Knights","image": "assets/images/NHL_Golden_Kinghts_Primary.png"},' +
+  '{"team": "golden knights","fullname": "Vegas Golden Knights","image": "assets/images/NHL_Golden_Knights_Primary.png"},' +
   '{"team": "hurricanes","fullname": "Carolina Hurricanes","image": "assets/images/NHL_Hurricanes_Primary.png"},' +
   '{"team": "islanders","fullname": "New York Islanders","image": "assets/images/NHL_Islanders_Primary.png"},' +
   '{"team": "jets","fullname": "Winnipeg Jets","image": "assets/images/NHL_Jets_Primary.png"},' +
@@ -539,7 +539,8 @@ var logos = '{"teams": [' +
 			else if (remainingGuesses == 0) {
 				// pushing missed team name into missedName array to give the player a chace to get it right later.
 				// not working - does this need to be in a loop? does it need to be elsewhere?
-				// missedName.push(randomWord);
+				missedName.push(randomWord);
+				console.log(missedName);
 
 				countLosses++;
 				// update the loss count
