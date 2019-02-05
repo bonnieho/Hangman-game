@@ -429,6 +429,7 @@ var logos = '{"teams": [' +
 					remainingGuesses--; 
 					wrongLetters.push(letter);
 					// in-page message trigger
+					// LOOK INTO THIS MESSAGE - when do I want it to be called???
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
 
@@ -590,7 +591,7 @@ var logos = '{"teams": [' +
 		// testing for event.code helps bulletproof this verification because:
 		// The value of event.key can change depending on the language or CapsLock enabled. 
 		// Also, the value of event.code is strictly bound to the key,
-		if (event.code == "Key"+letterGuessed){
+		if (event.code == "Key"+letterGuessed && event.keyCode >= 65 && event.keyCode <= 90){
 			console.log(event.code);
 			// in-page message trigger - This works and displays UpperCase letter, which looks a little nicer in the message area.
 			pageMessage.textContent = ("You've chosen letter: "+letterGuessed);
@@ -598,7 +599,7 @@ var logos = '{"teams": [' +
 		}
 
 		// put this in a listener ?? Because we don't want to send non-letter entries to the incorrect guesses array and have them count against the player.
-		else if (event.code !== "Key"+letterGuessed){
+		else if (event.code !== "Key"+letterGuessed && event.keyCode <= 65 && event.keyCode >= 90){
 			console.log(event.code);
 			// in-page message trigger - THIS IS working!
 			pageMessage.textContent = ("That's NOT a letter. Please choose a letter between a-z.");
@@ -606,20 +607,6 @@ var logos = '{"teams": [' +
 		}
 
 
-/* testing some more */
-
-		if (event.keyCode >= 65 && event.keyCode <= 90) {
-			// in-page message trigger - THIS IS NOT working
-			pageMessage.textContent = ("That IS a letter.");
-	    	pageMessage.style.display = "block";
-			console.log("This is an OK key");
-		}
-		else if (event.keyCode <= 65 && event.keyCode >= 90) {
-			// in-page message trigger - THIS IS NOT working
-			pageMessage.textContent = ("Sorry. That's not a letter.");
-	    	pageMessage.style.display = "block";
-			console.log("This NOT a good key");
-		}
 
 // ORIGINAL test
 /*
