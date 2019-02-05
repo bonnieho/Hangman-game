@@ -606,6 +606,20 @@ var logos = '{"teams": [' +
 		}
 
 
+/* testing some more */
+
+		if (event.keyCode >= 65 && event.keyCode <= 90) {
+			// in-page message trigger - THIS IS NOT working
+			pageMessage.textContent = ("That IS a letter.");
+	    	pageMessage.style.display = "block";
+			console.log("This is an OK key");
+		}
+		else if (event.keyCode <= 65 && event.keyCode >= 90) {
+			// in-page message trigger - THIS IS NOT working
+			pageMessage.textContent = ("Sorry. That's not a letter.");
+	    	pageMessage.style.display = "block";
+			console.log("This NOT a good key");
+		}
 
 // ORIGINAL test
 /*
