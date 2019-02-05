@@ -174,8 +174,8 @@ var logos = '{"teams": [' +
 			// var clearNodeStuff = document.getElementById("modal-header");
 
 			// As long as modal-header has a child node, remove it
-			//while (clearNodeStuff.hasChildNodes()) {  
-			//  clearNodeStuff.removeChild(clearNodeStuff.childNodes[0]);
+			// while (clearNodeStuff.hasChildNodes()) {  
+			// clearNodeStuff.removeChild(clearNodeStuff.childNodes[1]);
 			//} 
 		}
 
@@ -186,11 +186,11 @@ var logos = '{"teams": [' +
 		  }
 
 		  	// Get the div element with id="modal-header"
-			// var clearNodeStuff = document.getElementById("modal-header");
+			//var clearNodeStuff = document.getElementById("modal-header");
 			
 			// As long as modal-header has a child node, remove it
-			// while (clearNodeStuff.hasChildNodes()) {  
-			//  clearNodeStuff.removeChild(clearNodeStuff.childNodes[0]);
+			//while (clearNodeStuff.hasChildNodes()) {  
+			// clearNodeStuff.removeChild(clearNodeStuff.childNodes[1]);
 			//} 
 		}
 
@@ -469,7 +469,7 @@ var logos = '{"teams": [' +
 				console.log(logo);
 
 				// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
-				function findObjectByKey(logo, team, value) {
+				/*function findObjectByKey(logo, team, value) {
 				    for (var i = 0; i < logo.length; i++) {
 				        if (logo[i][team] === randomWord) {
 				            return logo[i][fullname];
@@ -477,7 +477,7 @@ var logos = '{"teams": [' +
 				        }
 				    }
 				    return null;
-				}
+				} */
 
 				//console.log(logo[i][fullname]);
 				//console.log(logo[i][image]);
