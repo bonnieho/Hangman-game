@@ -358,6 +358,7 @@ var logos = '{"teams": [' +
 				}
 				break;
 			}
+			
 
 			//if (alreadyChosen = true){
 				// in-page message trigger
