@@ -358,7 +358,7 @@ var logos = '{"teams": [' +
 				}
 				break;
 			}
-			
+
 
 			//if (alreadyChosen = true){
 				// in-page message trigger
@@ -472,6 +472,8 @@ var logos = '{"teams": [' +
 				modal.style.display = "block";
 				logo = JSON.parse(logos);
 
+
+//IS THIS WORKING?!?
 				console.log(logo);
 
 				// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
