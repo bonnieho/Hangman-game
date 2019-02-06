@@ -245,6 +245,8 @@ var logos = '{"teams": [' +
 
 			// randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; // changed to what's below to allow the countdown of names already shown.
 			randomWord = gameWords[randomNumber];
+			console.log("The random Word is:");
+	    	console.log(randomWord);
 
 
 			lettersInWord = randomWord.split("");
