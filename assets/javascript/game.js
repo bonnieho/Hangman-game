@@ -347,6 +347,7 @@ var logos = '{"teams": [' +
 
 			// checking to see if guessed letter has been picked already
 			// (is already in the blanksAndSuccesses array OR the wrongLetters letter array)
+			// LOOK AT THIS TO SPLIT THE LOOP - one condition and response for wrong letter and one other condition for blanksSuccesses
 			var alreadyChosen = false;
 			for (var i=0; i<numOfBlanks; i++){
 				if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
