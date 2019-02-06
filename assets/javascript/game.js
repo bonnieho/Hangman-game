@@ -473,7 +473,7 @@ var logos = '{"teams": [' +
 				logo = JSON.parse(logos);
 
 
-//IS THIS WORKING?!?
+				//IS THIS WORKING?!?
 				console.log(logo);
 
 				// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
