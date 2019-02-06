@@ -311,6 +311,8 @@ var logos = '{"teams": [' +
 			console.log(lettersInWord);
 			console.log(numOfBlanks);
 			console.log(blanksAndSuccesses);
+			console.log("the random team name is:");
+			console.log(randomWord);
 
 
 			//testing the tossing out of current randomly picked member of the gameWords array
