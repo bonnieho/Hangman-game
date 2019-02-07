@@ -264,7 +264,13 @@ var logos = '{"teams": [' +
 
 			//Populate blanks and successes with the correct number of blanks.
 			for (var i=0; i<numOfBlanks; i++) {
-				blanksAndSuccesses.push("_");
+				//blanksAndSuccesses.push("_");
+
+				if (lettersInWord[i] === ' ') {
+					blanksAndSuccesses.push("\xa0");
+				}
+
+				else blanksAndSuccesses.push("_")
 				
 				// also try this https://stackoverflow.com/questions/5308797/detect-nbsp-and-space-with-javascript
 				// https://stackoverflow.com/questions/1495822/replacing-nbsp-from-javascript-dom-text-node
