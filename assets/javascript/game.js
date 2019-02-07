@@ -452,6 +452,8 @@ var logos = '{"teams": [' +
 			// console.log("from inside checkLetters function");
 		}
 
+		// ======== END checkLetters() function ==============
+
 		
 /* =========   Function when the round is complete (either won or not) ================  */
 
