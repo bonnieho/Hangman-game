@@ -124,7 +124,7 @@ var logos = '{"teams": [' +
 	// create arrays
 
 		var gameWords = ["avalanche", "blackhawks", "blue jackets", "blues", "bruins", "canadiens", "canucks", "capitals", "coyotes", "devils", "ducks", "flames", "flyers", "golden knights", "hurricanes", "islanders", "jets", "kings", "lightning", "maple leafs", "oilers", "panthers", "penguins", "predators", "rangers", "red wings", "sabres", "senators", "sharks", "stars", "wild"];
-		// newGameWords array holding team names not guessed yet
+		// newGameWords array holding team names not guessed yet - NOT USING RIGHT NOW
 		var newGameWords = [];
 		var randomWord = ""
 		var lettersInWord = [];
@@ -239,7 +239,7 @@ var logos = '{"teams": [' +
 	    	randomNumber = (Math.floor(Math.random() * gameWords.length));
 
 	    	// debugging to see why the wrong image comes up after a couple of correct images.
-	    	// it's likely because the original array is decreased but the JSON file is not, so the number doesn't match after the first few in the array are removed.
+	    	// it's because the original array is decreased but the JSON file is not, so the number doesn't match after the first few in the array are removed.
 	    	console.log("The random number is:");
 	    	console.log(randomNumber);
 
@@ -436,9 +436,10 @@ var logos = '{"teams": [' +
 				}
 			}
 
-			// the space character check works here (doesn't break game cycle)
-			// this may be removed later if I can get the blanks to insert automatically if there's one in the team name.
+			
 			else {
+				// the space character check works here (doesn't break game cycle)
+				// this may be removed later if I can get the blanks to insert automatically if there's one in the team name.
 				if (letter == " "){
 					letter = '[space]&#160;';	
 				}
@@ -482,6 +483,9 @@ var logos = '{"teams": [' +
 				// update the win count
 				document.getElementById("wincount").innerHTML = countWins;
 
+
+			/* ========= MODAL stuff ==========  */
+
 				// modal trigger
 				modal.style.display = "block";
 				logo = JSON.parse(logos);
@@ -524,7 +528,7 @@ var logos = '{"teams": [' +
 				// WORKS (red lamps + team logo)!
 				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-120%);'/><img style='margin-right: 54px; margin-left: 54px;' src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-120%);'/></p>";
 
-
+			/* ======= END MODAL stuff ==========  */
 
 				// in-page message trigger
 				pageMessage.textContent = ("You won this round!");
@@ -560,8 +564,25 @@ var logos = '{"teams": [' +
 			else if (remainingGuesses == 0) {
 				// pushing missed team name into missedName array to give the player a chace to get it right later.
 				// not working - does this need to be in a loop? does it need to be elsewhere?
-				missedName.push(randomWord);
-				console.log(missedName);
+				missedNames = missedNames.push(randomWord);
+				console.log("NEW missedNames array after addition of missed randomWord: ");
+				console.log(missedNames);
+
+
+
+				//testing the pushing of missed team name into missedName array using current randomly picked member of the gameWords array
+				//var i = gameWords.length; // initialize counter to array length 
+
+				// while (i--) // decrement counter 
+				//{
+  				//	if (gameWords[i] === gameWords[randomNumber]) {
+	    		//		console.log("NEW missedName Array after addition of RandomNumber element: ", missedName[i]);
+	    		//		missedName = missedName.slice(0, i).concat(missedName.slice(i + 1));
+	    		//		console.log(missedName);
+  				//	}
+				//}
+
+
 
 				countLosses++;
 				// update the loss count
