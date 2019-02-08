@@ -313,9 +313,6 @@ var logos = '{"teams": [' +
 
 
 			// TEST
-			//console.log(gameWords);
-			console.log("the random team name is:");
-			console.log(randomWord);
 			console.log(lettersInWord);
 			console.log(numOfBlanks);
 			console.log(blanksAndSuccesses);
@@ -327,9 +324,12 @@ var logos = '{"teams": [' +
 			while (i--) // decrement counter 
 			{
   				if (gameWords[i] === gameWords[randomNumber]) {
-	    			console.log("NEW gameWords Array after removal of randomNumber element: ", gameWords[i]);
+	    			console.log("NEW gameWords array after removal of randomNumber element: ", gameWords[i]);
 	    			gameWords = gameWords.slice(0, i).concat(gameWords.slice(i + 1));
 	    			console.log(gameWords);
+	    			// testing transfer to new array
+	    			missedNames.push(randomWord);
+	    			console.log(missedNames);
   				}
 			}
 			// this seems to work!
@@ -564,9 +564,9 @@ var logos = '{"teams": [' +
 			else if (remainingGuesses == 0) {
 				// pushing missed team name into missedName array to give the player a chace to get it right later.
 				// not working - does this need to be in a loop? does it need to be elsewhere?
-				missedNames = missedNames.push(randomWord);
-				console.log("NEW missedNames array after addition of missed randomWord: ");
-				console.log(missedNames);
+				//missedNames = missedNames.push(randomWord);
+				//console.log("NEW missedNames array after addition of missed randomWord: ");
+				//console.log(missedNames);
 
 
 
