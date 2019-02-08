@@ -222,123 +222,134 @@ var logos = '{"teams": [' +
 			// NOT WORKING var node = "";
 
 
-			// check to see if all teams have shown up (the whole game is completed). 
-			if (gameWords.length === 0){
+			// check to see if all teams have shown up, were guessed correctly, and there are no more missedNames (the whole game is completed). 
+			if (gameWords.length === 0 && missedNames.length === 0){
 				alert("OMG - you successfully guessed the names of all of the teams in the NHL!");
 			}
 
-			// in-page message trigger
-			pageMessage.textContent = ("Starting this round... Good luck!");
-	    	pageMessage.style.display = "block";
-	    	winLampShowL.style.display = "none";
-	    	winLampShowR.style.display = "none";
-
-			console.log("new round starting");
-
-	    	// generate a random element from the gameWords array
-	    	randomNumber = (Math.floor(Math.random() * gameWords.length));
-
-	    	// debugging to see why the wrong image comes up after a couple of correct images.
-	    	// it's because the original array is decreased but the JSON file is not, so the number doesn't match after the first few in the array are removed.
-	    	console.log("The random number is:");
-	    	console.log(randomNumber);
-
-			// randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; // changed to what's below to allow the countdown of names already shown.
-			randomWord = gameWords[randomNumber];
-			console.log("The random Word is:");
-	    	console.log(randomWord);
-
-
-			lettersInWord = randomWord.split("");
-			// this figures how many blanks are required for a specific team name
-			numOfBlanks = lettersInWord.length;
-
-
-
-			// RESET remainingGuesses total and wrongLetters and blanksAndSuccesses arrays
-
-			remainingGuesses = 8;
-			wrongLetters = [];
-			blanksAndSuccesses = [];
-
-
-			//Populate blanks and successes with the correct number of blanks.
-			for (var i=0; i<numOfBlanks; i++) {
-				//this works, but now moved below so the check for a space can me make and a space inserted into the div
-				//blanksAndSuccesses.push("_");
-
-				if (lettersInWord[i] === ' ') {
-					blanksAndSuccesses.push("\xa0");
-				}
-
-				else blanksAndSuccesses.push("_")
-				
-				// also try this https://stackoverflow.com/questions/5308797/detect-nbsp-and-space-with-javascript
-				// https://stackoverflow.com/questions/1495822/replacing-nbsp-from-javascript-dom-text-node
-				// https://stackoverflow.com/questions/5237989/how-is-a-non-breaking-space-represented-in-a-javascript-string
-				// THIS MIGHT JUST DO IT! https://appendto.com/2016/02/replace-spaces-underscores-javascript/
-
-				/* NOT WORKING yet - maybe double == or single = instead???
-				// check for blanks in name
-				var isBlankInWord = false;
-
-				if(isBlankInWord) {
-					for (var i=0; i<numOfBlanks; i++){
-						// checking for space and inserting nbsp
-						//if(randomWord[i] === " "){
-						if(lettersInWord[i] === " "){
-							isBlankInWord = true;
-							lettersInWord[i] = '\xa0';	
-							} // the space character check HERE breaks game cycle IF there's a space in the team name
-							//blanksAndSuccesses[i] = letter;
-							blanksAndSuccesses[i].push('\xa0');
-						}			
-				}
-				// END check for blanks in name */
-				
- 				// not working yet, but I think this is promising (to find a space in the randomWord array and insert it into blanksAndSuccesses automatically)
-				//randomWord = randomWord.replace(/\s/g, " ");
+			// check to see if all teams have shown up, were guessed correctly, but there are missedNames left to be re-attempted
+			// this is not working yet - check truthiness of missedNames.length, then subbing missedNames for gameWords
+			if (gameWords.length === 0 && missedNames.length > 0){
+				gameWords === missedNames;
 			}
-			// END populate blanks and successes with the correct number of blanks.
-			
+
+			// check to see if there are still teams to try to guess for the first time
+			else {
+
+				// in-page message trigger
+				pageMessage.textContent = ("Starting this round... Good luck!");
+		    	pageMessage.style.display = "block";
+		    	winLampShowL.style.display = "none";
+		    	winLampShowR.style.display = "none";
+
+				console.log("new round starting");
+
+		    	// generate a random element from the gameWords array
+		    	randomNumber = (Math.floor(Math.random() * gameWords.length));
+
+		    	// debugging to see why the wrong image comes up after a couple of correct images.
+		    	// it's because the original array is decreased but the JSON file is not, so the number doesn't match after the first few in the array are removed.
+		    	console.log("The random number is:");
+		    	console.log(randomNumber);
+
+				// randomWord = gameWords[Math.floor(Math.random() * gameWords.length)]; // changed to what's below to allow the countdown of names already shown.
+				randomWord = gameWords[randomNumber];
+				console.log("The random Word is:");
+		    	console.log(randomWord);
 
 
-			// Change HTML to reflect round conditions
-			// FYI - join will put the array members together without the unsightly comma delimiter
-			document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
-			document.getElementById("guessesLeft").innerHTML = remainingGuesses;
-			document.getElementById("wincount").innerHTML = countWins;
-			document.getElementById("losscount").innerHTML = countLosses;
+				lettersInWord = randomWord.split("");
+				// this figures how many blanks are required for a specific team name
+				numOfBlanks = lettersInWord.length;
 
 
 
-			// TEST
-			console.log(lettersInWord);
-			console.log(numOfBlanks);
-			console.log(blanksAndSuccesses);
+				// RESET remainingGuesses total and wrongLetters and blanksAndSuccesses arrays
+
+				remainingGuesses = 8;
+				wrongLetters = [];
+				blanksAndSuccesses = [];
 
 
-			//testing the tossing out of current randomly picked member of the gameWords array
-			var i = gameWords.length; // initialize counter to array length 
+				//Populate blanks and successes with the correct number of blanks.
+				for (var i=0; i<numOfBlanks; i++) {
+					//this works, but now moved below so the check for a space can me make and a space inserted into the div
+					//blanksAndSuccesses.push("_");
 
-			while (i--) // decrement counter 
-			{
-  				if (gameWords[i] === gameWords[randomNumber]) {
-	    			console.log("NEW gameWords array after removal of randomNumber element: ", gameWords[i]);
-	    			gameWords = gameWords.slice(0, i).concat(gameWords.slice(i + 1));
-	    			console.log(gameWords);
-	    			// testing transfer to new array
-	    			missedNames.push(randomWord);
-	    			console.log(missedNames);
-  				}
+					if (lettersInWord[i] === ' ') {
+						blanksAndSuccesses.push("\xa0");
+					}
+
+					else blanksAndSuccesses.push("_")
+					
+					// also try this https://stackoverflow.com/questions/5308797/detect-nbsp-and-space-with-javascript
+					// https://stackoverflow.com/questions/1495822/replacing-nbsp-from-javascript-dom-text-node
+					// https://stackoverflow.com/questions/5237989/how-is-a-non-breaking-space-represented-in-a-javascript-string
+					// THIS MIGHT JUST DO IT! https://appendto.com/2016/02/replace-spaces-underscores-javascript/
+
+					/* NOT WORKING yet - maybe double == or single = instead???
+					// check for blanks in name
+					var isBlankInWord = false;
+
+					if(isBlankInWord) {
+						for (var i=0; i<numOfBlanks; i++){
+							// checking for space and inserting nbsp
+							//if(randomWord[i] === " "){
+							if(lettersInWord[i] === " "){
+								isBlankInWord = true;
+								lettersInWord[i] = '\xa0';	
+								} // the space character check HERE breaks game cycle IF there's a space in the team name
+								//blanksAndSuccesses[i] = letter;
+								blanksAndSuccesses[i].push('\xa0');
+							}			
+					}
+					// END check for blanks in name */
+					
+	 				// not working yet, but I think this is promising (to find a space in the randomWord array and insert it into blanksAndSuccesses automatically)
+					//randomWord = randomWord.replace(/\s/g, " ");
+				}
+				// END populate blanks and successes with the correct number of blanks.
+				
+
+
+				// Change HTML to reflect round conditions
+				// FYI - join will put the array members together without the unsightly comma delimiter
+				document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
+				document.getElementById("guessesLeft").innerHTML = remainingGuesses;
+				document.getElementById("wincount").innerHTML = countWins;
+				document.getElementById("losscount").innerHTML = countLosses;
+
+
+
+				// TEST
+				console.log(lettersInWord);
+				console.log(numOfBlanks);
+				console.log(blanksAndSuccesses);
+
+
+				//testing the tossing out of current randomly picked member of the gameWords array
+				var i = gameWords.length; // initialize counter to array length 
+
+				while (i--) // decrement counter 
+				{
+	  				if (gameWords[i] === gameWords[randomNumber]) {
+		    			console.log("NEW gameWords array after removal of randomNumber element: ", gameWords[i]);
+		    			gameWords = gameWords.slice(0, i).concat(gameWords.slice(i + 1));
+		    			console.log(gameWords);
+		    			// pushing current randomWord to missedNames array temporarily
+		    			// this element will be popped out of missedNames if the team name in the current round is guessed correctly
+		    			missedNames.push(randomWord);
+		    			console.log("NEW missedNames array after addition of current randomWord element: ", missedNames);
+	  				}
+				}
+				// this seems to work!
+
 			}
-			// this seems to work!
 
+			/* function checkForSpace(){
+
+			} */
 		}
-
-		/* function checkForSpace(){
-
-		} */
 
 /* =========   Function to check letter that were typed in  ================  */
 
@@ -482,6 +493,14 @@ var logos = '{"teams": [' +
 				countWins++;
 				// update the win count
 				document.getElementById("wincount").innerHTML = countWins;
+
+				// format the correctly guessed team name to look nicer
+				let arr = Array.from(randomWord);
+				document.getElementById("wordToGuess").innerHTML = arr.join(" ");
+				//randomWord = randomWord.slice(0, i).concat(randomWord.slice(i + 1));
+
+				// remove last added element to missedNames array so that it leaves only the actual missedNames
+				missedNames.pop();
 
 
 			/* ========= MODAL stuff ==========  */
