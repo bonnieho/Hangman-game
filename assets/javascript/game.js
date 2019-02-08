@@ -494,10 +494,27 @@ var logos = '{"teams": [' +
 				// update the win count
 				document.getElementById("wincount").innerHTML = countWins;
 
-				// format the correctly guessed team name to look nicer
+				// format the correctly guessed team name to look nicer by splitting the word into individual letters and capitalizing first letters
+				// note: capitalization of BOTH first letter IS working for two-word team names!
+				//randomWord = randomWord.toLowerCase()
+				randomWord = randomWord.toString()
+    				.split(' ')
+    				// inserting this space character in front of the first word seems to work ok to re-insert (force) the space between two-word team names
+    				// (it's ugly, but the only thing that seems to work! FWIW, the last 'empty' string is dropped or otherwise doesn't display as a full nbsp.)
+    				.map((s) => "\xa0" + s.charAt(0).toUpperCase() + s.substring(1) + " ")
+    				.join(' ');
+				
 				let arr = Array.from(randomWord);
+    			/* the stuff above seemed to work ok, so will likely remove this at some point
+    			for (var i=0; i<arr.length; i++){
+					if (arr[i] === "\xa0") {
+						arr[i] = ("&#160;");
+					}
+				}*/
+
+				// inserting the new, nicer formatted winning team name
 				document.getElementById("wordToGuess").innerHTML = arr.join(" ");
-				//randomWord = randomWord.slice(0, i).concat(randomWord.slice(i + 1));
+				
 
 				// remove last added element to missedNames array so that it leaves only the actual missedNames
 				missedNames.pop();
