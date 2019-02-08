@@ -297,7 +297,7 @@ var logos = '{"teams": [' +
 				// END check for blanks in name */
 				
  				// not working yet, but I think this is promising (to find a space in the randomWord array and insert it into blanksAndSuccesses automatically)
-				randomWord = randomWord.replace(/\s/g, " ");
+				//randomWord = randomWord.replace(/\s/g, " ");
 			}
 			// END populate blanks and successes with the correct number of blanks.
 			
@@ -327,7 +327,7 @@ var logos = '{"teams": [' +
 			while (i--) // decrement counter 
 			{
   				if (gameWords[i] === gameWords[randomNumber]) {
-	    			console.log("NEW gameWords Array after removal of RandomNumber element: ", gameWords[i]);
+	    			console.log("NEW gameWords Array after removal of randomNumber element: ", gameWords[i]);
 	    			gameWords = gameWords.slice(0, i).concat(gameWords.slice(i + 1));
 	    			console.log(gameWords);
   				}
