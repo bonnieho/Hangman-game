@@ -23,7 +23,7 @@
 
 // FIX: modal content needs to pull by randomWord NOT randomNumber!
 
-// FIX: IF team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
+// (WORKING so far...) FIX: IF team name has a space, inserting a nbsp breaks the game cycle (win not registered and new game won't launch)
 
 // (the OBVIOUS) - add background image(s) and STYLE the page (and style alerts?!)
 
@@ -50,7 +50,8 @@
 // GAME PLAY MVPs
 
 // Since all names should be guessed successfully before the game can be won...
-// keep record of names that are missed and add them back into the gameWords array so the player has a chance to get them right?
+// add missedNames back into the gameWords array so the player has a chance to get them right 
+// (substitute missedNames array for gameWords once gameWords.length = 0?)
 
 // - sounds! 
 //   1. maybe have a sound play when the user gets an answer correct (like a fog horn);
@@ -68,7 +69,7 @@
 // DONE DONE DONE !!!
 // - see if there's a way to get the FINAL letter (or space) of each correctly guessed team name to display:
 //  once it's typed AND before the alert pops up; DONE DONE DONE!!!
-//  have spaces display somehow (can the space key trigger placement of a nbsp if the name has one??) YES, but if it displays, it breaks the game cycle.
+//  have spaces display somehow (can the space key trigger placement of a nbsp if the name has one??) YES
 // DONE DONE DONE !!!
 // see about eliminating previous team names that were randomly picked one by one so that there are no repeats until 
 // all of the individual team names are picked (throw out successfully guessed name as player wins that round using decrement of array members)
@@ -79,6 +80,7 @@
 // team (data is identical to what's already in the original array) + fullname + logo image + to populate a (non-Bootstrap!) modal?
 // clean up modal - placement to center DONE! colors DONE!, height DONE!, content DONE!
 // clean up modal - get close span button to work DONE!
+// keep record of names that are missed - DONE (missedNames array)
 
 // =============================================================
 
@@ -125,12 +127,12 @@ var logos = '{"teams": [' +
 
 		var gameWords = ["avalanche", "blackhawks", "blue jackets", "blues", "bruins", "canadiens", "canucks", "capitals", "coyotes", "devils", "ducks", "flames", "flyers", "golden knights", "hurricanes", "islanders", "jets", "kings", "lightning", "maple leafs", "oilers", "panthers", "penguins", "predators", "rangers", "red wings", "sabres", "senators", "sharks", "stars", "wild"];
 		// newGameWords array holding team names not guessed yet - NOT USING RIGHT NOW
-		var newGameWords = [];
+		// var newGameWords = [];
 		var randomWord = ""
 		var lettersInWord = [];
 		var numOfBlanks = 0;
 		var blanksAndSuccesses = [];
-		// new array to hold missed team names to give the player a chance to get them correct
+		// new array to hold missed (AND CURRENT) team names to give the player a chance to get them correct
 		var missedNames = [];
 
 	// game counters
@@ -203,7 +205,7 @@ var logos = '{"teams": [' +
   			//winLampShow[i].style.display = "inline-block";
 			//}
 
-	// converting non-breaking space to something that the browser understands - NOT USING RIGHT NOW
+		// converting non-breaking space to something that the browser understands - NOT USING RIGHT NOW
 		// var SpaceCharacterNode = document.createTextNode("\u00a0")
 
 
@@ -233,7 +235,7 @@ var logos = '{"teams": [' +
 				gameWords === missedNames;
 			}
 
-			// check to see if there are still teams to try to guess for the first time
+			// check to see if there are still teams to try to guess for the first time - WORKING
 			else {
 
 				// in-page message trigger
@@ -247,7 +249,7 @@ var logos = '{"teams": [' +
 		    	// generate a random element from the gameWords array
 		    	randomNumber = (Math.floor(Math.random() * gameWords.length));
 
-		    	// debugging to see why the wrong image comes up after a couple of correct images.
+		    	// debugging to see why the wrong full name and image come up after a couple of correct images.
 		    	// it's because the original array is decreased but the JSON file is not, so the number doesn't match after the first few in the array are removed.
 		    	console.log("The random number is:");
 		    	console.log(randomNumber);
@@ -273,9 +275,10 @@ var logos = '{"teams": [' +
 
 				//Populate blanks and successes with the correct number of blanks.
 				for (var i=0; i<numOfBlanks; i++) {
-					//this works, but now moved below so the check for a space can me make and a space inserted into the div
+					//this works, but now moved below so the check for a space can be made and a space inserted into the div
 					//blanksAndSuccesses.push("_");
 
+					// here is the check for a space in the team name (since there are currently four NHL teams with two-word names)
 					if (lettersInWord[i] === ' ') {
 						blanksAndSuccesses.push("\xa0");
 					}
@@ -312,7 +315,7 @@ var logos = '{"teams": [' +
 				
 
 
-				// Change HTML to reflect round conditions
+				// update HTML to reflect round conditions
 				// FYI - join will put the array members together without the unsightly comma delimiter
 				document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
 				document.getElementById("guessesLeft").innerHTML = remainingGuesses;
@@ -327,7 +330,8 @@ var logos = '{"teams": [' +
 				console.log(blanksAndSuccesses);
 
 
-				//testing the tossing out of current randomly picked member of the gameWords array
+				// extracting of current randomly picked member of the gameWords array
+
 				var i = gameWords.length; // initialize counter to array length 
 
 				while (i--) // decrement counter 
@@ -345,10 +349,6 @@ var logos = '{"teams": [' +
 				// this seems to work!
 
 			}
-
-			/* function checkForSpace(){
-
-			} */
 		}
 
 /* =========   Function to check letter that were typed in  ================  */
@@ -425,9 +425,12 @@ var logos = '{"teams": [' +
 		// check index placement of existing letter(s) then populate blanksAndSuccesses
 			if(isLetterInWord) {
 				for (var i=0; i<numOfBlanks; i++){
+					// this WORKS to display a space in team name if present, but the space key still needs to be pressed to complete round
 					if (randomWord[i] === '\xa0') {
+						// trying to force a space keystroke? NOT WORKING
 						KeyboardEvent.key = " ";
 						KeyboardEvent.key = "Space";
+						// END attempt to force keystroke
 						blanksAndSuccesses.push(" ");
 					}
 					if (randomWord[i] == letter){
@@ -439,10 +442,13 @@ var logos = '{"teams": [' +
 						//	} 
 
 						// capitalize first letter? WORK ON THIS!!!
-							//if(randomWord[0] == letter){
-							//	letter = String.toUpperCase();
+							//if(randomWord[i]=randomWord[0]){
+							//	letter.toUpperCase();
+						    //  blanksAndSuccesses[0] = letter;
 							//}
+						
 						blanksAndSuccesses[i] = letter;
+						
 					}	
 				}
 			}
@@ -526,23 +532,31 @@ var logos = '{"teams": [' +
 				modal.style.display = "block";
 				logo = JSON.parse(logos);
 
+				var teamfullname = "";
+				var teamImage = "";
+
 
 				//IS THIS WORKING?!?
-				console.log(logo);
+				//console.log(logo);
 
 				// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
-				/*function findObjectByKey(logo, team, value) {
+				//function findObjectByKey(logo, team, value) {
 				    for (var i = 0; i < logo.length; i++) {
-				        if (logo[i][team] === randomWord) {
-				            return logo[i][fullname];
-				            return logo[i][image];
+				        //if (logo.teams[i][team] === randomWord) {
+				        if (logo.teams.team[i] === randomWord) {
+				            teamfullname = logo.teams[i][fullname];
+				            teamImage = logo.teams[i][image];
+				            //return teamfullname;
+				            //return teamImage;
 				        }
 				    }
-				    return null;
-				} */
+				    //return null;
+				//} 
 
-				//console.log(logo[i][fullname]);
-				//console.log(logo[i][image]);
+				//logo.teams[randomNumber].image
+				console.log("values pulled from the JSON object:");
+				console.log(teamfullname);
+				console.log(teamImage);
 
 
 				var newElemH2 = document.createElement("h2");

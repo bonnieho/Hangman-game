@@ -45,6 +45,7 @@ h3 {
 	/* margin-left: 72px; */
 	font-size: 180%
 	font-weight: bold;
+  display: inline;
 }
 
 #wrongletters {
@@ -105,6 +106,18 @@ h3 {
 /* footer link color change */
 .foot a:link {
 	color: lime;
+}
+
+.foot a:visited {
+  color: lime;
+}
+
+.foot a:hover {
+  color: lime;
+}
+
+.foot a:active {
+  color: lime;
 }
 
 
