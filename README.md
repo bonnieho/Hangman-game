@@ -1,4 +1,4 @@
-# Hangman-game
+# A Word-Guess Game (based on the classic "Hangman Game")
 
 Published site: [https://bonnieho.github.io/Hangman-game/](https://bonnieho.github.io/Hangman-game/)
 
