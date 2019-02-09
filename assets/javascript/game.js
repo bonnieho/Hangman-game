@@ -494,6 +494,43 @@ var logos = '{"teams": [' +
 			document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
 			document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 
+			//testing
+			console.log("the randomWord (before toUpperCase):");
+			console.log(randomWord);
+
+			logo = JSON.parse(logos);
+			var teamfullname = "";
+			var teamImage = "";
+
+			if(Object.keys(logo.teams).indexOf(randomWord) == randomWord) {
+    			console.log(randomWord + ' is a property of logo.teams.team');
+			}
+
+			// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
+				//function findObjectByKey() {
+				   // for (var i = 0; i < logo.length; i++) {
+				        //if (logo.teams[i][team] === randomWord) {
+				       // if (randomWord == logo.teams[i, 0]) {
+				       //     teamfullname = logo.teams[i].fullname;
+				        //    teamImage = logo.teams[i][image];
+				            //return teamfullname;
+				            //return teamImage;
+				        //    console.log("values pulled from the JSON object:");
+				         //   console.log(logo.teams[i, 0]);
+						//	console.log(teamfullname);
+						//	console.log(teamImage);
+				       // }
+				   // }
+				   // return null;
+				//} 
+				//findObjectByKey();
+//logo.teams[randomNumber].image
+				//console.log("Values pulled from the JSON object:");
+				//console.log(teamfullname);
+				//console.log(teamImage);
+
+
+
 			// check for a win
 			if (lettersInWord.toString() == blanksAndSuccesses.toString()) {
 				countWins++;
@@ -530,33 +567,24 @@ var logos = '{"teams": [' +
 
 				// modal trigger
 				modal.style.display = "block";
-				logo = JSON.parse(logos);
+				//logo = JSON.parse(logos);
 
-				var teamfullname = "";
-				var teamImage = "";
+				//console.log("the JSON object:");
+				//console.log(logo);
+				//console.log(logo.teams[randomNumber].image);
+				console.log("the randomWord (after conversion):");
+				console.log(randomWord);
+
+				//var teamfullname = "";
+				//var teamImage = "";
 
 
 				//IS THIS WORKING?!?
 				//console.log(logo);
 
-				// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
-				//function findObjectByKey(logo, team, value) {
-				    for (var i = 0; i < logo.length; i++) {
-				        //if (logo.teams[i][team] === randomWord) {
-				        if (logo.teams.team[i] === randomWord) {
-				            teamfullname = logo.teams[i][fullname];
-				            teamImage = logo.teams[i][image];
-				            //return teamfullname;
-				            //return teamImage;
-				        }
-				    }
-				    //return null;
-				//} 
+				
 
-				//logo.teams[randomNumber].image
-				console.log("values pulled from the JSON object:");
-				console.log(teamfullname);
-				console.log(teamImage);
+				
 
 
 				var newElemH2 = document.createElement("h2");
