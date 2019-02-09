@@ -43,7 +43,7 @@ h3 {
 #wordToGuess {
 	/* margin-top: -24px; */
 	/* margin-left: 72px; */
-	font-size: 180%
+	font-size: 180%;
 	font-weight: bold;
   display: inline;
 }
@@ -146,7 +146,7 @@ h3 {
 /* Modal Content */
 /* w3schools has this as a class ! */
 .modal-content {
-  position: fixed; /
+  position: fixed; 
   bottom: 0;
   background-color: #fefefe;
   width: 40%; /* sets the width of the content element (parent that's holding everything) */

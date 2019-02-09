@@ -494,6 +494,8 @@ var logos = '{"teams": [' +
 			document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" ");
 			document.getElementById("wrongLetters").innerHTML = wrongLetters.join(" ");
 
+
+
 			//testing
 			console.log("the randomWord (before toUpperCase):");
 			console.log(randomWord);
@@ -502,9 +504,23 @@ var logos = '{"teams": [' +
 			var teamfullname = "";
 			var teamImage = "";
 
-			if(Object.keys(logo.teams).indexOf(randomWord) == randomWord) {
-    			console.log(randomWord + ' is a property of logo.teams.team');
+			//if(Object.keys(logo.teams).indexOf(randomWord) === randomWord) {
+    		//	console.log(randomWord + ' is a property of logo.teams.team');
+			//}
+			console.log("pulled from logo object:")
+			//console.log(Object.keys(logo.teams.team));
+
+
+			function getElByPropVal(arr, prop, val){
+			    for (var i = 0, length = arr.length; i < length; i++) {
+			        if (arr[i][prop] == val){
+			            return arr[i];
+			        }
+			    }
 			}
+
+			getElByPropVal(logo, name, randomWord);
+			console.log(getElByPropVal);
 
 			// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
 				//function findObjectByKey() {
