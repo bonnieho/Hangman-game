@@ -4,30 +4,31 @@ Published site: [https://bonnieho.github.io/Hangman-game/](https://bonnieho.gith
 
 ## Overview
 
-This project is a classic "Hangman" app using a theme of National Hockey League team names. The app runs in a web browser and features dynamically updated HTML powered by basic JavaScript code.
+This project is a simple word-guess game/app based on the classic "Hangman" format and uses a theme of team names from the National Hockey League. The app runs in a web browser and features dynamically updated HTML powered by basic, vanilla JavaScript that reacts to game-player keyboard input.
 
+The requirements of this project were to set up a basic html page with linked css style sheets (one reset and one sheet of our own custom styles) as well as an external game.js script file to generate game play. Any images used in the execution of the game are saved to a linked images directory within the domain.
 
 - - -
 
+### Game Play
+
+Since the concept is based on guessing all of the correct letters in the randomly chosen word, the following elements were included in the interface:
 
 
 
-In the javascript folder, make a file called game.js. Use the src attribute of the script tag to link to this file, rather than embedding the code directly in your HTML document.
+Display the following on the page:
 
-In the css folder, make a file called style.css.
+Press any key to get started!
 
-Also in the css folder, make a file called reset.css. Paste into it the code from the Meyerweb reset stylesheet. 
+Wins: (# of times user guessed the word correctly).
 
-If you opt to use Bootstrap instead of writing your own CSS, skip this step, and simply include a link to Bootstrap via CDN.
+If the word is madonna, display it like this when the game starts: _ _ _ _ _ _ _
 
-In the images folder, save whatever images you plan on using.
+As the user guesses the correct letters, reveal them: m a d o _ _ a.
 
-Push the above changes to GitHub.
+Number of Guesses Remaining: (# of guesses remaining for the user).
 
-
-Option Two: Hangman Game (Challenge - Recommended)
-
-
+Letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).
 
 
 
