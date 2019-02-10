@@ -14,46 +14,15 @@ The requirements of this project were to set up a basic html page with linked cs
 
 Since the concept is based on guessing all of the correct letters in the randomly chosen word, the following elements were included in the interface:
 
+* a section ("wordToGuess") that displays underscores for each of the letters in the randomly picked team name currently in play (Once correct letters are selected by the player, the corresponding underscore "placeholder" is replaced by that letter, or multiples if the letter occurs more than once in a team name.);
 
+* a section to display letters already guessed incorrectly;
 
-Display the following on the page:
+* a section for both the number of rounds won (as determined by individual names guessed correctly before the incorrect letters limit was exhausted) and the number of rounds lost;
 
-Press any key to get started!
+The javascript contains key events to listen for the letters that the players will type. Parameters are specified so that non-letter characters and keys do not register as incorrectly chosen letters and counted against the player.
 
-Wins: (# of times user guessed the word correctly).
-
-If the word is madonna, display it like this when the game starts: _ _ _ _ _ _ _
-
-As the user guesses the correct letters, reveal them: m a d o _ _ a.
-
-Number of Guesses Remaining: (# of guesses remaining for the user).
-
-Letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).
-
-
-
-
-Use key events to listen for the letters that your players will type.
-
-
-
-Display the following on the page:
-
-Press any key to get started!
-
-Wins: (# of times user guessed the word correctly).
-
-If the word is madonna, display it like this when the game starts: _ _ _ _ _ _ _
-
-As the user guesses the correct letters, reveal them: m a d o _ _ a.
-
-Number of Guesses Remaining: (# of guesses remaining for the user).
-
-Letters Already Guessed: (Letters the user has guessed, displayed like L Z Y H).
-
-
-
-After the user wins/loses the game should automatically choose another word and make the user play it.
+Once the player either wins or loses a round (guessing a random team name), the the game automatically choses another random team name out of the remaining array and begins a new round. Rounds proceed until all names in the array are guessed correctly.
 
 
 
