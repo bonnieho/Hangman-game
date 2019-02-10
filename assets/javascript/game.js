@@ -366,6 +366,11 @@ var logos = '{"teams": [' +
 			// checking to see if guessed letter has been picked already
 			// (is already in the blanksAndSuccesses array OR the wrongLetters letter array)
 			// LOOK AT THIS TO SPLIT THE LOOP - one condition and response for wrong letter and one other condition for blanksSuccesses
+			
+			// Rutgers notes to check if letter is guessed already:
+			// if (gameRunning === true && guessedLetterbank.indexOf(letter) === -1) {
+					// then game runs inside here
+			//} else { alert("you've already picked that letter")}
 			var alreadyChosen = false;
 			for (var i=0; i<numOfBlanks; i++){
 				if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
@@ -513,14 +518,19 @@ var logos = '{"teams": [' +
 
 			function getElByPropVal(arr, prop, val){
 			    for (var i = 0, length = arr.length; i < length; i++) {
-			        if (arr[i][prop] == val){
+			        if (arr[i][prop] = val){
+			        	// CLOSER NOW - this is at least returning the array of logo.teams' first member (Avalanche)!
+			        	// Now I need to get to to cycle through and compare name:_____ with the value of randomWord 
+			        	// AND then spit out the corresponding fullname and image!
 			            return arr[i];
-			        }
+			        } else {
+			        return "can't help you here";
+			    	}
 			    }
 			}
 
-			getElByPropVal(logo, name, randomWord);
-			console.log(getElByPropVal);
+			//getElByPropVal(logo.teams, name, randomWord);
+			console.log(getElByPropVal(logo.teams, name, randomWord));
 
 			// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
 				//function findObjectByKey() {
