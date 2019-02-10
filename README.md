@@ -25,7 +25,7 @@ The javascript contains key events to "listen" for the letters that the players 
 Once the player either wins (by correctly guessing a random team name) OR loses a round, the player is then notified of that status and then the game automatically choses another random team name out of the remaining array and begins a new round. Rounds proceed until all NHL team names in the original array are guessed correctly.
 
 
-
+- - -
 
 Hangman Game Bonuses
 
@@ -44,6 +44,11 @@ Don't forget to place your global variables and functions above your object.
 
 Remember: global variables, then objects, then calls.
 
+- - -
+
+##### Author's note:
+
+Although this was a project that was offered and originally completed in my full-stack coding bootcamp,
 
 
 - - - 
