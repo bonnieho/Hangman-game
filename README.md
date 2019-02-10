@@ -20,9 +20,9 @@ Since the concept is based on guessing all of the correct letters in the randoml
 
 * a section for both the number of rounds *won* (as determined by individual names guessed correctly before the incorrect letters limit was exhausted) and the number of rounds *lost*;
 
-The javascript contains key events to listen for the letters that the players type. Parameters are specified so that non-letter characters and keys do not register as incorrectly chosen letters and thus counted against the player.
+The javascript contains key events to "listen" for the letters that the players type. Parameters are specified so that non-letter characters and keys do not register as incorrectly chosen letters and thus counted against the player's total.
 
-Once the player either wins or loses a round (guessing a random team name), the the game automatically choses another random team name out of the remaining array and begins a new round. Rounds proceed until all NHL team names in the array are guessed correctly.
+Once the player either wins (by correctly guessing a random team name) OR loses a round, the player is then notified of that status and then the game automatically choses another random team name out of the remaining array and begins a new round. Rounds proceed until all NHL team names in the original array are guessed correctly.
 
 
 
