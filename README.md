@@ -50,7 +50,7 @@ Remember: global variables, then objects, then calls.
 
 #### Author's note:
 
-Although this was a project that was assigned and originally completed in my full-stack coding bootcamp, well after the course was over, I decided to update it with the purpose of refreshing and updating my javascript skills.
+Although this was a project that was assigned and originally completed in my full-stack coding bootcamp, well after the course was over, I decided to update it with the purpose of refreshing and updating my javascript skills. I took this as an opportunity to try some more advanced techniques that had been suggested at the time of the assignment, as well as a few that I took upon myself in the interest of making a much more 'digified' product than I was able to back under the time constraint of the original assignment!
 
 
 - - - 
