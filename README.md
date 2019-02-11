@@ -22,7 +22,7 @@ Since the concept is based on guessing all of the correct letters in the randoml
 
 The javascript contains key events to "listen" for the letters that the players type. Parameters are specified so that non-letter characters and keys do not register as incorrectly chosen letters and thus counted against the player's total.
 
-Once the player either wins (by correctly guessing a random team name) OR loses a round, the player is then notified of that status and then the game automatically choses another random team name out of the remaining array and begins a new round. Rounds proceed until all NHL team names in the original array are guessed correctly.
+Once the player either wins (by correctly guessing a random team name) OR loses a round, the player is then notified of that status, and then the game automatically choses another random team name out of the remaining array and begins a new round. Rounds proceed until all NHL team names in the original array are guessed correctly.
 
 
 - - -
@@ -30,11 +30,13 @@ Once the player either wins (by correctly guessing a random team name) OR loses 
 Hangman Game Bonuses
 
 Play a sound or song when the user guesses their word correctly, like in our demo.
+
 Write some stylish CSS rules to make a design that fits your game's theme.
 
 
+HARD MODE: 
 
-HARD MODE: Organize your game code as an object, except for the key events to get the letter guessed. T
+Organize your game code as an object, except for the key events to get the letter guessed. T
 
 Save your whole game and its properties in an object.
 
@@ -46,9 +48,9 @@ Remember: global variables, then objects, then calls.
 
 - - -
 
-##### Author's note:
+#### Author's note:
 
-Although this was a project that was offered and originally completed in my full-stack coding bootcamp,
+Although this was a project that was assigned and originally completed in my full-stack coding bootcamp, well after the course was over, I decided to update it with the purpose of refreshing and updating my javascript skills.
 
 
 - - - 

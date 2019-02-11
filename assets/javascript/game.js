@@ -520,7 +520,7 @@ var logos = '{"teams": [' +
 			    for (var i = 0, length = arr.length; i < length; i++) {
 			        if (arr[i][prop] = val){
 			        	// CLOSER NOW - this is at least returning the array of logo.teams' first member (Avalanche)!
-			        	// Now I need to get to to cycle through and compare name:_____ with the value of randomWord 
+			        	// Now I need to get it to cycle through and compare team:_____ with the value of randomWord 
 			        	// AND then spit out the corresponding fullname and image!
 			            return arr[i];
 			        } else {
@@ -529,7 +529,7 @@ var logos = '{"teams": [' +
 			    }
 			}
 
-			//getElByPropVal(logo.teams, name, randomWord);
+			//getElByPropVal(logo.teams, team, randomWord);
 			console.log(getElByPropVal(logo.teams, name, randomWord));
 
 			// trying to synch up updated gameWords with full set of names, fullnames, and images in logos object
