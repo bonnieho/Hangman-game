@@ -8,6 +8,8 @@ This project is a simple word-guess game/app based on the classic "Hangman" form
 
 The requirements of this project were to set up a basic html page with linked css style sheets (one reset and one sheet of our own custom styles), as well as an external game.js script file to generate game play. Any images used in the execution of the game are saved to a linked images directory within the domain.
 
+(screenshot of interface here?)
+
 - - -
 
 ### Game Play
@@ -34,7 +36,7 @@ Play a sound or song when the user guesses their word correctly, like in our dem
 Write some stylish CSS rules to make a design that fits your game's theme.
 
 
-HARD MODE: 
+HARD MODE: (make a second version for fun??  check this tutorial https://www.youtube.com/watch?v=KJeRLolub8E)
 
 Organize your game code as an object, except for the key events to get the letter guessed. T
 
