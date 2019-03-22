@@ -16,20 +16,24 @@ The requirements of this project were to set up a basic html page with linked cs
 
 Since the concept is based on guessing all of the correct letters in the randomly chosen word, the following elements were included in the interface:
 
-* a section ("wordToGuess") that displays underscores for each of the letters in the randomly picked team name currently in play (Once correct letters are selected by the player, the corresponding underscore "placeholder" is replaced by that letter, or multiples if the letter occurs more than once in a team name.);
+* a section ("wordToGuess") that displays **underscores** for **each of the letters** in the randomly picked **team name** currently in play (Once correct letters are selected by the player, the corresponding underscore "placeholder" is replaced by that letter, or multiples if the letter occurs more than once in a team name.);
 
-* a section to display letters already guessed *incorrectly*;
+* a section to display **letters already guessed** *incorrectly*;
 
-* a section for both the number of rounds *won* (as determined by individual names guessed correctly before the incorrect letters limit was exhausted) and the number of rounds *lost*;
+* a section for both the **number of rounds** *won* (as determined by individual names guessed correctly before the incorrect letters limit was exhausted) and the **number of rounds** *lost*;
 
 The javascript contains key events to "listen" for the letters that the players type. Parameters are specified so that non-letter characters and keys do not register as incorrectly chosen letters and thus counted against the player's total.
 
-Once the player either wins (by correctly guessing a random team name) OR loses a round, the player is then notified of that status, and then the game automatically choses another random team name out of the remaining names array and begins a new round. If all of the team names in that array have been exhausted, then any teams in a missed team array are presented so that the player gets another chance to guess them correctly. Rounds proceed until all NHL team names in both the original and "missed" arrays are guessed correctly.
+Once the player either wins (by correctly guessing a random team name) OR loses a round, the player is then notified of that status, and then the game automatically choses another random team name out of the remaining names array and begins a new round. 
+
+If all of the team names in that array have been exhausted, then any teams in a missed team array are presented so that the player gets another chance to guess them correctly. Rounds proceed until all NHL team names in both the original and "missed" arrays are guessed correctly.
 
 
 - - -
 
 ### Under the Hood
+
+#### Starting with a Clean Slate
 
 #### Detecting Key Presses
 
@@ -45,7 +49,7 @@ Play a sound or song when the user guesses their word correctly, like in our dem
 
 Write some stylish CSS rules to make a design that fits your game's theme.
 
-- - - s
+- - - 
 
 HARD MODE: (make a second version for fun??  check this tutorial https://www.youtube.com/watch?v=KJeRLolub8E)
 
