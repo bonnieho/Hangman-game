@@ -6,12 +6,16 @@ Author: Bonnie L. Hoffman - bonnieho@rice.edu */
 body {
 	font-family: arial, helvetica, sans-serif;
 	color: #999;
+  background-color: #000; 
 }
 
 
 #main {
 	width: 65%;
-	margin: auto;
+	margin: 2rem auto;
+  padding: 2rem 4rem;
+  background-color: #fff;
+  border-radius: 25px;
 }
 
 
