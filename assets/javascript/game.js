@@ -132,6 +132,8 @@ var logos = '{"teams": [' +
 		var lettersInWord = [];
 		var numOfBlanks = 0;
 		var blanksAndSuccesses = [];
+		// array to hold letters guessed in a round but that are not in that round's team name
+		var wrongLetters = [];
 		// new array to hold missed (AND CURRENT) team names to give the player a chance to get them correct
 		var missedNames = [];
 
@@ -328,6 +330,7 @@ var logos = '{"teams": [' +
 				console.log(lettersInWord);
 				console.log(numOfBlanks);
 				console.log(blanksAndSuccesses);
+				console.log(wrongLetters);
 
 
 				// extracting of current randomly picked member of the gameWords array
@@ -373,7 +376,7 @@ var logos = '{"teams": [' +
 			//} else { alert("you've already picked that letter")}
 			var alreadyChosen = false;
 			for (var i=0; i<numOfBlanks; i++){
-				if(letter == wrongLetters[i] || letter == blanksAndSuccesses[i]){
+				if(letter === wrongLetters[i] || letter == blanksAndSuccesses[i]){
 					alreadyChosen = true;
 					// in-page message trigger
 					pageMessage.textContent = ("You've already picked that letter!");
@@ -472,6 +475,20 @@ var logos = '{"teams": [' +
 					// LOOK INTO THIS MESSAGE - when do I want it to be called???
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
+/*
+			for (var i=0; i<numOfBlanks; i++){
+				if(letter === wrongLetters[i]){
+					
+					
+					pageMessage.textContent = ("You've already picked that letter!");
+	    			pageMessage.style.display = "block";
+				}
+				else {
+					remainingGuesses--; 
+	    			wrongLetters.push(letter);
+				}
+			} */
+					
 
 				//else if (alreadyChosen = true) {
 					// in-page message trigger
