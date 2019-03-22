@@ -475,10 +475,9 @@ var logos = '{"teams": [' +
 					// LOOK INTO THIS MESSAGE - when do I want it to be called???
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
-/*
+/* this was brought down for above...
 			for (var i=0; i<numOfBlanks; i++){
 				if(letter === wrongLetters[i]){
-					
 					
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
@@ -501,6 +500,7 @@ var logos = '{"teams": [' +
 
 			//Testing this
 			console.log(blanksAndSuccesses);
+			console.log(wrongLetters);
 			// console.log("from inside checkLetters function");
 		}
 
@@ -627,8 +627,6 @@ var logos = '{"teams": [' +
 
 				
 
-				
-
 
 				var newElemH2 = document.createElement("h2");
 				var newElemBR = document.createElement("BR");
@@ -702,6 +700,10 @@ var logos = '{"teams": [' +
 	    		//		console.log(missedName);
   				//	}
 				//}
+
+
+				// not sure if the above is needed anymore because I'm pretty sure that by pushing the *current* round's team name
+				// into missedName array at the start and then POPPING it out IF the round is won seems to be working.
 
 
 
