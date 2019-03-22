@@ -24,12 +24,18 @@ Since the concept is based on guessing all of the correct letters in the randoml
 
 The javascript contains key events to "listen" for the letters that the players type. Parameters are specified so that non-letter characters and keys do not register as incorrectly chosen letters and thus counted against the player's total.
 
-Once the player either wins (by correctly guessing a random team name) OR loses a round, the player is then notified of that status, and then the game automatically choses another random team name out of the remaining array and begins a new round. Rounds proceed until all NHL team names in the original array (and then any missed) are guessed correctly.
+Once the player either wins (by correctly guessing a random team name) OR loses a round, the player is then notified of that status, and then the game automatically choses another random team name out of the remaining names array and begins a new round. If all of the team names in that array have been exhausted, then any teams in a missed team array are presented so that the player gets another chance to guess them correctly. Rounds proceed until all NHL team names in both the original and "missed" arrays are guessed correctly.
 
 
 - - -
 
 ### Under the Hood
+
+#### Detecting Key Presses
+
+#### Configuration of Letter Blanks & Game Feedback Page Elements
+
+#### Modal
 
 - - - 
 
