@@ -475,6 +475,7 @@ var logos = '{"teams": [' +
 					// LOOK INTO THIS MESSAGE - when do I want it to be called???
 					pageMessage.textContent = ("You've already picked that letter!");
 	    			pageMessage.style.display = "block";
+
 /* this was brought down for above...
 			for (var i=0; i<numOfBlanks; i++){
 				if(letter === wrongLetters[i]){
@@ -567,7 +568,7 @@ var logos = '{"teams": [' +
 				   // return null;
 				//} 
 				//findObjectByKey();
-//logo.teams[randomNumber].image
+				//logo.teams[randomNumber].image
 				//console.log("Values pulled from the JSON object:");
 				//console.log(teamfullname);
 				//console.log(teamImage);
