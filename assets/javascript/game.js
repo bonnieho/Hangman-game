@@ -689,7 +689,6 @@ var logos = '{"teams": [' +
 				//console.log(missedNames);
 
 
-
 				//testing the pushing of missed team name into missedName array using current randomly picked member of the gameWords array
 				//var i = gameWords.length; // initialize counter to array length 
 
@@ -703,7 +702,7 @@ var logos = '{"teams": [' +
 				//}
 
 
-				// not sure if the above is needed anymore because I'm pretty sure that by pushing the *current* round's team name
+				// ***** not sure if the above is needed anymore because I'm pretty sure that by pushing the *current* round's team name
 				// into missedName array at the start and then POPPING it out IF the round is won seems to be working.
 
 
@@ -730,11 +729,10 @@ var logos = '{"teams": [' +
 
 // SECTION - main processes
 
-// launchGame();
-// then onkeyup event triggers checkLetters then roundComplete functions
+// this inititates the game the first time
+launchGame();
 
-	// this inititates the game the first time
-	launchGame();
+// then onkeyup event triggers checkLetters then roundComplete functions
 
 	// clear red goal lamp if starting new round/game.
 	// winLampShow.style.display = "none";
