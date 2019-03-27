@@ -648,7 +648,11 @@ var logos = '{"teams": [' +
 
 
 				// remove recently guessed element from logo.teams object
+				// This doesn't work!
 				// logo.teams[randomNumber].pop();
+
+				// suggestion to duplicate logo object each time minus the randomNumber element
+				var logosClone = JSON.parse(JSON.stringify(a));
 
 			/* ================== END MODAL stuff ====================  */
 
