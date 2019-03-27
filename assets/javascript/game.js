@@ -652,7 +652,8 @@ var logos = '{"teams": [' +
 				// logo.teams[randomNumber].pop();
 
 				// suggestion to duplicate logo object each time minus the randomNumber element
-				var logosClone = JSON.parse(JSON.stringify(a));
+				var logosClone = logo;
+				delete logosClone.teams[randomNumber];
 
 			/* ================== END MODAL stuff ====================  */
 
