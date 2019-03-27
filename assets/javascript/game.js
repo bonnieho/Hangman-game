@@ -626,8 +626,6 @@ var logos = '{"teams": [' +
 				//IS THIS WORKING?!?
 				//console.log(logo);
 
-				
-
 
 				var newElemH2 = document.createElement("h2");
 				var newElemBR = document.createElement("BR");
@@ -648,7 +646,12 @@ var logos = '{"teams": [' +
 				// WORKS (red lamps + team logo)!
 				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-120%);'/><img style='margin-right: 54px; margin-left: 54px;' src='"+logo.teams[randomNumber].image+"' alt='logo of "+logo.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-120%);'/></p>";
 
-			/* ======= END MODAL stuff ==========  */
+
+				// remove recently guessed element from logo.teams object
+				logo.teams[randomNumber].pop();
+
+			/* ================== END MODAL stuff ====================  */
+
 
 				// in-page message trigger
 				pageMessage.textContent = ("You won this round!");
