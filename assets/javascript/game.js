@@ -137,6 +137,10 @@ var logos = '{"teams": [' +
 		// new array to hold missed (AND CURRENT) team names to give the player a chance to get them correct
 		var missedNames = [];
 
+		logo = JSON.parse(logos);
+		// suggestion to duplicate logo object each time minus the randomNumber element
+		var logosClone = logo;
+
 	// game counters
 
 		var countWins = 0;
@@ -523,7 +527,7 @@ var logos = '{"teams": [' +
 			console.log("the randomWord (before toUpperCase):");
 			console.log(randomWord);
 
-			logo = JSON.parse(logos);
+			// logo = JSON.parse(logos);
 			var teamfullname = "";
 			var teamImage = "";
 
