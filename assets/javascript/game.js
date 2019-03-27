@@ -648,7 +648,7 @@ var logos = '{"teams": [' +
 
 
 				// remove recently guessed element from logo.teams object
-				logo.teams[randomNumber].pop();
+				// logo.teams[randomNumber].pop();
 
 			/* ================== END MODAL stuff ====================  */
 
