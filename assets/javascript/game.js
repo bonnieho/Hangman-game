@@ -650,7 +650,7 @@ var logos = '{"teams": [' +
 				// WORKS (red lamps + team logo)!
 				document.getElementById("modal-body").innerHTML = "<p><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-120%);'/><img style='margin-right: 54px; margin-left: 54px;' src='"+logosClone.teams[randomNumber].image+"' alt='logo of "+logosClone.teams[randomNumber].fullname+"'/><img src='assets/images/animated-police-light-image-0004.gif' alt='light the lamp animated gif' class='win-lamp' style='position: relative; top: 50%; transform: translateY(-120%);'/></p>";
 
-
+				console.log(logosClone);
 				// remove recently guessed element from logo.teams object
 				// This doesn't work!
 				// logo.teams[randomNumber].pop();
